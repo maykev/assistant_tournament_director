@@ -1,0 +1,38 @@
+<%
+   players = []
+   Player.all.find_each do |player|
+     players.append([player.full_name, player.id])
+   end
+
+   match_player_1 = @object.match_players.where(match: @object).first
+   match_player_2 = @object.match_players.where(match: @object).last
+%>
+
+<h1>Edit Match</h1>
+<%= form_tag("/admin/match/#{@object.to_param}", method: :put) do %>
+  <p>
+    <%= label_tag("Table number: ") %>
+    <%= text_field_tag("table_number", @object.table_number) %>
+  </p>
+
+  <p>
+    <%= label_tag("Status: ") %>
+    <%= select_tag(:status, options_for_select(@object.status_enum, @object.status)) %>
+  </p>
+
+  <p>
+    <%= label_tag("Player 1: ") %>
+    <%= select_tag(:player_1, options_for_select(players, match_player_1.player_id)) %>
+    <%= text_field_tag(:player_1_score, match_player_1.score) %>
+  </p>
+
+  <p>
+    <%= label_tag("Player 2: ") %>
+    <%= select_tag(:player_2, options_for_select(players, match_player_2.player_id)) %>
+    <%= text_field_tag(:player_2_score, match_player_2.score) %>
+  </p>
+
+  <p>
+    <%= submit_tag("Update") %>
+  </p>
+<% end %>

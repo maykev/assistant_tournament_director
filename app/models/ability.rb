@@ -9,7 +9,10 @@ class Ability
       can :dashboard
       can :index, [Admin, Level, Match, Player]
       can :new, [Admin, Level, Player]
-      can :export, [Match, Player]
+      can :new_match, [Match]
+      can :edit, [Admin, Level, Player]
+      can :edit_match, [Match]
+      can :export, [Player]
       can :history, [Admin, Level, Match, Player]
       can :destroy, [Admin, Level, Match, Player]
     else

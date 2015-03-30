@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20150319052405) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.integer  "table_number",                 null: false
-    t.boolean  "finished",     default: false, null: false
+    t.integer  "table_number", null: false
+    t.string   "status",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

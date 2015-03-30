@@ -1,1 +1,9 @@
 <h1>Current Matches</h1>
+
+<% @in_progress_matches.find_each do |match| %>
+  <p>
+    <%= "#{match.match_players.first.player.full_name} - #{match.match_players.first.score}" %>
+    <br>
+    <%= "#{match.match_players.last.player.full_name} - #{match.match_players.last.score}" %>
+  </p>
+<% end %>

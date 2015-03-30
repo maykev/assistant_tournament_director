@@ -1,5 +1,5 @@
 #Admins
-Admin.create!(email: "admin@mezzweststatetour.com", password: "mezzwest")
+Admin.create!(email: "admin@mezzweststatetour.com", password: "mezzwest", super_admin: true)
 
 #Levels
 pro = Level.create!(name: "Pro", games_required: 9)

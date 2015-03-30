@@ -1,3 +1,5 @@
+Dir[Rails.root.join('lib', 'rails_admin', '**', '*.rb')].each { |file| require file }
+
 RailsAdmin.config do |config|
   config.authenticate_with do
     warden.authenticate! scope: :admin
@@ -6,18 +8,34 @@ RailsAdmin.config do |config|
   config.authorize_with(:cancan)
   config.current_user_method(&:current_admin)
 
-  config.navigation_static_links = {
-    'Create Match' => '/match/new',
-  }
-
   config.actions do
     dashboard
     index
     new
+
+    collection :new_match do
+      collection true
+      link_icon 'icon-plus'
+      pjax false
+      visible do
+        authorized? && bindings[:abstract_model].model.to_s == "Match"
+      end
+    end
+
     export
     bulk_delete
     show
     edit
+
+    member :edit_match, :edit_match do
+      member true
+      link_icon 'icon-pencil'
+      pjax false
+      visible do
+        authorized? && bindings[:abstract_model].model.to_s == "Match"
+      end
+    end
+
     delete
     show_in_app
   end
@@ -52,7 +70,8 @@ RailsAdmin.config do |config|
 
   config.model Match do
     list do
-      include_fields :table_number, :match_players, :finished
+      include_fields :table_number, :match_players
+      field :status, :enum
       configure :match_players do
         label "Match score"
       end
@@ -64,7 +83,7 @@ RailsAdmin.config do |config|
   end
 
   config.model Player do
-    object_label_method :rails_admin_display
+    object_label_method :full_name
 
     list do
       include_fields :first_name, :last_name, :display_name, :email, :level
