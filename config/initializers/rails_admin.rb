@@ -86,7 +86,7 @@ RailsAdmin.config do |config|
     object_label_method :full_name
 
     list do
-      include_fields :first_name, :last_name, :display_name, :email, :level
+      include_fields :membership_identifier, :first_name, :last_name, :display_name, :email, :level
     end
 
     show do
@@ -94,7 +94,7 @@ RailsAdmin.config do |config|
     end
 
     edit do
-      include_fields :first_name, :last_name, :display_name, :email, :level
+      include_fields :membership_identifier, :first_name, :last_name, :display_name, :email, :level
     end
   end
 end

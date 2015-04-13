@@ -58,11 +58,12 @@ ActiveRecord::Schema.define(version: 20150319052405) do
   end
 
   create_table "players", force: :cascade do |t|
-    t.string   "first_name",   null: false
+    t.integer  "membership_identifier", null: false
+    t.string   "first_name",            null: false
     t.string   "last_name"
-    t.string   "display_name", null: false
+    t.string   "display_name",          null: false
     t.string   "email"
-    t.integer  "level_id",     null: false
+    t.integer  "level_id",              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

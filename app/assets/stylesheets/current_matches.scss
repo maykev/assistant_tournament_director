@@ -1,0 +1,66 @@
+.current-matches {
+  padding: 15px;
+  background-color: black;
+
+  .logo {
+    background: image-url('mezz_west_logo.png') no-repeat left center;
+    width: 500px;
+    height: 150px;
+    padding-left: 170px;
+    padding-top: 40px;
+    margin-bottom: 15px;
+    font-size: 50px;
+    color: white;
+  }
+
+  .matches {
+    background-color: white;
+    border-top: 10px solid rgba(242, 186, 53, 1);
+
+    .match {
+      background: image-url('table.png') no-repeat left center;
+      width: 218px;
+      height: 109px;
+      padding: 20px;
+      margin: 15px;
+      color: white;
+
+      table {
+        width: 100%;
+      }
+
+      .table-number {
+        font-size: 14px;
+        padding-bottom: 5px;
+        text-align: center;
+      }
+
+      .player-name {
+        font-size: 16px;
+        text-align: left;
+      }
+
+      .player-score {
+        font-size: 16px;
+        text-align: right;
+      }
+    }
+  }
+
+  .no-matches {
+    background-color: white;
+    border-top: 10px solid rgba(242, 186, 53, 1);
+    font-size: 50px;
+    padding-left: 15px;
+  }
+
+  .sponsors {
+    border-top: 10px solid rgba(242, 186, 53, 1);
+    padding-top: 15px;
+
+    .sponsor {
+      height: 115px;
+      text-align: center;
+    }
+  }
+}
