@@ -1,6 +1,6 @@
 class MatchController < ApplicationController
   skip_before_action :verify_authenticity_token
-  
+
   def index
     respond_to do |format|
       format.html do
@@ -44,6 +44,7 @@ class MatchController < ApplicationController
   end
 
   def update
+    Match.find(id: params[:id]).update_attributes!(status: :in_progress)
     MatchPlayer.where(match_id: params[:id], player_id: params[:players][0][:id]).first.update_attributes!(score: params[:players][0][:score])
     MatchPlayer.where(match_id: params[:id], player_id: params[:players][1][:id]).first.update_attributes!(score: params[:players][1][:score])
 
