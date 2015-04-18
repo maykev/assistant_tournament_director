@@ -42,22 +42,11 @@ class MatchController < ApplicationController
   end
 
   def update
-    {
-      players: [
-        {
-          id: 1,
-          score: 4
-        },
-        {
-          id: 2,
-          score: 5
-        }
-      ]
-    }
-
     MatchPlayer.where(match_id: params[:id], player_id: params[:players][0][:id]).first.update_attributes!(score: params[:players][0][:score])
     MatchPlayer.where(match_id: params[:id], player_id: params[:players][1][:id]).first.update_attributes!(score: params[:players][1][:score])
 
     head :ok
+  rescue => e
+    Rails.logger.warn(e.inspect)
   end
 end
