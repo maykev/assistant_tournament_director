@@ -10,12 +10,12 @@
               <td colspan="2" class="table-number">Table <%= match.table_number %></td>
             </tr>
             <tr>
-              <td class="player-name"><%= match.match_players.first.player.full_name %></td>
-              <td class="player-score"><%= match.match_players.first.score %></td>
+              <td class="player-name"><%= match.match_players.order(:id).first.player.full_name %></td>
+              <td class="player-score"><%= match.match_players.order(:id).first.score %></td>
             </tr>
             <tr>
-              <td class="player-name"><%= match.match_players.last.player.full_name %></td>
-              <td class="player-score"><%= match.match_players.last.score %></td>
+              <td class="player-name"><%= match.match_players.order(:id).last.player.full_name %></td>
+              <td class="player-score"><%= match.match_players.order(:id).last.score %></td>
             </tr>
           </table>
         </div>
@@ -46,3 +46,9 @@
     </div>
   </div>
 </div>
+
+<script>
+  setTimeout(function(){
+    window.location.reload(1);
+  }, 30000);
+</script>

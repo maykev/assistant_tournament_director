@@ -16,8 +16,8 @@ class MatchController < ApplicationController
             players: []
           }
 
-          match_player_1 = created_match.match_players.first
-          match_player_2 = created_match.match_players.last
+          match_player_1 = created_match.match_players.order(:id).first
+          match_player_2 = created_match.match_players.order(:id).last
 
           player_1 = {
             id: match_player_1.player.id,
