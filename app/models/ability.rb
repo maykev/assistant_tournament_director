@@ -14,7 +14,7 @@ class Ability
       can :edit_match, [Match]
       can :export, [Player]
       can :history, [Admin, Level, Match, Player]
-      can :destroy, [Admin, Level, Match, Player]
+      can :destroy, [Admin, Level, Match]
     else
       can :read, :all
     end
