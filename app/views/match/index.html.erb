@@ -2,53 +2,56 @@
   <div class="logo">Live Scoring</div>
 
   <% if @in_progress_matches.present? %>
-    <div class="row matches">
-      <% @in_progress_matches.find_each do |match| %>
-        <div class="col-md-4 match">
-          <table>
-            <tr>
-              <td colspan="2" class="table-number">Table <%= match.table_number %></td>
-            </tr>
-            <tr>
-              <td class="player-name"><%= match.match_players.order(:id).first.player.full_name %></td>
-              <td class="player-score"><%= match.match_players.order(:id).first.score %></td>
-            </tr>
-            <tr>
-              <td class="player-name"><%= match.match_players.order(:id).last.player.full_name %></td>
-              <td class="player-score"><%= match.match_players.order(:id).last.score %></td>
-            </tr>
-          </table>
-        </div>
-      <% end %>
-    </div>
+      <div class="row matches">
+        <% @in_progress_matches.find_each do |match| %>
+            <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block match">
+              <table>
+                <tr>
+                  <td colspan="2" class="table-number">Table <%= match.table_number %></td>
+                </tr>
+                <tr>
+                  <td class="player-name"><%= match.match_players.order(:id).first.player.full_name %></td>
+                  <td class="player-score"><%= match.match_players.order(:id).first.score %></td>
+                </tr>
+                <tr>
+                  <td class="player-name"><%= match.match_players.order(:id).last.player.full_name %></td>
+                  <td class="player-score"><%= match.match_players.order(:id).last.score %></td>
+                </tr>
+              </table>
+            </div>
+        <% end %>
+      </div>
   <% else %>
-    <div class="row no-matches">There are currently no matches in progress</div>
+      <div class="row no-matches">There are currently no matches in progress</div>
   <% end %>
 
   <div class="row sponsors">
-    <div class="col-md-2 sponsor">
+    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
       <%= image_tag("mezz_cues.png") %>
     </div>
-    <div class="col-md-2 sponsor">
+    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
       <%= image_tag("west_state_billiards_supply.png") %>
     </div>
-    <div class="col-md-2 sponsor">
+    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
       <%= image_tag("zan_tips.png") %>
     </div>
-    <div class="col-md-2 sponsor">
+    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
       <%= image_tag("turtle_rack.png") %>
     </div>
-    <div class="col-md-2 sponsor">
+    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
       <%= image_tag("az_billiards.png") %>
     </div>
-    <div class="col-md-2 sponsor">
+    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
       <%= image_tag("fast_and_loose_designs.png") %>
+    </div>
+    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
+      <%= image_tag("contact_point.png") %>
     </div>
   </div>
 </div>
 
 <script>
-  setTimeout(function(){
-    window.location.reload(1);
-  }, 30000);
+    setTimeout(function () {
+        window.location.reload(1);
+    }, 30000);
 </script>

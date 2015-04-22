@@ -19,8 +19,8 @@
 
     .match {
       background: image-url('table.png') no-repeat left center;
-      width: 218px;
-      height: 109px;
+      width: 254px;
+      height: 127px;
       padding: 20px;
       margin: 15px;
       color: white;
@@ -36,12 +36,12 @@
       }
 
       .player-name {
-        font-size: 16px;
+        font-size: 20px;
         text-align: left;
       }
 
       .player-score {
-        font-size: 16px;
+        font-size: 20px;
         text-align: right;
       }
     }
@@ -56,11 +56,11 @@
 
   .sponsors {
     border-top: 10px solid rgba(242, 186, 53, 1);
-    padding-top: 15px;
 
     .sponsor {
       height: 115px;
       text-align: center;
+      padding: 25px 35px;
     }
   }
 }
