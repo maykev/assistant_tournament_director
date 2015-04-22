@@ -1,7 +1,7 @@
 class CreatePlayers < ActiveRecord::Migration
   def change
     create_table :players do |t|
-      t.integer :membership_identifier, null: false
+      t.integer :membership_number
       t.string :first_name, null: false
       t.string :last_name
       t.string :display_name, length: 10, null: false
