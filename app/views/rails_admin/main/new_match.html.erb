@@ -1,6 +1,6 @@
 <%
    players = []
-   Player.all.find_each do |player|
+   Player.order(:first_name).each do |player|
      players.append([player.full_name, player.id])
    end
 %>
