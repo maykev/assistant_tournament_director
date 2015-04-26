@@ -3,6 +3,8 @@ class Admin::MatchController < ApplicationController
     player_1 = Player.find(params[:player_1])
     player_2 = Player.find(params[:player_2])
 
+    Match.where(table_number: params[:table_number]).update_all(status: :finished)
+
     Match.create!(table_number: params[:table_number], status: :created).tap do |match|
       MatchPlayer.create!(player: player_1, match: match, score: 9 - player_1.level.games_required)
       MatchPlayer.create!(player: player_2, match: match, score: 9 - player_2.level.games_required)
