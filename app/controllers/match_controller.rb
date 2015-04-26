@@ -43,6 +43,14 @@ class MatchController < ApplicationController
     end
   end
 
+  def create
+    match = Match.create!(table_number: params[:table_number], status: :in_progress)
+    MatchPlayer.create!(match: match, player_id: params[:players][0][:id])
+    MatchPlayer.create!(match: match, player_id: params[:players][1][:id])
+
+    render json: { id: match.id }.to_json
+  end
+
   def update
     Match.find(params[:id]).update_attributes!(status: :in_progress)
     MatchPlayer.find_by(match_id: params[:id], player_id: params[:players][0][:id]).update_attributes!(score: params[:players][0][:score])

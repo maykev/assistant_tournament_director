@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   root 'match#index'
 
-  resources :match, only: [:index, :update]
+  resources :match, only: [:create, :index, :update]
+  resources :player, only: [:index]
 
   namespace :admin do
     post 'match/create' => 'match#create'
