@@ -2,15 +2,31 @@
   padding: 15px;
   background-color: black;
 
-  .logo {
-    background: image-url('mezz_west_logo.png') no-repeat left center;
-    width: 500px;
-    height: 150px;
-    padding-left: 170px;
-    padding-top: 40px;
-    margin-bottom: 15px;
-    font-size: 50px;
-    color: white;
+  .header {
+    .logo {
+      background: image-url('mezz_west_logo.png') no-repeat left center;
+      width: 400px;
+      height: 150px;
+      padding-left: 170px;
+      padding-top: 45px;
+      margin-bottom: 15px;
+      font-size: 40px;
+      color: white;
+    }
+
+    .title-sponsor {
+      height: 115px;
+      text-align: center;
+      float: right;
+
+      img.mezz {
+        padding: 35px 15px;
+      }
+
+      img.west-state-billiard-supply {
+        padding: 50px 20px;
+      }
+    }
   }
 
   .matches {
@@ -50,7 +66,7 @@
   .no-matches {
     background-color: white;
     border-top: 10px solid rgba(242, 186, 53, 1);
-    font-size: 50px;
+    font-size: 40px;
     padding-left: 15px;
   }
 
@@ -60,7 +76,7 @@
     .sponsor {
       height: 115px;
       text-align: center;
-      padding: 25px 35px;
+      padding: 25px 15px;
     }
   }
 }
