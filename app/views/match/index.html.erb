@@ -9,7 +9,7 @@
 
   <% if @in_progress_matches.present? %>
       <div class="row matches">
-        <% @in_progress_matches.find_each do |match| %>
+        <% @in_progress_matches.each do |match| %>
             <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block match">
               <table>
                 <tr>
