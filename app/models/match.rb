@@ -5,5 +5,5 @@ class Match < ActiveRecord::Base
 
   has_many :match_players
 
-  scope :with_player, ->(player) { where(player: player) }
+  scope :with_player, ->(player) { where(match_players: {player: player}) }
 end
