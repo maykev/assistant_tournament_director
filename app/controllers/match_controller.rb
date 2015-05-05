@@ -77,9 +77,17 @@ class MatchController < ApplicationController
   end
 
   def update
-    Match.find(params[:id]).update_attributes!(status: :in_progress)
-    MatchPlayer.find_by(match_id: params[:id], player_id: params[:players][0][:id]).update_attributes!(score: params[:players][0][:score])
-    MatchPlayer.find_by(match_id: params[:id], player_id: params[:players][1][:id]).update_attributes!(score: params[:players][1][:score])
+    player_1 = Player.find(params[:players][0][:id])
+    player_2 = Player.find(params[:players][1][:id])
+
+    match = Match.find(params[:id])
+    Match.where(table_number: match.table_number).update_all(status: :finished)
+    Match.includes(:match_players).where(match_players: {player: player_1}).update_all(status: :finished)
+    Match.includes(:match_players).where(match_players: {player: player_2}).update_all(status: :finished)
+    match.update_attributes!(status: :in_progress)
+
+    MatchPlayer.find_by(match: match, player: player_1).update_attributes!(score: params[:players][0][:score])
+    MatchPlayer.find_by(match: match, player: player_2).update_attributes!(score: params[:players][1][:score])
 
     head :ok
   rescue => e
