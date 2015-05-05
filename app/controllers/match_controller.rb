@@ -82,8 +82,8 @@ class MatchController < ApplicationController
 
     match = Match.find(params[:id])
     Match.where(table_number: match.table_number).update_all(status: :finished)
-    Match.with_player(player_1).update_all(status: :finished)
-    Match.with_player(player_2).update_all(status: :finished)
+    Match.joins(:match_players).merge(MatchPlayer.where(player: player_1)).update_all(status: :finished)
+    Match.joins(:match_players).merge(MatchPlayer.where(player: player_2)).update_all(status: :finished)
     match.update_attributes!(status: :in_progress)
 
     MatchPlayer.find_by(match: match, player: player_1).update_attributes!(score: params[:players][0][:score])
