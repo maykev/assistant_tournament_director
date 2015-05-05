@@ -4,7 +4,7 @@ class MatchController < ApplicationController
   def index
     respond_to do |format|
       format.html do
-        @in_progress_matches = Match.includes(:match_players).where(status: :in_progress)
+        @in_progress_matches = Match.includes(:match_players).where(status: :in_progress).order(:table_number)
         render :index
       end
       format.json do
