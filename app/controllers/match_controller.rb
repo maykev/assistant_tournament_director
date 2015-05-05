@@ -44,9 +44,6 @@ class MatchController < ApplicationController
   end
 
   def create
-    puts "*" * 100
-    puts params.inspect
-    puts "*" * 100
     match = Match.create!(table_number: params[:table_number], status: :created)
     player_1 = Player.find(params[:players][0][:id])
     player_2 = Player.find(params[:players][1][:id])
