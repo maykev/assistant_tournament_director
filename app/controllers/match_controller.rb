@@ -44,7 +44,7 @@ class MatchController < ApplicationController
   end
 
   def create
-    Match.where(table_number: params[:table_number]).first.update_attributes(status: :finished)
+    Match.where(table_number: params[:table_number], status: :in_progress).update_all(status: :finished)
     match = Match.create!(table_number: params[:table_number], status: :in_progress)
     player_1 = Player.find(params[:players][0][:id])
     player_2 = Player.find(params[:players][1][:id])
