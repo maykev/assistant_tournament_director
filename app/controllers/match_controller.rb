@@ -44,7 +44,8 @@ class MatchController < ApplicationController
   end
 
   def create
-    match = Match.create!(table_number: params[:table_number], status: :created)
+    Match.find_by(table_number: params[:table_number]).first.update_attributes!(status: :finished)
+    match = Match.create!(table_number: params[:table_number], status: :in_progress)
     player_1 = Player.find(params[:players][0][:id])
     player_2 = Player.find(params[:players][1][:id])
 
@@ -81,9 +82,6 @@ class MatchController < ApplicationController
     player_2 = Player.find(params[:players][1][:id])
 
     match = Match.find(params[:id])
-    Match.where(table_number: match.table_number).update_all(status: :finished)
-    Match.joins(:match_players).merge(MatchPlayer.where(player: player_1)).update_all(status: :finished)
-    Match.joins(:match_players).merge(MatchPlayer.where(player: player_2)).update_all(status: :finished)
     match.update_attributes!(status: :in_progress)
 
     MatchPlayer.find_by(match: match, player: player_1).update_attributes!(score: params[:players][0][:score])
