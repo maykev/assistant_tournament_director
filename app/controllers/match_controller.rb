@@ -49,7 +49,7 @@ class MatchController < ApplicationController
 
     Match.where(table_number: params[:table_number], status: :in_progress).update_all(status: :finished)
     Match.joins(:match_players).where(status: :in_progress, match_players: {player: player_1}).update_all(status: :finished)
-    Match.joins(:match_players).where(status: :in_progress, match_players: {player: player_2}).update_all(status: :finished)
+    Match.joins(:match_players).where(status: :in_progress, match_players: {player: player_2œ¡}).update_all(status: :finished)
 
     match = Match.create!(table_number: params[:table_number], status: :in_progress)
     match_player_1 = MatchPlayer.create!(match: match, player: player_1, score: 9 - player_1.level.games_required)

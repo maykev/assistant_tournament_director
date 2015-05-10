@@ -97,4 +97,10 @@ RailsAdmin.config do |config|
       include_fields :membership_number, :first_name, :last_name, :display_name, :email, :level
     end
   end
+
+  config.model Tournament do
+    edit do
+      include_fields :name, :status, :start_date, :end_date, :players
+    end
+  end
 end
