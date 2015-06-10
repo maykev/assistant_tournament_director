@@ -9,6 +9,7 @@
 
   <% if @in_progress_matches.present? %>
       <div class="row matches">
+        <p><strong>All matches are race to 9.</strong>  This page will refresh automatically every 30 seconds.</p>
         <% @in_progress_matches.each do |match| %>
             <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block match">
               <table>
@@ -49,6 +50,9 @@
     </div>
     <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
       <%= image_tag("andy_cloth.png") %>
+    </div>
+    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
+      <%= image_tag("csi.png") %>
     </div>
     <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
       <%= image_tag("fast_and_loose_designs.png") %>

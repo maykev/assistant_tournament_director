@@ -2,6 +2,11 @@
   padding: 15px;
   background-color: black;
 
+  p {
+    font-size: 16px;
+    padding: 10px 0px 0px 20px;
+  }
+
   .header {
     .logo {
       background: image-url('mezz_west_logo.png') no-repeat left center;
@@ -38,7 +43,7 @@
       width: 254px;
       height: 127px;
       padding: 20px;
-      margin: 15px;
+      margin: 0px 10px 10px 10px;
       color: white;
 
       table {
