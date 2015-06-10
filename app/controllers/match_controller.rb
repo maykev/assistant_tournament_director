@@ -57,6 +57,7 @@ class MatchController < ApplicationController
 
     match_json = {
         id: match.id,
+        table_number: match.table_number,
         players: []
     }
 
