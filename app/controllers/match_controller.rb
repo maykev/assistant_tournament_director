@@ -61,17 +61,19 @@ class MatchController < ApplicationController
         players: []
     }
 
+    display_names = create_display_names(match_player_1.player, match_player_2.player);
+
     match_player_1_json = {
         id: match_player_1.player.id,
         full_name: match_player_1.player.full_name,
-        display_name: match_player_1.player.display_name,
+        display_name: display_names[0],
         games_on_the_wire: match_player_1.score
     }
 
     match_player_2_json = {
         id: match_player_2.player.id,
         full_name: match_player_2.player.full_name,
-        display_name: match_player_2.player.display_name,
+        display_name: display_names[1],
         games_on_the_wire: match_player_2.score
     }
 
@@ -94,5 +96,22 @@ class MatchController < ApplicationController
     head :ok
   rescue => e
     Rails.logger.warn(e.inspect)
+  end
+
+  def create_display_names(player_1, player_2)
+    display_names = []
+
+    if player_1.first_name != player_2.first_name
+      display_names = [player_1.first_name, player_2.first_name]
+    elsif player_1.last_name[0] != player_2.last_name[0]
+      display_names = ["#{player_1.first_name} #{player_1.last_name[0]}", "#{player_2.first_name} #{player_2.last_name[0]}"]
+    else
+      display_names = ["#{player_1.first_name[0]}. #{player_1.last_name}", "#{player_2.first_name[0]}. #{player_2.last_name}"]
+    end
+
+    display_names[0] = display_names[0][0..8]
+    display_names[1] = display_names[1][0..8]
+
+    return display_names
   end
 end
