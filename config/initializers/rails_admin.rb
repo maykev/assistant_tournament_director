@@ -70,7 +70,7 @@ RailsAdmin.config do |config|
 
   config.model Match do
     list do
-      include_fields :table_number, :match_players
+      include_fields :table_number, :match_players, :created_at
       field :status, :enum
       configure :match_players do
         label "Match score"
