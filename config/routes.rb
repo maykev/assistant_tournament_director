@@ -11,6 +11,7 @@ Rails.application.routes.draw do
         resources :players, only: [:index]
         resources :matches, only: [:index, :create, :update]
         resources :tournaments, only: [:index]
+        get 'tournaments/:id/tables' => 'tournaments#tables'
     end
 
     namespace :admin do
