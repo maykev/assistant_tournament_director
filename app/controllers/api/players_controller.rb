@@ -1,6 +1,6 @@
 class Api::PlayersController < ApplicationController
     def index
-        players = {players: []}
+        players = []
 
         if params[:tournament]
             tournament = Tournament.find(params[:tournament])
@@ -10,11 +10,17 @@ class Api::PlayersController < ApplicationController
 
         if tournament.present?
             tournament.players.order(:first_name).each do |player|
-                players[:players].append({id: player.id, full_name: player.full_name})
+                players.push({
+                    id: player.id,
+                    full_name: player.full_name
+                })
             end
         else
             Player.order(:first_name).each do |player|
-                players[:players].append({id: player.id, full_name: player.full_name})
+                players.push({
+                    id: player.id,
+                    full_name: player.full_name
+                })
             end
         end
 
