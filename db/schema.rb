@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150510092456) do
+ActiveRecord::Schema.define(version: 20160318022836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,14 +48,19 @@ ActiveRecord::Schema.define(version: 20150510092456) do
     t.integer  "score",      default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "matches", force: :cascade do |t|
-    t.integer  "table_number", null: false
-    t.string   "status",       null: false
+    t.string   "table_number"
+    t.string   "status",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tournament_id"
+    t.string   "bracket_position"
   end
+
+  add_index "matches", ["tournament_id"], name: "index_matches_on_tournament_id", using: :btree
 
   create_table "player_tournaments", force: :cascade do |t|
     t.integer  "tournament_id"
@@ -65,14 +70,15 @@ ActiveRecord::Schema.define(version: 20150510092456) do
   end
 
   create_table "players", force: :cascade do |t|
-    t.integer  "membership_number"
-    t.string   "first_name",        null: false
+    t.string   "first_name",   null: false
     t.string   "last_name"
-    t.string   "display_name",      null: false
     t.string   "email"
-    t.integer  "level_id",          null: false
+    t.integer  "level_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone"
+    t.boolean  "enable_phone"
+    t.boolean  "enable_email"
   end
 
   create_table "tournaments", force: :cascade do |t|
@@ -82,6 +88,11 @@ ActiveRecord::Schema.define(version: 20150510092456) do
     t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "race"
+    t.integer  "final_race"
+    t.string   "bye_pattern"
+    t.string   "bracket_type"
+    t.string   "table_numbers"
   end
 
 end
