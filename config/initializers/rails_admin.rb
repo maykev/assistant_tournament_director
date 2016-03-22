@@ -12,30 +12,10 @@ RailsAdmin.config do |config|
     dashboard
     index
     new
-
-    collection :new_match do
-      collection true
-      link_icon 'icon-plus'
-      pjax false
-      visible do
-        authorized? && bindings[:abstract_model].model.to_s == "Match"
-      end
-    end
-
     export
     bulk_delete
     show
     edit
-
-    member :edit_match, :edit_match do
-      member true
-      link_icon 'icon-pencil'
-      pjax false
-      visible do
-        authorized? && bindings[:abstract_model].model.to_s == "Match"
-      end
-    end
-
     delete
     show_in_app
   end
@@ -56,7 +36,7 @@ RailsAdmin.config do |config|
 
   config.model Level do
     list do
-      include_fields :name, :games_required
+      include_all_fields
     end
 
     show do
@@ -64,20 +44,20 @@ RailsAdmin.config do |config|
     end
 
     edit do
-      include_fields :name, :games_required
+      include_all_fields
     end
   end
 
   config.model Match do
     list do
-      include_fields :table_number, :match_players, :created_at
-      field :status, :enum
-      configure :match_players do
-        label "Match score"
-      end
+      include_fields :id, :bracket_position, :match_players
     end
 
     show do
+      include_all_fields
+    end
+
+    edit do
       include_all_fields
     end
   end
@@ -86,7 +66,7 @@ RailsAdmin.config do |config|
     object_label_method :full_name
 
     list do
-      include_fields :membership_number, :first_name, :last_name, :display_name, :email, :level
+      include_all_fields
     end
 
     show do
@@ -94,13 +74,13 @@ RailsAdmin.config do |config|
     end
 
     edit do
-      include_fields :membership_number, :first_name, :last_name, :display_name, :email, :level
+      include_all_fields
     end
   end
 
   config.model Tournament do
     edit do
-      include_fields :name, :status, :start_date, :end_date, :players
+      include_all_fields
     end
   end
 end

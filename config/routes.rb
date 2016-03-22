@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
     root 'match#index'
 
+    resources :brackets, only: [:create, :show]
     resources :match, only: [:create, :index, :update]
     resources :player, only: [:index]
 
