@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318022836) do
+ActiveRecord::Schema.define(version: 20160323062334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,7 +92,8 @@ ActiveRecord::Schema.define(version: 20160318022836) do
     t.integer  "final_race"
     t.string   "bye_pattern"
     t.string   "bracket_type"
-    t.string   "table_numbers"
+    t.text     "table_numbers"
+    t.string   "mode"
   end
 
 end
