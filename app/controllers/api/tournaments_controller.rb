@@ -8,12 +8,12 @@ class Api::TournamentsController < ApplicationController
     end
 
     def tables
-        if params[:id] == "1"
-            render json: [1,2,3,4,5].to_json
-        elsif params[:id] == "2"
-            render json: [1,2,3,4,5,6,7,8,9,10].to_json
-        else
-            head :not_found
-        end
+        tournament = Tournament.find(params[:id])
+
+        available_tables = tournament.table_numbers - tournament.matches.where(status: :in_progress).pluck(:table_number)
+
+        render json: available_tables.to_json
+    rescue ActiveRecord::RecordNotFound
+        head :not_found
     end
 end
