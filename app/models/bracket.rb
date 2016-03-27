@@ -55,7 +55,8 @@ class Bracket
                 match_player_2 = MatchPlayer.create!(match: match, player: player, position: 2, score: tournament.race - player.level.games_required)
             end
 
-            if bye
+            if bye && match.match_players.length > 0
+                match.update_attributes!(status: :finished)
                 update(match.id)
             end
 
@@ -68,8 +69,12 @@ class Bracket
 
         bracket_size = 2 ** Math.log2(match.tournament.players.length).ceil
         winners_side = match.bracket_position.start_with?('W')
-        match_number = match.bracket_position[4].to_i
-        round_number = match.bracket_position[1].to_i
+        match_number = match.bracket_position[(match.bracket_position.index('M') + 1)..(match.bracket_position.length - 1)].to_i
+        round_number = match.bracket_position[1..(match.bracket_position.index('-') - 1)].to_i
+
+        puts match_number
+        puts round_number
+
         position = match_number % 2 == 0 ? 2 : 1
 
         winner = match.match_players.order(score: :desc, position: :asc).first.player
