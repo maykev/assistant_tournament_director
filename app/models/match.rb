@@ -6,6 +6,8 @@ class Match < ActiveRecord::Base
     has_many :match_players, dependent: :destroy
     has_many :players, through: :match_players
 
+    after_save :update_bracket, if: :finished?
+
     def race
         match.tournament.matches.where(status: :created).count > 1 ? match.tournament.race : match.tournament.final_race
     end
@@ -26,5 +28,13 @@ class Match < ActiveRecord::Base
         display_names[1] = display_names[1][0..8]
 
         return display_names[position - 1]
+    end
+
+    def finished?
+        self.status == :finished
+    end
+
+    def update_bracket
+        Bracket.new.update(self.id)
     end
 end

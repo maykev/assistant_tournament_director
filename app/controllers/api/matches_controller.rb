@@ -40,6 +40,25 @@ class Api::MatchesController < ApplicationController
     end
 
     def update
+        player_1 = Player.find(params[:players][0][:id])
+        player_2 = Player.find(params[:players][1][:id])
+
+        match = Match.find(params[:id])
+
+        if match.status == :in_progress
+            unless params[:override]
+                head :conflict
+                return
+            end
+        end
+
+        match.update_attributes!(table_number: params[:table], status: params[:finished] ? :finished : :in_progress)
+
+        MatchPlayer.find_by(match: match, player: player_1).update_attributes!(score: params[:players][0][:score])
+        MatchPlayer.find_by(match: match, player: player_2).update_attributes!(score: params[:players][1][:score])
+
         head :ok
+    rescue ActiveRecord::RecordNotFound
+        head :not_found
     end
 end
