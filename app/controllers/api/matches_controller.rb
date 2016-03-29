@@ -36,7 +36,27 @@ class Api::MatchesController < ApplicationController
     end
 
     def create
-        head :created
+        begin
+            tournament = Tournament.find(params[:tournament_id])
+        rescue ActiveRecord::RecordNotFound
+            render status: :not_found, body: 'tournament'
+            return
+        end
+
+        match = Match.create!(tournament: tournament, table_number: params[:table], status: :created)
+
+        params[:players].each do |player_id|
+            begin
+                player = tournament.players.find(player_id)
+            rescue
+                render status: :not_found, body: "player #{player_id}"
+                return
+            end
+
+            MatchPlayer.create!(match: match, player: player)
+        end
+
+        render status: :created, json: { id: match.id }
     end
 
     def update
