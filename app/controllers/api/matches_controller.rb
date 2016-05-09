@@ -83,9 +83,11 @@ class Api::MatchesController < ApplicationController
 
         match = Match.find(params[:id])
 
-        if match.status == :in_progress
-            unless params[:override]
-                head :conflict
+        if match.status == :created
+            tables_in_use = match.tournament.matches.where(status: :in_progress).pluck(:table_number)
+
+            if tables_in_use.include?(params[:table])
+                render status: :conflict, body: "table"
                 return
             end
         end
