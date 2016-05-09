@@ -45,6 +45,7 @@ class Api::MatchesController < ApplicationController
 
         match = Match.create!(tournament: tournament, table_number: params[:table], status: :created)
 
+        puts params[:players]
         params[:players].each do |player_id|
             begin
                 player = tournament.players.find(player_id)
