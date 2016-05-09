@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323062334) do
+ActiveRecord::Schema.define(version: 20160421022558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,12 @@ ActiveRecord::Schema.define(version: 20160323062334) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "bracket_configurations", force: :cascade do |t|
+    t.integer "size",          null: false
+    t.text    "bye_pattern"
+    t.text    "loser_pattern"
+  end
 
   create_table "levels", force: :cascade do |t|
     t.string   "name",           null: false
@@ -94,6 +100,9 @@ ActiveRecord::Schema.define(version: 20160323062334) do
     t.string   "bracket_type"
     t.text     "table_numbers"
     t.string   "mode"
+    t.integer  "bracket_configuration_id"
   end
+
+  add_index "tournaments", ["bracket_configuration_id"], name: "index_tournaments_on_bracket_configuration_id", using: :btree
 
 end

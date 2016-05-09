@@ -22,14 +22,14 @@ class MatchController < ApplicationController
           player_1 = {
               id: match_player_1.player.id,
               full_name: match_player_1.player.full_name,
-              display_name: match_player_1.player.display_name,
+              display_name: match_player_1.player.display_name(match_player_1.position),
               games_on_the_wire: match_player_1.score
           }
 
           player_2 = {
               id: match_player_2.player.id,
               full_name: match_player_2.player.full_name,
-              display_name: match_player_2.player.display_name,
+              display_name: match_player_2.player.display_name(match_player_2.position),
               games_on_the_wire: match_player_2.score
           }
 
