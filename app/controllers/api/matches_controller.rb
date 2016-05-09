@@ -45,7 +45,7 @@ class Api::MatchesController < ApplicationController
 
         match = Match.create!(tournament: tournament, table_number: params[:table], status: :created)
 
-        puts params.inspect
+        player_number = 1
         params[:players].each do |player_id|
             begin
                 player = tournament.players.find(player_id)
@@ -54,10 +54,27 @@ class Api::MatchesController < ApplicationController
                 return
             end
 
-            MatchPlayer.create!(match: match, player: player)
+            MatchPlayer.create!(match: match, player: player, position: player_number)
+            player_number = player_number + 1
         end
 
-        render status: :created, json: { id: match.id }
+        matchJson = {
+            id: match.id,
+            race: tournament.reload.race,
+            tables: tournament.available_tables,
+            players: []
+        }
+
+        match.reload.match_players.order(position: :asc).each do |match_player|
+            matchJson[:players].push({
+                id: match_player.player.id,
+                full_name: match_player.player.full_name,
+                display_name: match_player.match.display_name(match_player.position),
+                games_on_the_wire: tournament.race - match_player.player.level.games_required
+            })
+        end
+
+        render status: :created, json: matchJson.to_json
     end
 
     def update
