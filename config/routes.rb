@@ -4,14 +4,14 @@ Rails.application.routes.draw do
 
     root 'match#index'
 
-    resources :brackets, only: [:create, :show]
+    resources :tournaments, only: [:show]
     resources :match, only: [:create, :index, :update]
     resources :player, only: [:index]
 
     namespace :api do
         resources :players, only: [:index]
         resources :matches, only: [:index, :create, :update]
-        resources :tournaments, only: [:index]
+        resources :tournaments, only: [:index, :show]
         get 'tournaments/:id/tables' => 'tournaments#tables'
     end
 

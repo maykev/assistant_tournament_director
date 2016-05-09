@@ -6,9 +6,11 @@ class Tournament < ActiveRecord::Base
 
     serialize :table_numbers, Array
 
+    belongs_to :bracket_configuration
     has_many :player_tournaments
     has_many :players, through: :player_tournaments
     has_many :matches
+    has_many :match_players, through: :matches
 
     after_create :create_bracket, if: :full?
 

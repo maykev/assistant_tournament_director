@@ -7,12 +7,12 @@ class Ability
     if admin.super_admin?
       can :access, :rails_admin
       can :dashboard
-      can :index, [Admin, Level, Match, Player, Tournament]
-      can :new, [Admin, Level, Match, Player, Tournament]
-      can :edit, [Admin, Level, Match, Player, Tournament]
+      can :index, [Admin, BracketConfiguration, Level, Match, Player, Tournament]
+      can :new, [Admin, BracketConfiguration, Level, Match, Player, Tournament]
+      can :edit, [Admin, BracketConfiguration, Level, Match, Player, Tournament]
       can :export, [Player]
       can :history, [Admin, Level, Match, Player, Tournament]
-      can :destroy, [Admin, Level, Match, Tournament]
+      can :destroy, [Admin, BracketConfiguration, Level, Match, Tournament]
     else
       can :read, :all
     end

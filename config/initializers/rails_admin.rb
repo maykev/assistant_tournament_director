@@ -34,6 +34,20 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model BracketConfiguration do
+      list do
+          include_all_fields
+      end
+
+      show do
+          include_all_fields
+      end
+
+      edit do
+          include_all_fields
+      end
+  end
+
   config.model Level do
     list do
       include_all_fields

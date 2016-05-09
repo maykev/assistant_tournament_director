@@ -1,0 +1,42 @@
+#tournament {
+    rect {
+        fill: lightblue;
+        stroke: steelblue;
+        stroke-width: 1px;
+    }
+
+    text {
+        fill: black;
+    }
+
+    polyline {
+        fill: none;
+        stroke: black;
+        stroke-width: 1px;
+    }
+
+    .match-player {
+        position: absolute;
+        font-size: 14px;
+
+        .name {
+            display: inline-block;
+            width: 150px;
+            height: 30px;
+            background-color: lightblue;
+            border: 1px solid steelblue;
+            padding: 3px;
+        }
+
+        .score {
+            display: inline-block;
+            width: 25px;
+            height: 30px;
+            border: 1px solid steelblue;
+            background-color: lightblue;
+            text-align: center;
+            padding: 3px;
+            margin-left: -5px;
+        }
+    }
+}
