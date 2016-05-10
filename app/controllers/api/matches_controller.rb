@@ -14,7 +14,6 @@ class Api::MatchesController < ApplicationController
             matchJson = {
                 id: match.id,
                 race: tournament.race,
-                tables: tournament.available_tables,
                 players: []
             }
 
@@ -61,7 +60,6 @@ class Api::MatchesController < ApplicationController
         matchJson = {
             id: match.id,
             race: tournament.reload.race,
-            tables: tournament.available_tables,
             players: []
         }
 
