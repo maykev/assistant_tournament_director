@@ -13,6 +13,7 @@ class Api::MatchesController < ApplicationController
 
             matchJson = {
                 id: match.id,
+                tournament_id: tournament.id,
                 race: tournament.race,
                 players: []
             }
