@@ -13,8 +13,13 @@ class TournamentsController < ApplicationController
             end
         end
 
-        pp @bracket
-
-        render 'show32'
+        bracket_size = tournament.bracket_configuration.size
+        if bracket_size == 32
+            render 'show32'
+        elsif bracket_size == 64
+            render 'show64'
+        elsif bracket_size == 128
+            render 'show128'
+        end
     end
 end
