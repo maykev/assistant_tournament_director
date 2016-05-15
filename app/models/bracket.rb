@@ -85,12 +85,14 @@ class Bracket
 
         if winners_side
             winners_match = Match.where(bracket_position: "W#{round_number + 1}-M#{(match_number.to_f / 2.to_f).ceil}", tournament: match.tournament).first
+            MatchPlayer.where(match: winners_match, position: position).destroy_all
             MatchPlayer.create!(match: winners_match, player: winner, position: position, score: winners_match.tournament.race - winner.level.games_required)
 
             if loser != winner && round_number + 1 != (Math.log2(match.tournament.players.length).ceil + 2)
                 bracket_position = match.tournament.bracket_configuration.loser_position("W#{round_number}-M#{match_number}")
 
                 losers_match = Match.where(bracket_position: bracket_position, tournament: match.tournament).first
+                MatchPlayer.where(match: losers_match, position: (round_number == 1 ? position : 2)).destroy_all
                 MatchPlayer.create!(match: losers_match, player: loser, position: (round_number == 1 ? position : 2), score: losers_match.tournament.race - loser.level.games_required)
 
                 # Check for byes
@@ -115,6 +117,8 @@ class Bracket
                 winners_side_match = Match.where(bracket_position: "W#{final_round_number}-M1", tournament: match.tournament).first
                 losers_side_match = Match.where(bracket_position: "L#{round_number + 1}-M1", tournament: match.tournament).first
 
+                MatchPlayer.where(match: losers_side_match, position: 1).destroy_all
+                MatchPlayer.where(match: winners_side_match, position: 2).destroy_all
                 MatchPlayer.create!(match: losers_side_match, player: winner, position: 1, score: losers_side_match.tournament.race - winner.level.games_required)
                 MatchPlayer.create!(match: winners_side_match, player: winner, position: 2, score: winners_side_match.tournament.race - winner.level.games_required)
             else
@@ -128,6 +132,7 @@ class Bracket
                 end
 
                 winners_match = Match.where(bracket_position: "L#{round_number + 1}-M#{losers_side_match_number}", tournament: match.tournament).first
+                MatchPlayer.where(match: winners_match, position: position).destroy_all
                 MatchPlayer.create!(match: winners_match, player: winner, position: position, score: winners_match.tournament.race - winner.level.games_required)
             end
         end
