@@ -7,7 +7,12 @@ class Bracket
 
         bracket_size = 2 ** Math.log2(shuffled_players.length).ceil
         bracket_positions = (1..bracket_size).to_a
-        byes = tournament.bracket_configuration.bye_pattern[0..bracket_size - shuffled_players.length - 1]
+
+        if shuffled_players.length == bracket_size
+            byes = []
+        else
+            byes = tournament.bracket_configuration.bye_pattern[0..bracket_size - shuffled_players.length - 1]
+        end
 
         winners_side = 1
         while winners_side <= (Math.log2(shuffled_players.length).ceil + 2) do
