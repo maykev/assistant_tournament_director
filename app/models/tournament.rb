@@ -15,6 +15,9 @@ class Tournament < ActiveRecord::Base
     after_create :create_bracket, if: :full?
 
     def create_bracket
+        bracket_configuration = BracketConfiguration.where('size >= ?', self.players.count).order(:size).first
+        self.update_attributes!(bracket_configuration: bracket_configuration)
+
         Bracket.new.create(self.id)
     end
 
