@@ -6,7 +6,11 @@ class Match < ActiveRecord::Base
     has_many :match_players, dependent: :destroy
     has_many :players, through: :match_players
 
-    after_save :update_bracket, if: :finished?
+    after_save :update_bracket, if: :full_tournament_and_finished
+
+    def full_tournament_and_finished?
+        return true if self.tournament.full? && self.finished?
+    end
 
     def race
         match.tournament.matches.where(status: :created).count > 1 ? match.tournament.race : match.tournament.final_race
