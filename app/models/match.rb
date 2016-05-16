@@ -9,6 +9,10 @@ class Match < ActiveRecord::Base
     after_save :update_bracket, if: :full_tournament_and_finished
 
     def full_tournament_and_finished?
+        puts '--------full?---------'
+        puts self.tournament.full?
+        puts '--------finished?---------'
+        puts self.finished?
         return true if self.tournament.full? && self.finished?
     end
 
