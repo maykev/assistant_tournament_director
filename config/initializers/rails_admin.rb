@@ -34,15 +34,15 @@ RailsAdmin.config do |config|
 
     config.model Match do
         list do
-            include_fields :id, :tournament, :bracket_position, :table_number, :match_players
+            include_fields :id, :tournament, :status, :table_number, :bracket_position, :match_players
         end
 
         show do
-            include_fields :id, :tournament, :bracket_position, :table_number, :match_players
+            include_fields :id, :tournament, :status, :table_number, :bracket_position, :match_players
         end
 
         edit do
-            include_fields :id, :bracket_position, :table_number
+            include_fields :id, :status, :table_number
         end
     end
 
