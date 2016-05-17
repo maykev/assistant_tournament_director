@@ -1,4 +1,8 @@
 #tournament {
+    svg {
+        margin: 15px;
+    }
+    
     rect {
         fill: lightblue;
         stroke: steelblue;
@@ -7,6 +11,10 @@
 
     text {
         fill: black;
+
+        &.number {
+            font-size: 10px;
+        }
     }
 
     polyline {
