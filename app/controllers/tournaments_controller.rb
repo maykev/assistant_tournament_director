@@ -1,6 +1,9 @@
 class TournamentsController < ApplicationController
     def show
         tournament = Tournament.find(params[:id])
+
+        return head :not_found unless tournament.full?
+
         @bracket = {}
 
         tournament.matches.order(bracket_position: :asc).each do |match|
@@ -21,5 +24,7 @@ class TournamentsController < ApplicationController
         elsif bracket_size == 128
             render 'show128'
         end
+    rescue ActiveRecord::RecordNotFound
+        return head :not_found
     end
 end
