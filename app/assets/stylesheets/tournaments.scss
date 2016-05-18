@@ -2,15 +2,29 @@
     svg {
         margin: 15px;
     }
-    
+
     rect {
-        fill: lightblue;
-        stroke: steelblue;
+        fill: #737D87;
+        stroke: black;
         stroke-width: 1px;
     }
 
     text {
-        fill: black;
+        &.name {
+            &.pro {
+                fill: aqua;
+            }
+
+            &.semi-pro {
+                fill: chartreuse;
+            }
+
+            fill: whitesmoke;
+        }
+
+        &.score {
+            fill: whitesmoke;
+        }
 
         &.number {
             font-size: 10px;
