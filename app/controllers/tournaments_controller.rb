@@ -12,7 +12,11 @@ class TournamentsController < ApplicationController
             match_players.each do |match_player|
                 key = "#{match.bracket_position}-P#{match_player.position}"
                 puts key
-                @bracket[key] = { name: match_player.player.full_name, score: match_player.score }
+                @bracket[key] = {
+                    name: match_player.player.full_name,
+                    score: match_player.score,
+                    level: match_player.player.level.name.downcase
+                }
             end
         end
 
