@@ -91,10 +91,10 @@ class Api::MatchesController < ApplicationController
             end
         end
 
-        match.update_attributes!(table_number: params[:table], status: params[:finished] ? :finished : :in_progress)
-
         MatchPlayer.find_by(match: match, player: player_1).update_attributes!(score: params[:players][0][:score])
         MatchPlayer.find_by(match: match, player: player_2).update_attributes!(score: params[:players][1][:score])
+        
+        match.update_attributes!(table_number: params[:table], status: params[:finished] ? :finished : :in_progress)
 
         head :ok
     rescue ActiveRecord::RecordNotFound
