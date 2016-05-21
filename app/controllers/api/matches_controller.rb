@@ -11,10 +11,12 @@ class Api::MatchesController < ApplicationController
                 next
             end
 
+            round_number = match.bracket_position.slice!(1, match.bracket_position.index('-') - 1).to_i
+            is_final = (Math.log2(shuffled_players.length).ceil + 1) == round_number
             matchJson = {
                 id: match.id,
                 tournament_id: tournament.id,
-                race: tournament.race,
+                race: is_final ? tournament.final_race : tournament.race,
                 players: []
             }
 
@@ -93,7 +95,7 @@ class Api::MatchesController < ApplicationController
 
         MatchPlayer.find_by(match: match, player: player_1).update_attributes!(score: params[:players][0][:score])
         MatchPlayer.find_by(match: match, player: player_2).update_attributes!(score: params[:players][1][:score])
-        
+
         match.update_attributes!(table_number: params[:table], status: params[:finished] ? :finished : :in_progress)
 
         head :ok
