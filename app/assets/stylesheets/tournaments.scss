@@ -1,64 +1,47 @@
 #tournament {
     svg {
-        margin: 15px;
+        background: #22262B;
+        padding: 15px;
     }
 
     rect {
-        fill: #737D87;
-        stroke: black;
+        fill: #292E34;
+        stroke: #393F47;
         stroke-width: 1px;
     }
 
     text {
+        font-family: 'verdana';
+
         &.name {
             &.pro {
-                fill: aqua;
+                fill: #15C0F4;
             }
 
             &.semi-pro {
-                fill: chartreuse;
+                fill: #5CB85C;
             }
 
-            fill: whitesmoke;
+            fill: #d5d9dd;
         }
 
         &.score {
-            fill: whitesmoke;
+            fill: #d5d9dd;
         }
 
         &.number {
             font-size: 10px;
+            fill: #888;
+        }
+
+        &.position {
+            fill: #888;
         }
     }
 
     polyline {
         fill: none;
-        stroke: black;
+        stroke: #393F47;
         stroke-width: 1px;
-    }
-
-    .match-player {
-        position: absolute;
-        font-size: 14px;
-
-        .name {
-            display: inline-block;
-            width: 150px;
-            height: 30px;
-            background-color: lightblue;
-            border: 1px solid steelblue;
-            padding: 3px;
-        }
-
-        .score {
-            display: inline-block;
-            width: 25px;
-            height: 30px;
-            border: 1px solid steelblue;
-            background-color: lightblue;
-            text-align: center;
-            padding: 3px;
-            margin-left: -5px;
-        }
     }
 }

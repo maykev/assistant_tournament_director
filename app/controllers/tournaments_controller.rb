@@ -31,4 +31,9 @@ class TournamentsController < ApplicationController
     rescue ActiveRecord::RecordNotFound
         return head :not_found
     end
+
+    def players
+        @players = Tournament.find(params[:id]).players
+        render 'tournament_players'
+    end
 end

@@ -1,11 +1,7 @@
 en:
-  admin:
-    actions:
-      edit_match:
-        menu: Edit
-        breadcrumb: Edit
-        title: Edit Match
-      new_match:
-        menu: Add new
-        breadcrumb: New
-        title: New Match
+    admin:
+        actions:
+            start_tournament:
+                menu: Start tournament
+            list_tournament_players:
+                menu: List tournament players

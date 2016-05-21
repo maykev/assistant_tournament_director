@@ -12,24 +12,22 @@ class Tournament < ActiveRecord::Base
     has_many :matches
     has_many :match_players, through: :matches
 
-    after_save :create_bracket, if: :full?
+    def start
+        bracket_configuration = BracketConfiguration.where('size >= ?', self.players.count).order(:size).first
+        self.update_attributes!(bracket_configuration: bracket_configuration, status: :in_progress)
 
-    def create_bracket
-        if self.bracket_configuration.blank?
-            bracket_configuration = BracketConfiguration.where('size >= ?', self.players.count).order(:size).first
-            self.update_attributes!(bracket_configuration: bracket_configuration)
-        end
+        # Clear any previously created bracket matches
+        Match.where(tournament: self).destroy_all
 
-        if self.status == :in_progress
-            # Clear any previously created bracket matches
-            Match.where(tournament: self).destroy_all
-
-            Bracket.new.create(self.id)
-        end
+        Bracket.new.create(self.id)
     end
 
     def full?
         self.mode == :full
+    end
+
+    def number_of_players
+        self.players.size
     end
 
     def available_tables

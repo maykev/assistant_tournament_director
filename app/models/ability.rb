@@ -9,6 +9,9 @@ class Ability
       can :dashboard
       can :index, [Admin, BracketConfiguration, Level, Match, Player, Tournament]
       can :new, [Admin, BracketConfiguration, Level, Match, Player, Tournament]
+      can :start_tournament, [Tournament]
+      can :list_tournament_players, [Tournament]
+      can :show_in_app, [Tournament]
       can :edit, [Admin, BracketConfiguration, Level, Match, Player, Tournament]
       can :export, [Player]
       can :history, [Admin, Level, Match, Player, Tournament]

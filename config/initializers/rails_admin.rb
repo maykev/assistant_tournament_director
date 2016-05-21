@@ -18,6 +18,8 @@ RailsAdmin.config do |config|
         edit
         delete
         show_in_app
+        start_tournament
+        list_tournament_players
     end
 
     config.model Admin do
@@ -53,11 +55,23 @@ RailsAdmin.config do |config|
 
     config.model Tournament do
         list do
-            include_fields :id, :name, :status, :race, :final_race, :table_numbers, :mode
+            field :id
+            field :name
+            field :status
+            field :number_of_players
+            field :mode
+            field :table_numbers, :string
         end
 
         edit do
-            include_fields :id, :name, :status, :race, :final_race, :table_numbers, :mode, :players
+            field :id
+            field :name
+            field :status
+            field :race
+            field :final_race
+            field :table_numbers
+            field :mode
+            field :players
         end
     end
 end
