@@ -35,6 +35,11 @@
         &.position {
             fill: #888;
         }
+
+        &.instruction {
+            fill: #888;
+            font-size: 20px;
+        }
     }
 
     polyline {
