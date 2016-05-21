@@ -41,5 +41,9 @@
         fill: none;
         stroke: #393F47;
         stroke-width: 1px;
+
+        &.arrow {
+            stroke-width: 2px;
+        }
     }
 }
