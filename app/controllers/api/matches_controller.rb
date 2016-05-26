@@ -89,7 +89,7 @@ class Api::MatchesController < ApplicationController
         if match.status == :created
             tables_in_use = match.tournament.matches.where(status: :in_progress).pluck(:table_number)
 
-            if tables_in_use.include?(params[:table])
+            if tables_in_use.include?(params[:table]) && params[:table].present?
                 render status: :conflict, body: "table"
                 return
             end
