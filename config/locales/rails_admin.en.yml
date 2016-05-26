@@ -5,3 +5,11 @@ en:
                 menu: Start tournament
             list_tournament_players:
                 menu: List tournament players
+            add_player:
+                menu: Add player
+                title: Add player
+                breadcrumb: Add player
+            remove_player:
+                menu: Remove player
+                title: Remove player
+                breadcrumb: Remove player

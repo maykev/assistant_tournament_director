@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     root 'match#index'
 
     resources :tournaments, only: [:show]
-    get 'tournaments/:id/players' => 'tournaments#players', as: 'tournament_players'
+    get 'tournaments/:id/players' => 'tournaments#players'
 
     resources :match, only: [:create, :index, :update]
     resources :player, only: [:index]
@@ -18,8 +18,7 @@ Rails.application.routes.draw do
     end
 
     namespace :admin do
-        post 'tournament/create' => 'tournament#create'
-        post 'match/create' => 'match#create'
         resources :match, only: [:update]
+        resources :tournament, only: [:update]
     end
 end

@@ -137,4 +137,41 @@ class Bracket
             end
         end
     end
+
+    def add_player(tournament_id, player_id)
+        tournament = Tournament.find(tournament_id)
+        player = Player.find(player_id)
+
+        # Determine position to add player
+        bye_count = tournament.bracket_configuration.size - tournament.players.length - 1
+        bracket_number = tournament.bracket_configuration.bye_pattern[bye_count]
+        position = bracket_number % 2 == 0 ? 2 : 1
+
+        # Find match for the position
+        match_number = (bracket_number / 2).ceil
+        match = Match.where(tournament: tournament, bracket_position: "W1-M#{match_number}").first
+
+        # Update next match if it was a bye before adding new player
+        match_player_count = match.match_players.length
+        if match_player_count > 0
+            Match.where(tournament: tournament, bracket_position: "W2-M#{(match_number.to_f / 2).ceil}").first.match_players.where(position: match_number % 2 == 0 ? 2 : 1).destroy_all
+        end
+
+        # Update loser side match in the case that someone got an automatic bye
+        loser_side_match = Match.where(tournament: tournament, bracket_position: "L2-M#{(match_number.to_f / 2).ceil}").first
+        if loser_side_match.match_players.length > 0
+            Match.where(tournament: tournament, bracket_position: "L3-M#{(match_number.to_f / 2).ceil}").first.match_players.where(position: 1).destroy_all
+        end
+
+        # Create MatchPlayer for match at position
+        MatchPlayer.create(player: player, match: match, score: tournament.race - player.level.games_required, position: position)
+
+        # Update match if it is a bye
+        if match_player_count == 0
+            update(match.id)
+        end
+
+        # Add player to tournament
+        PlayerTournament.create(tournament: tournament, player: player)
+    end
 end

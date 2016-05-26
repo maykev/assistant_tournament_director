@@ -1,0 +1,37 @@
+<%
+    players = []
+    (Player.all - @object.players).each do |player|
+        players.append([player.full_name, player.id])
+    end
+%>
+
+<% if @object.bracket_configuration.size <= @object.players.length %>
+    <br>
+    <p>You cannot add any more players to this bracket as it's full</p>
+<% else %>
+    <%= form_tag("/admin/tournament/#{@object.to_param}", method: :put, class: 'form-horizontal denser') do %>
+        <fieldset>
+            <div class="form-group control-group">
+                <label class="col-sm-2 control-label">Player</label>
+                <div class="col-sm-10 controls">
+                    <%= select_tag(:player, options_for_select(players), class: 'form-control') %>
+                </div>
+            <div>
+        </fieldset>
+        <br>
+        <div class="form-group form-actions">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-primary" data-disable-with="Save" name="save" type="submit">
+                    <i class="icon-white icon-ok"></i>
+                    Save
+                </button>
+                <span class="extra_buttons">
+                    <button class="btn" data-disable-with="Cancel" name="cancel" type="submit">
+                        <i class="icon-remove"></i>
+                        Cancel
+                    </button>
+                </span>
+            </div>
+        </div>
+    <% end %>
+<% end %>

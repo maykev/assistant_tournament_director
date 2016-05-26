@@ -11,6 +11,8 @@ class Ability
       can :new, [Admin, BracketConfiguration, Level, Match, Player, Tournament]
       can :start_tournament, [Tournament]
       can :list_tournament_players, [Tournament]
+      can :add_player, [Tournament]
+      can :remove_player, [Tournament]
       can :show_in_app, [Tournament]
       can :edit, [Admin, BracketConfiguration, Level, Match, Player, Tournament]
       can :export, [Player]

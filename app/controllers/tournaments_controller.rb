@@ -11,7 +11,6 @@ class TournamentsController < ApplicationController
 
             match_players.each do |match_player|
                 key = "#{match.bracket_position}-P#{match_player.position}"
-                puts key
                 @bracket[key] = {
                     name: match_player.player.full_name,
                     score: match_player.score,
@@ -33,7 +32,7 @@ class TournamentsController < ApplicationController
     end
 
     def players
-        @players = Tournament.find(params[:id]).players
+        @players = Tournament.find(params[:id]).players.order(:first_name, :last_name)
         render 'tournament_players'
     end
 end

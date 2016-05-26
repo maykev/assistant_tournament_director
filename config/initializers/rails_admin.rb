@@ -20,6 +20,8 @@ RailsAdmin.config do |config|
         show_in_app
         start_tournament
         list_tournament_players
+        add_player
+        remove_player
     end
 
     config.model Admin do
