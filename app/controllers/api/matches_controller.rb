@@ -18,6 +18,8 @@ class Api::MatchesController < ApplicationController
             matchJson = {
                 id: match.id,
                 tournament_id: tournament.id,
+                status: match.status,
+                table_number: match.table_number,
                 race: is_final ? tournament.final_race : tournament.race,
                 players: []
             }
