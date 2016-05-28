@@ -1,6 +1,12 @@
 class TournamentsController < ApplicationController
     def index
-        redirect_to tournament_path(Tournament.where(status: :in_progress).last.id)
+        tournament = Tournament.includes(:bracket_configuration).where(status: :in_progress).where.not('bracket_configurations.id' => nil).last
+
+        if tournament.present?
+            redirect_to tournament_path(tournament.id)
+        else
+            render :index
+        end
     end
 
     def show
