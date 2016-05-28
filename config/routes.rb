@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
     root 'match#index'
 
-    resources :tournaments, only: [:show]
+    resources :tournaments, only: [:index, :show]
     get 'tournaments/:id/players' => 'tournaments#players'
 
     resources :match, only: [:create, :index, :update]

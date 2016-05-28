@@ -1,4 +1,8 @@
 class TournamentsController < ApplicationController
+    def index
+        redirect_to tournament_path(Tournament.where(status: :in_progress).last.id)
+    end
+
     def show
         tournament = Tournament.find(params[:id])
 
