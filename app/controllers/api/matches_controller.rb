@@ -4,7 +4,7 @@ class Api::MatchesController < ApplicationController
     def index
         tournament = Tournament.find(params[:tournament])
         status = params[:status].try(:to_sym) || :created
-        matches = tournament.matches.where(status: status)
+        matches = tournament.matches.where(status: status).order(:id)
         json = []
 
         matches.each do |match|
