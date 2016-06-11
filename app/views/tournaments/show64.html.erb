@@ -1,10 +1,44 @@
 <div id="tournament">
     <svg width="4550px" height="2890px">
+        <!-- Logos -->
+        <!-- Top left -->
+        <image x="15" y="80" width="200" height="200" xlink:href="<%= image_path("mezz_west_logo_big.png") %>" />
+
+        <image x="250" y="85" width="260" height="50" xlink:href="<%= image_path("mezz_cues.png") %>" />
+        <image x="550" y="85" width="174" height="50" xlink:href="<%= image_path("west_state_billiards_supply.png") %>" />
+        <image x=760 y="60" width="77" height="100" xlink:href="<%= image_path("aramith.png") %>" />
+        <image x=880 y="80" width="157" height="60" xlink:href="<%= image_path("andy_cloth.png") %>" />
+        <image x=1080 y="80" width="136" height="60" xlink:href="<%= image_path("tony_rodriguez_remax.png") %>" />
+        <image x="1250" y="60" width="69" height="100" xlink:href="<%= image_path("zan_tips.png") %>" />
+
+        <image x="250" y="200" width="186" height="100" xlink:href="<%= image_path("on_the_wire.png") %>" />
+        <image x="470" y="208" width="127" height="83" xlink:href="<%= image_path("csi.png") %>" />
+        <image x="630" y="200" width="76" height="100" xlink:href="<%= image_path("james_hanshew.png") %>" />
+        <image x="750" y="200" width="97" height="102" xlink:href="<%= image_path("turtle_rack.png") %>" />
+        <image x="890" y="220" width="170" height="52" xlink:href="<%= image_path("kurzweils.png") %>" />
+        <image x="1100" y="220" width="190" height="60" xlink:href="<%= image_path("fast_and_loose_designs.png") %>" />
+
+        <!-- Top right -->
+        <image x="4355" y="15" width="150" height="150" xlink:href="<%= image_path("mezz_west_logo.png") %>" />
+
+        <!-- Bottom left -->
+        <image x="15" y="2695" width="150" height="150" xlink:href="<%= image_path("mezz_west_logo.png") %>" />
+
+        <!-- Bottom right -->
+        <image x="4355" y="2695" width="150" height="150" xlink:href="<%= image_path("mezz_west_logo.png") %>" />
+
+        <!-- Instructions -->
+        <text class="instruction" x="350" y="400" width="100" height="30">Scroll right to see bracket</text>
+        <text class="instruction" x="350" y="450" width="100" height="30">Player ratings</text>
+        <text class="name" x="350" y="480" width="100" height="30">Open - 2 games on the wire</text>
+        <text class="name semi-pro" x="350" y="510" width="100" height="30">Semi-Pro - 1 game on the wire</text>
+        <text class="name pro" x="350" y="540" width="100" height="30">Professional</text>
+
         <!-- Winners side -->
         <!-- Round 1 -->
         <g id="W1-M1-P1">
             <rect width="170" height="30" x="2640" y="0"></rect>
-            <text class="name" width="170" height="30" x="2645" y="20"><%= @bracket['W1-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M1-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="20"><%= @bracket['W1-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="0"></rect>
             <text class="score" width="30" height="30" x="2815" y="20"><%= @bracket['W1-M1-P1'].try(:[], :score) %></text>
             <polyline points="2840,15 2860,15 2860,35 2880,35" />
@@ -12,7 +46,7 @@
         </g>
         <g id="W1-M1-P2">
             <rect width="170" height="30" x="2640" y="40"></rect>
-            <text class="name" width="170" height="30" x="2645" y="60"><%= @bracket['W1-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M1-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="60"><%= @bracket['W1-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="40"></rect>
             <text class="score" width="30" height="30" x="2815" y="60"><%= @bracket['W1-M1-P2'].try(:[], :score) %></text>
             <polyline points="2840,55 2860,55 2860,35 2880,35" />
@@ -20,7 +54,7 @@
         </g>
         <g id="W1-M2-P1">
             <rect width="170" height="30" x="2640" y="90"></rect>
-            <text class="name" width="170" height="30" x="2645" y="110"><%= @bracket['W1-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M2-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="110"><%= @bracket['W1-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="90"></rect>
             <text class="score" width="30" height="30" x="2815" y="110"><%= @bracket['W1-M2-P1'].try(:[], :score) %></text>
             <polyline points="2840,105 2860,105 2860,125 2880,125" />
@@ -28,7 +62,7 @@
         </g>
         <g id="W1-M2-P2">
             <rect width="170" height="30" x="2640" y="130"></rect>
-            <text class="name" width="170" height="30" x="2645" y="150"><%= @bracket['W1-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M2-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="150"><%= @bracket['W1-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="130"></rect>
             <text class="score" width="30" height="30" x="2815" y="150"><%= @bracket['W1-M2-P2'].try(:[], :score) %></text>
             <polyline points="2840,145 2860,145 2860,125 2880,125" />
@@ -36,7 +70,7 @@
         </g>
         <g id="W1-M3-P1">
             <rect width="170" height="30" x="2640" y="180"></rect>
-            <text class="name" width="170" height="30" x="2645" y="200"><%= @bracket['W1-M3-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M3-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="200"><%= @bracket['W1-M3-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="180"></rect>
             <text class="score" width="30" height="30" x="2815" y="200"><%= @bracket['W1-M3-P1'].try(:[], :score) %></text>
             <polyline points="2840,195 2860,195 2860,215 2880,215" />
@@ -44,7 +78,7 @@
         </g>
         <g id="W1-M3-P2">
             <rect width="170" height="30" x="2640" y="220"></rect>
-            <text class="name" width="170" height="30" x="2645" y="240"><%= @bracket['W1-M3-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M3-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="240"><%= @bracket['W1-M3-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="220"></rect>
             <text class="score" width="30" height="30" x="2815" y="240"><%= @bracket['W1-M3-P2'].try(:[], :score) %></text>
             <polyline points="2840,235 2860,235 2860,215 2880,215" />
@@ -52,7 +86,7 @@
         </g>
         <g id="W1-M4-P1">
             <rect width="170" height="30" x="2640" y="270"></rect>
-            <text class="name" width="170" height="30" x="2645" y="290"><%= @bracket['W1-M4-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M4-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="290"><%= @bracket['W1-M4-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="270"></rect>
             <text class="score" width="30" height="30" x="2815" y="290"><%= @bracket['W1-M4-P1'].try(:[], :score) %></text>
             <polyline points="2840,285 2860,285 2860,305 2880,305" />
@@ -60,7 +94,7 @@
         </g>
         <g id="W1-M4-P2">
             <rect width="170" height="30" x="2640" y="310"></rect>
-            <text class="name" width="170" height="30" x="2645" y="330"><%= @bracket['W1-M4-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M4-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="330"><%= @bracket['W1-M4-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="310"></rect>
             <text class="score" width="30" height="30" x="2815" y="330"><%= @bracket['W1-M4-P2'].try(:[], :score) %></text>
             <polyline points="2840,325 2860,325 2860,305 2880,305" />
@@ -68,7 +102,7 @@
         </g>
         <g id="W1-M5-P1">
             <rect width="170" height="30" x="2640" y="360"></rect>
-            <text class="name" width="170" height="30" x="2645" y="380"><%= @bracket['W1-M5-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M5-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="380"><%= @bracket['W1-M5-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="360"></rect>
             <text class="score" width="30" height="30" x="2815" y="380"><%= @bracket['W1-M5-P1'].try(:[], :score) %></text>
             <polyline points="2840,375 2860,375 2860,395 2880,395" />
@@ -76,7 +110,7 @@
         </g>
         <g id="W1-M5-P2">
             <rect width="170" height="30" x="2640" y="400"></rect>
-            <text class="name" width="170" height="30" x="2645" y="420"><%= @bracket['W1-M5-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M5-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="420"><%= @bracket['W1-M5-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="400"></rect>
             <text class="score" width="30" height="30" x="2815" y="420"><%= @bracket['W1-M5-P2'].try(:[], :score) %></text>
             <polyline points="2840,415 2860,415 2860,395 2880,395" />
@@ -84,7 +118,7 @@
         </g>
         <g id="W1-M6-P1">
             <rect width="170" height="30" x="2640" y="450"></rect>
-            <text class="name" width="170" height="30" x="2645" y="470"><%= @bracket['W1-M6-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M6-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="470"><%= @bracket['W1-M6-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="450"></rect>
             <text class="score" width="30" height="30" x="2815" y="470"><%= @bracket['W1-M6-P1'].try(:[], :score) %></text>
             <polyline points="2840,465 2860,465 2860,485 2880,485" />
@@ -92,7 +126,7 @@
         </g>
         <g id="W1-M6-P2">
             <rect width="170" height="30" x="2640" y="490"></rect>
-            <text class="name" width="170" height="30" x="2645" y="510"><%= @bracket['W1-M6-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M6-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="510"><%= @bracket['W1-M6-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="490"></rect>
             <text class="score" width="30" height="30" x="2815" y="510"><%= @bracket['W1-M6-P2'].try(:[], :score) %></text>
             <polyline points="2840,505 2860,505 2860,485 2880,485" />
@@ -100,7 +134,7 @@
         </g>
         <g id="W1-M7-P1">
             <rect width="170" height="30" x="2640" y="540"></rect>
-            <text class="name" width="170" height="30" x="2645" y="560"><%= @bracket['W1-M7-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M7-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="560"><%= @bracket['W1-M7-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="540"></rect>
             <text class="score" width="30" height="30" x="2815" y="560"><%= @bracket['W1-M7-P1'].try(:[], :score) %></text>
             <polyline points="2840,555 2860,555 2860,575 2880,575" />
@@ -108,7 +142,7 @@
         </g>
         <g id="W1-M7-P2">
             <rect width="170" height="30" x="2640" y="580"></rect>
-            <text class="name" width="170" height="30" x="2645" y="600"><%= @bracket['W1-M7-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M7-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="600"><%= @bracket['W1-M7-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="580"></rect>
             <text class="score" width="30" height="30" x="2815" y="600"><%= @bracket['W1-M7-P2'].try(:[], :score) %></text>
             <polyline points="2840,595 2860,595 2860,575 2880,575" />
@@ -116,7 +150,7 @@
         </g>
         <g id="W1-M8-P1">
             <rect width="170" height="30" x="2640" y="630"></rect>
-            <text class="name" width="170" height="30" x="2645" y="650"><%= @bracket['W1-M8-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M8-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="650"><%= @bracket['W1-M8-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="630"></rect>
             <text class="score" width="30" height="30" x="2815" y="650"><%= @bracket['W1-M8-P1'].try(:[], :score) %></text>
             <polyline points="2840,645 2860,645 2860,665 2880,665" />
@@ -124,7 +158,7 @@
         </g>
         <g id="W1-M8-P2">
             <rect width="170" height="30" x="2640" y="670"></rect>
-            <text class="name" width="170" height="30" x="2645" y="690"><%= @bracket['W1-M8-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M8-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="690"><%= @bracket['W1-M8-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="670"></rect>
             <text class="score" width="30" height="30" x="2815" y="690"><%= @bracket['W1-M8-P2'].try(:[], :score) %></text>
             <polyline points="2840,685 2860,685 2860,665 2880,665" />
@@ -132,7 +166,7 @@
         </g>
         <g id="W1-M9-P1">
             <rect width="170" height="30" x="2640" y="720"></rect>
-            <text class="name" width="170" height="30" x="2645" y="740"><%= @bracket['W1-M9-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M9-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="740"><%= @bracket['W1-M9-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="720"></rect>
             <text class="score" width="30" height="30" x="2815" y="740"><%= @bracket['W1-M9-P1'].try(:[], :score) %></text>
             <polyline points="2840,735 2860,735 2860,755 2880,755" />
@@ -140,7 +174,7 @@
         </g>
         <g id="W1-M9-P2">
             <rect width="170" height="30" x="2640" y="760"></rect>
-            <text class="name" width="170" height="30" x="2645" y="780"><%= @bracket['W1-M9-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M9-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="780"><%= @bracket['W1-M9-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="760"></rect>
             <text class="score" width="30" height="30" x="2815" y="780"><%= @bracket['W1-M9-P2'].try(:[], :score) %></text>
             <polyline points="2840,775 2860,775 2860,755 2880,755" />
@@ -148,7 +182,7 @@
         </g>
         <g id="W1-M10-P1">
             <rect width="170" height="30" x="2640" y="810"></rect>
-            <text class="name" width="170" height="30" x="2645" y="830"><%= @bracket['W1-M10-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M10-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="830"><%= @bracket['W1-M10-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="810"></rect>
             <text class="score" width="30" height="30" x="2815" y="830"><%= @bracket['W1-M10-P1'].try(:[], :score) %></text>
             <polyline points="2840,825 2860,825 2860,845 2880,845" />
@@ -156,7 +190,7 @@
         </g>
         <g id="W1-M10-P2">
             <rect width="170" height="30" x="2640" y="850"></rect>
-            <text class="name" width="170" height="30" x="2645" y="870"><%= @bracket['W1-M10-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M10-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="870"><%= @bracket['W1-M10-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="850"></rect>
             <text class="score" width="30" height="30" x="2815" y="870"><%= @bracket['W1-M10-P2'].try(:[], :score) %></text>
             <polyline points="2840,865 2860,865 2860,845 2880,845" />
@@ -164,7 +198,7 @@
         </g>
         <g id="W1-M11-P1">
             <rect width="170" height="30" x="2640" y="900"></rect>
-            <text class="name" width="170" height="30" x="2645" y="920"><%= @bracket['W1-M11-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M11-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="920"><%= @bracket['W1-M11-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="900"></rect>
             <text class="score" width="30" height="30" x="2815" y="920"><%= @bracket['W1-M11-P1'].try(:[], :score) %></text>
             <polyline points="2840,915 2860,915 2860,935 2880,935" />
@@ -172,7 +206,7 @@
         </g>
         <g id="W1-M11-P2">
             <rect width="170" height="30" x="2640" y="940"></rect>
-            <text class="name" width="170" height="30" x="2645" y="960"><%= @bracket['W1-M11-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M11-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="960"><%= @bracket['W1-M11-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="940"></rect>
             <text class="score" width="30" height="30" x="2815" y="960"><%= @bracket['W1-M11-P2'].try(:[], :score) %></text>
             <polyline points="2840,955 2860,955 2860,935 2880,935" />
@@ -180,7 +214,7 @@
         </g>
         <g id="W1-M12-P1">
             <rect width="170" height="30" x="2640" y="990"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1010"><%= @bracket['W1-M12-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M12-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="1010"><%= @bracket['W1-M12-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="990"></rect>
             <text class="score" width="30" height="30" x="2815" y="1010"><%= @bracket['W1-M12-P1'].try(:[], :score) %></text>
             <polyline points="2840,1005 2860,1005 2860,1025 2880,1025" />
@@ -188,7 +222,7 @@
         </g>
         <g id="W1-M12-P2">
             <rect width="170" height="30" x="2640" y="1030"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1050"><%= @bracket['W1-M12-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M12-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="1050"><%= @bracket['W1-M12-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1030"></rect>
             <text class="score" width="30" height="30" x="2815" y="1050"><%= @bracket['W1-M12-P2'].try(:[], :score) %></text>
             <polyline points="2840,1045 2860,1045 2860,1025 2880,1025" />
@@ -196,7 +230,7 @@
         </g>
         <g id="W1-M13-P1">
             <rect width="170" height="30" x="2640" y="1080"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1100"><%= @bracket['W1-M13-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M13-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="1100"><%= @bracket['W1-M13-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1080"></rect>
             <text class="score" width="30" height="30" x="2815" y="1100"><%= @bracket['W1-M13-P1'].try(:[], :score) %></text>
             <polyline points="2840,1095 2860,1095 2860,1115 2880,1115" />
@@ -204,7 +238,7 @@
         </g>
         <g id="W1-M13-P2">
             <rect width="170" height="30" x="2640" y="1120"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1140"><%= @bracket['W1-M13-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M13-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="1140"><%= @bracket['W1-M13-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1120"></rect>
             <text class="score" width="30" height="30" x="2815" y="1140"><%= @bracket['W1-M13-P2'].try(:[], :score) %></text>
             <polyline points="2840,1135 2860,1135 2860,1115 2880,1115" />
@@ -212,7 +246,7 @@
         </g>
         <g id="W1-M14-P1">
             <rect width="170" height="30" x="2640" y="1170"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1190"><%= @bracket['W1-M14-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M14-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="1190"><%= @bracket['W1-M14-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1170"></rect>
             <text class="score" width="30" height="30" x="2815" y="1190"><%= @bracket['W1-M14-P1'].try(:[], :score) %></text>
             <polyline points="2840,1185 2860,1185 2860,1205 2880,1205" />
@@ -220,7 +254,7 @@
         </g>
         <g id="W1-M14-P2">
             <rect width="170" height="30" x="2640" y="1210"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1230"><%= @bracket['W1-M14-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M14-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="1230"><%= @bracket['W1-M14-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1210"></rect>
             <text class="score" width="30" height="30" x="2815" y="1230"><%= @bracket['W1-M14-P2'].try(:[], :score) %></text>
             <polyline points="2840,1225 2860,1225 2860,1205 2880,1205" />
@@ -228,7 +262,7 @@
         </g>
         <g id="W1-M15-P1">
             <rect width="170" height="30" x="2640" y="1260"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1280"><%= @bracket['W1-M15-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M15-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="1280"><%= @bracket['W1-M15-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1260"></rect>
             <text class="score" width="30" height="30" x="2815" y="1280"><%= @bracket['W1-M15-P1'].try(:[], :score) %></text>
             <polyline points="2840,1275 2860,1275 2860,1295 2880,1295" />
@@ -236,7 +270,7 @@
         </g>
         <g id="W1-M15-P2">
             <rect width="170" height="30" x="2640" y="1300"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1320"><%= @bracket['W1-M15-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M15-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="1320"><%= @bracket['W1-M15-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1300"></rect>
             <text class="score" width="30" height="30" x="2815" y="1320"><%= @bracket['W1-M15-P2'].try(:[], :score) %></text>
             <polyline points="2840,1315 2860,1315 2860,1295 2880,1295" />
@@ -244,7 +278,7 @@
         </g>
         <g id="W1-M16-P1">
             <rect width="170" height="30" x="2640" y="1350"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1370"><%= @bracket['W1-M16-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M16-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="1370"><%= @bracket['W1-M16-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1350"></rect>
             <text class="score" width="30" height="30" x="2815" y="1370"><%= @bracket['W1-M16-P1'].try(:[], :score) %></text>
             <polyline points="2840,1365 2860,1365 2860,1385 2880,1385" />
@@ -252,7 +286,7 @@
         </g>
         <g id="W1-M16-P2">
             <rect width="170" height="30" x="2640" y="1390"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1410"><%= @bracket['W1-M16-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M16-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="1410"><%= @bracket['W1-M16-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1390"></rect>
             <text class="score" width="30" height="30" x="2815" y="1410"><%= @bracket['W1-M16-P2'].try(:[], :score) %></text>
             <polyline points="2840,1405 2860,1405 2860,1385 2880,1385" />
@@ -260,7 +294,7 @@
         </g>
         <g id="W1-M17-P1">
             <rect width="170" height="30" x="2640" y="1440"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1460"><%= @bracket['W1-M17-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M17-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="1460"><%= @bracket['W1-M17-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1440"></rect>
             <text class="score" width="30" height="30" x="2815" y="1460"><%= @bracket['W1-M17-P1'].try(:[], :score) %></text>
             <polyline points="2840,1455 2860,1455 2860,1475 2880,1475" />
@@ -268,7 +302,7 @@
         </g>
         <g id="W1-M17-P2">
             <rect width="170" height="30" x="2640" y="1480"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1500"><%= @bracket['W1-M17-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M17-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="1500"><%= @bracket['W1-M17-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1480"></rect>
             <text class="score" width="30" height="30" x="2815" y="1500"><%= @bracket['W1-M17-P2'].try(:[], :score) %></text>
             <polyline points="2840,1495 2860,1495 2860,1475 2880,1475" />
@@ -276,7 +310,7 @@
         </g>
         <g id="W1-M18-P1">
             <rect width="170" height="30" x="2640" y="1530"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1550"><%= @bracket['W1-M18-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M18-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="1550"><%= @bracket['W1-M18-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1530"></rect>
             <text class="score" width="30" height="30" x="2815" y="1550"><%= @bracket['W1-M18-P1'].try(:[], :score) %></text>
             <polyline points="2840,1545 2860,1545 2860,1565 2880,1565" />
@@ -284,7 +318,7 @@
         </g>
         <g id="W1-M18-P2">
             <rect width="170" height="30" x="2640" y="1570"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1590"><%= @bracket['W1-M18-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M18-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="1590"><%= @bracket['W1-M18-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1570"></rect>
             <text class="score" width="30" height="30" x="2815" y="1590"><%= @bracket['W1-M18-P2'].try(:[], :score) %></text>
             <polyline points="2840,1585 2860,1585 2860,1565 2880,1565" />
@@ -292,7 +326,7 @@
         </g>
         <g id="W1-M19-P1">
             <rect width="170" height="30" x="2640" y="1620"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1640"><%= @bracket['W1-M19-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M19-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="1640"><%= @bracket['W1-M19-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1620"></rect>
             <text class="score" width="30" height="30" x="2815" y="1640"><%= @bracket['W1-M19-P1'].try(:[], :score) %></text>
             <polyline points="2840,1635 2860,1635 2860,1655 2880,1655" />
@@ -300,7 +334,7 @@
         </g>
         <g id="W1-M19-P2">
             <rect width="170" height="30" x="2640" y="1660"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1680"><%= @bracket['W1-M19-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M19-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="1680"><%= @bracket['W1-M19-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1660"></rect>
             <text class="score" width="30" height="30" x="2815" y="1680"><%= @bracket['W1-M19-P2'].try(:[], :score) %></text>
             <polyline points="2840,1675 2860,1675 2860,1655 2880,1655" />
@@ -308,7 +342,7 @@
         </g>
         <g id="W1-M20-P1">
             <rect width="170" height="30" x="2640" y="1710"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1730"><%= @bracket['W1-M20-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M20-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="1730"><%= @bracket['W1-M20-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1710"></rect>
             <text class="score" width="30" height="30" x="2815" y="1730"><%= @bracket['W1-M20-P1'].try(:[], :score) %></text>
             <polyline points="2840,1725 2860,1725 2860,1745 2880,1745" />
@@ -316,7 +350,7 @@
         </g>
         <g id="W1-M20-P2">
             <rect width="170" height="30" x="2640" y="1750"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1770"><%= @bracket['W1-M20-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M20-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="1770"><%= @bracket['W1-M20-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1750"></rect>
             <text class="score" width="30" height="30" x="2815" y="1770"><%= @bracket['W1-M20-P2'].try(:[], :score) %></text>
             <polyline points="2840,1765 2860,1765 2860,1745 2880,1745" />
@@ -324,7 +358,7 @@
         </g>
         <g id="W1-M21-P1">
             <rect width="170" height="30" x="2640" y="1800"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1820"><%= @bracket['W1-M21-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M21-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="1820"><%= @bracket['W1-M21-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1800"></rect>
             <text class="score" width="30" height="30" x="2815" y="1820"><%= @bracket['W1-M21-P1'].try(:[], :score) %></text>
             <polyline points="2840,1815 2860,1815 2860,1835 2880,1835" />
@@ -332,7 +366,7 @@
         </g>
         <g id="W1-M21-P2">
             <rect width="170" height="30" x="2640" y="1840"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1860"><%= @bracket['W1-M21-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M21-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="1860"><%= @bracket['W1-M21-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1840"></rect>
             <text class="score" width="30" height="30" x="2815" y="1860"><%= @bracket['W1-M21-P2'].try(:[], :score) %></text>
             <polyline points="2840,1855 2860,1855 2860,1835 2880,1835" />
@@ -340,7 +374,7 @@
         </g>
         <g id="W1-M22-P1">
             <rect width="170" height="30" x="2640" y="1890"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1910"><%= @bracket['W1-M22-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M22-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="1910"><%= @bracket['W1-M22-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1890"></rect>
             <text class="score" width="30" height="30" x="2815" y="1910"><%= @bracket['W1-M22-P1'].try(:[], :score) %></text>
             <polyline points="2840,1905 2860,1905 2860,1925 2880,1925" />
@@ -348,7 +382,7 @@
         </g>
         <g id="W1-M22-P2">
             <rect width="170" height="30" x="2640" y="1930"></rect>
-            <text class="name" width="170" height="30" x="2645" y="1950"><%= @bracket['W1-M22-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M22-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="1950"><%= @bracket['W1-M22-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1930"></rect>
             <text class="score" width="30" height="30" x="2815" y="1950"><%= @bracket['W1-M22-P2'].try(:[], :score) %></text>
             <polyline points="2840,1945 2860,1945 2860,1925 2880,1925" />
@@ -356,7 +390,7 @@
         </g>
         <g id="W1-M23-P1">
             <rect width="170" height="30" x="2640" y="1980"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2000"><%= @bracket['W1-M23-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M23-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="2000"><%= @bracket['W1-M23-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="1980"></rect>
             <text class="score" width="30" height="30" x="2815" y="2000"><%= @bracket['W1-M23-P1'].try(:[], :score) %></text>
             <polyline points="2840,1995 2860,1995 2860,2015 2880,2015" />
@@ -364,7 +398,7 @@
         </g>
         <g id="W1-M23-P2">
             <rect width="170" height="30" x="2640" y="2020"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2040"><%= @bracket['W1-M23-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M23-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="2040"><%= @bracket['W1-M23-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2020"></rect>
             <text class="score" width="30" height="30" x="2815" y="2040"><%= @bracket['W1-M23-P2'].try(:[], :score) %></text>
             <polyline points="2840,2035 2860,2035 2860,2015 2880,2015" />
@@ -372,7 +406,7 @@
         </g>
         <g id="W1-M24-P1">
             <rect width="170" height="30" x="2640" y="2070"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2090"><%= @bracket['W1-M24-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M24-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="2090"><%= @bracket['W1-M24-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2070"></rect>
             <text class="score" width="30" height="30" x="2815" y="2090"><%= @bracket['W1-M24-P1'].try(:[], :score) %></text>
             <polyline points="2840,2085 2860,2085 2860,2105 2880,2105" />
@@ -380,7 +414,7 @@
         </g>
         <g id="W1-M24-P2">
             <rect width="170" height="30" x="2640" y="2110"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2130"><%= @bracket['W1-M24-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M24-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="2130"><%= @bracket['W1-M24-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2110"></rect>
             <text class="score" width="30" height="30" x="2815" y="2130"><%= @bracket['W1-M24-P2'].try(:[], :score) %></text>
             <polyline points="2840,2125 2860,2125 2860,2105 2880,2105" />
@@ -388,7 +422,7 @@
         </g>
         <g id="W1-M25-P1">
             <rect width="170" height="30" x="2640" y="2160"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2180"><%= @bracket['W1-M25-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M25-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="2180"><%= @bracket['W1-M25-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2160"></rect>
             <text class="score" width="30" height="30" x="2815" y="2180"><%= @bracket['W1-M25-P1'].try(:[], :score) %></text>
             <polyline points="2840,2175 2860,2175 2860,2195 2880,2195" />
@@ -396,7 +430,7 @@
         </g>
         <g id="W1-M25-P2">
             <rect width="170" height="30" x="2640" y="2200"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2220"><%= @bracket['W1-M25-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M25-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="2220"><%= @bracket['W1-M25-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2200"></rect>
             <text class="score" width="30" height="30" x="2815" y="2220"><%= @bracket['W1-M25-P2'].try(:[], :score) %></text>
             <polyline points="2840,2215 2860,2215 2860,2195 2880,2195" />
@@ -404,7 +438,7 @@
         </g>
         <g id="W1-M26-P1">
             <rect width="170" height="30" x="2640" y="2250"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2270"><%= @bracket['W1-M26-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M26-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="2270"><%= @bracket['W1-M26-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2250"></rect>
             <text class="score" width="30" height="30" x="2815" y="2270"><%= @bracket['W1-M26-P1'].try(:[], :score) %></text>
             <polyline points="2840,2265 2860,2265 2860,2285 2880,2285" />
@@ -412,7 +446,7 @@
         </g>
         <g id="W1-M26-P2">
             <rect width="170" height="30" x="2640" y="2290"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2310"><%= @bracket['W1-M26-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M26-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="2310"><%= @bracket['W1-M26-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2290"></rect>
             <text class="score" width="30" height="30" x="2815" y="2310"><%= @bracket['W1-M26-P2'].try(:[], :score) %></text>
             <polyline points="2840,2305 2860,2305 2860,2285 2880,2285" />
@@ -420,7 +454,7 @@
         </g>
         <g id="W1-M27-P1">
             <rect width="170" height="30" x="2640" y="2340"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2360"><%= @bracket['W1-M27-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M27-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="2360"><%= @bracket['W1-M27-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2340"></rect>
             <text class="score" width="30" height="30" x="2815" y="2360"><%= @bracket['W1-M27-P1'].try(:[], :score) %></text>
             <polyline points="2840,2355 2860,2355 2860,2375 2880,2375" />
@@ -428,7 +462,7 @@
         </g>
         <g id="W1-M27-P2">
             <rect width="170" height="30" x="2640" y="2380"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2400"><%= @bracket['W1-M27-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M27-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="2400"><%= @bracket['W1-M27-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2380"></rect>
             <text class="score" width="30" height="30" x="2815" y="2400"><%= @bracket['W1-M27-P2'].try(:[], :score) %></text>
             <polyline points="2840,2395 2860,2395 2860,2375 2880,2375" />
@@ -436,7 +470,7 @@
         </g>
         <g id="W1-M28-P1">
             <rect width="170" height="30" x="2640" y="2430"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2450"><%= @bracket['W1-M28-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M28-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="2450"><%= @bracket['W1-M28-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2430"></rect>
             <text class="score" width="30" height="30" x="2815" y="2450"><%= @bracket['W1-M28-P1'].try(:[], :score) %></text>
             <polyline points="2840,2445 2860,2445 2860,2465 2880,2465" />
@@ -444,7 +478,7 @@
         </g>
         <g id="W1-M28-P2">
             <rect width="170" height="30" x="2640" y="2470"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2490"><%= @bracket['W1-M28-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M28-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="2490"><%= @bracket['W1-M28-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2470"></rect>
             <text class="score" width="30" height="30" x="2815" y="2490"><%= @bracket['W1-M28-P2'].try(:[], :score) %></text>
             <polyline points="2840,2485 2860,2485 2860,2465 2880,2465" />
@@ -452,7 +486,7 @@
         </g>
         <g id="W1-M29-P1">
             <rect width="170" height="30" x="2640" y="2520"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2540"><%= @bracket['W1-M29-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M29-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="2540"><%= @bracket['W1-M29-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2520"></rect>
             <text class="score" width="30" height="30" x="2815" y="2540"><%= @bracket['W1-M29-P1'].try(:[], :score) %></text>
             <polyline points="2840,2535 2860,2535 2860,2555 2880,2555" />
@@ -460,7 +494,7 @@
         </g>
         <g id="W1-M29-P2">
             <rect width="170" height="30" x="2640" y="2560"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2580"><%= @bracket['W1-M29-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M29-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="2580"><%= @bracket['W1-M29-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2560"></rect>
             <text class="score" width="30" height="30" x="2815" y="2580"><%= @bracket['W1-M29-P2'].try(:[], :score) %></text>
             <polyline points="2840,2575 2860,2575 2860,2555 2880,2555" />
@@ -468,7 +502,7 @@
         </g>
         <g id="W1-M30-P1">
             <rect width="170" height="30" x="2640" y="2610"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2630"><%= @bracket['W1-M30-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M30-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="2630"><%= @bracket['W1-M30-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2610"></rect>
             <text class="score" width="30" height="30" x="2815" y="2630"><%= @bracket['W1-M30-P1'].try(:[], :score) %></text>
             <polyline points="2840,2625 2860,2625 2860,2645 2880,2645" />
@@ -476,7 +510,7 @@
         </g>
         <g id="W1-M30-P2">
             <rect width="170" height="30" x="2640" y="2650"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2670"><%= @bracket['W1-M30-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M30-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="2670"><%= @bracket['W1-M30-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2650"></rect>
             <text class="score" width="30" height="30" x="2815" y="2670"><%= @bracket['W1-M30-P2'].try(:[], :score) %></text>
             <polyline points="2840,2665 2860,2665 2860,2645 2880,2645" />
@@ -484,7 +518,7 @@
         </g>
         <g id="W1-M31-P1">
             <rect width="170" height="30" x="2640" y="2700"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2720"><%= @bracket['W1-M31-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M31-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="2720"><%= @bracket['W1-M31-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2700"></rect>
             <text class="score" width="30" height="30" x="2815" y="2720"><%= @bracket['W1-M31-P1'].try(:[], :score) %></text>
             <polyline points="2840,2715 2860,2715 2860,2735 2880,2735" />
@@ -492,7 +526,7 @@
         </g>
         <g id="W1-M31-P2">
             <rect width="170" height="30" x="2640" y="2740"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2760"><%= @bracket['W1-M31-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M31-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="2760"><%= @bracket['W1-M31-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2740"></rect>
             <text class="score" width="30" height="30" x="2815" y="2760"><%= @bracket['W1-M31-P2'].try(:[], :score) %></text>
             <polyline points="2840,2755 2860,2755 2860,2735 2880,2735" />
@@ -500,7 +534,7 @@
         </g>
         <g id="W1-M32-P1">
             <rect width="170" height="30" x="2640" y="2790"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2810"><%= @bracket['W1-M32-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M32-P1'].try(:[], :level) %>" width="170" height="30" x="2645" y="2810"><%= @bracket['W1-M32-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2790"></rect>
             <text class="score" width="30" height="30" x="2815" y="2810"><%= @bracket['W1-M32-P1'].try(:[], :score) %></text>
             <polyline points="2840,2805 2860,2805 2860,2825 2880,2825" />
@@ -508,7 +542,7 @@
         </g>
         <g id="W1-M32-P2">
             <rect width="170" height="30" x="2640" y="2830"></rect>
-            <text class="name" width="170" height="30" x="2645" y="2850"><%= @bracket['W1-M32-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W1-M32-P2'].try(:[], :level) %>" width="170" height="30" x="2645" y="2850"><%= @bracket['W1-M32-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2810" y="2830"></rect>
             <text class="score" width="30" height="30" x="2815" y="2850"><%= @bracket['W1-M32-P2'].try(:[], :score) %></text>
             <polyline points="2840,2845 2860,2845 2860,2825 2880,2825" />
@@ -518,7 +552,7 @@
         <!-- Round 2 -->
         <g id="W2-M1-P1">
             <rect width="170" height="30" x="2880" y="20"></rect>
-            <text class="name" width="170" height="30" x="2885" y="40"><%= @bracket['W2-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M1-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="40"><%= @bracket['W2-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="20"></rect>
             <text class="score" width="30" height="30" x="3055" y="40"><%= @bracket['W2-M1-P1'].try(:[], :score) %></text>
             <polyline points="3080,35 3100,35 3100,80 3120,80" />
@@ -526,14 +560,14 @@
         </g>
         <g id="W2-M1-P2">
             <rect width="170" height="30" x="2880" y="110"></rect>
-            <text class="name" width="170" height="30" x="2885" y="130"><%= @bracket['W2-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M1-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="130"><%= @bracket['W2-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="110"></rect>
             <text class="score" width="30" height="30" x="3055" y="130"><%= @bracket['W2-M1-P2'].try(:[], :score) %></text>
             <polyline points="3080,125 3100,125 3100,80 3120,80" />
         </g>
         <g id="W2-M2-P1">
             <rect width="170" height="30" x="2880" y="200"></rect>
-            <text class="name" width="170" height="30" x="2885" y="220"><%= @bracket['W2-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M2-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="220"><%= @bracket['W2-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="200"></rect>
             <text class="score" width="30" height="30" x="3055" y="220"><%= @bracket['W2-M2-P1'].try(:[], :score) %></text>
             <polyline points="3080,215 3100,215 3100,260 3120,260" />
@@ -541,14 +575,14 @@
         </g>
         <g id="W2-M2-P2">
             <rect width="170" height="30" x="2880" y="290"></rect>
-            <text class="name" width="170" height="30" x="2885" y="310"><%= @bracket['W2-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M2-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="310"><%= @bracket['W2-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="290"></rect>
             <text class="score" width="30" height="30" x="3055" y="310"><%= @bracket['W2-M2-P2'].try(:[], :score) %></text>
             <polyline points="3080,305 3100,305 3100,260 3120,260" />
         </g>
         <g id="W2-M3-P1">
             <rect width="170" height="30" x="2880" y="380"></rect>
-            <text class="name" width="170" height="30" x="2885" y="400"><%= @bracket['W2-M3-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M3-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="400"><%= @bracket['W2-M3-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="380"></rect>
             <text class="score" width="30" height="30" x="3055" y="400"><%= @bracket['W2-M3-P1'].try(:[], :score) %></text>
             <polyline points="3080,395 3100,395 3100,440 3120,440" />
@@ -556,14 +590,14 @@
         </g>
         <g id="W2-M3-P2">
             <rect width="170" height="30" x="2880" y="470"></rect>
-            <text class="name" width="170" height="30" x="2885" y="490"><%= @bracket['W2-M3-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M3-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="490"><%= @bracket['W2-M3-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="470"></rect>
             <text class="score" width="30" height="30" x="3055" y="490"><%= @bracket['W2-M3-P2'].try(:[], :score) %></text>
             <polyline points="3080,485 3100,485 3100,440 3120,440" />
         </g>
         <g id="W2-M4-P1">
             <rect width="170" height="30" x="2880" y="560"></rect>
-            <text class="name" width="170" height="30" x="2885" y="580"><%= @bracket['W2-M4-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M4-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="580"><%= @bracket['W2-M4-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="560"></rect>
             <text class="score" width="30" height="30" x="3055" y="580"><%= @bracket['W2-M4-P1'].try(:[], :score) %></text>
             <polyline points="3080,575 3100,575 3100,620 3120,620" />
@@ -571,14 +605,14 @@
         </g>
         <g id="W2-M4-P2">
             <rect width="170" height="30" x="2880" y="650"></rect>
-            <text class="name" width="170" height="30" x="2885" y="670"><%= @bracket['W2-M4-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M4-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="670"><%= @bracket['W2-M4-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="650"></rect>
             <text class="score" width="30" height="30" x="3055" y="670"><%= @bracket['W2-M4-P2'].try(:[], :score) %></text>
             <polyline points="3080,665 3100,665 3100,620 3120,620" />
         </g>
         <g id="W2-M5-P1">
             <rect width="170" height="30" x="2880" y="740"></rect>
-            <text class="name" width="170" height="30" x="2885" y="760"><%= @bracket['W2-M5-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M5-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="760"><%= @bracket['W2-M5-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="740"></rect>
             <text class="score" width="30" height="30" x="3055" y="760"><%= @bracket['W2-M5-P1'].try(:[], :score) %></text>
             <polyline points="3080,755 3100,755 3100,800 3120,800" />
@@ -586,14 +620,14 @@
         </g>
         <g id="W2-M5-P2">
             <rect width="170" height="30" x="2880" y="830"></rect>
-            <text class="name" width="170" height="30" x="2885" y="850"><%= @bracket['W2-M5-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M5-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="850"><%= @bracket['W2-M5-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="830"></rect>
             <text class="score" width="30" height="30" x="3055" y="850"><%= @bracket['W2-M5-P2'].try(:[], :score) %></text>
             <polyline points="3080,845 3100,845 3100,800 3120,800" />
         </g>
         <g id="W2-M6-P1">
             <rect width="170" height="30" x="2880" y="920"></rect>
-            <text class="name" width="170" height="30" x="2885" y="940"><%= @bracket['W2-M6-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M6-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="940"><%= @bracket['W2-M6-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="920"></rect>
             <text class="score" width="30" height="30" x="3055" y="940"><%= @bracket['W2-M6-P1'].try(:[], :score) %></text>
             <polyline points="3080,935 3100,935 3100,980 3120,980" />
@@ -601,14 +635,14 @@
         </g>
         <g id="W2-M6-P2">
             <rect width="170" height="30" x="2880" y="1010"></rect>
-            <text class="name" width="170" height="30" x="2885" y="1030"><%= @bracket['W2-M6-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M6-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="1030"><%= @bracket['W2-M6-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="1010"></rect>
             <text class="score" width="30" height="30" x="3055" y="1030"><%= @bracket['W2-M6-P2'].try(:[], :score) %></text>
             <polyline points="3080,1025 3100,1025 3100,980 3120,980" />
         </g>
         <g id="W2-M7-P1">
             <rect width="170" height="30" x="2880" y="1100"></rect>
-            <text class="name" width="170" height="30" x="2885" y="1120"><%= @bracket['W2-M7-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M7-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="1120"><%= @bracket['W2-M7-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="1100"></rect>
             <text class="score" width="30" height="30" x="3055" y="1120"><%= @bracket['W2-M7-P1'].try(:[], :score) %></text>
             <polyline points="3080,1115 3100,1115 3100,1160 3120,1160" />
@@ -616,14 +650,14 @@
         </g>
         <g id="W2-M7-P2">
             <rect width="170" height="30" x="2880" y="1190"></rect>
-            <text class="name" width="170" height="30" x="2885" y="1210"><%= @bracket['W2-M7-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M7-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="1210"><%= @bracket['W2-M7-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="1190"></rect>
             <text class="score" width="30" height="30" x="3055" y="1210"><%= @bracket['W2-M7-P2'].try(:[], :score) %></text>
             <polyline points="3080,1205 3100,1205 3100,1160 3120,1160" />
         </g>
         <g id="W2-M8-P1">
             <rect width="170" height="30" x="2880" y="1280"></rect>
-            <text class="name" width="170" height="30" x="2885" y="1300"><%= @bracket['W2-M8-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M8-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="1300"><%= @bracket['W2-M8-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="1280"></rect>
             <text class="score" width="30" height="30" x="3055" y="1300"><%= @bracket['W2-M8-P1'].try(:[], :score) %></text>
             <polyline points="3080,1295 3100,1295 3100,1340 3120,1340" />
@@ -631,14 +665,14 @@
         </g>
         <g id="W2-M8-P2">
             <rect width="170" height="30" x="2880" y="1370"></rect>
-            <text class="name" width="170" height="30" x="2885" y="1390"><%= @bracket['W2-M8-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M8-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="1390"><%= @bracket['W2-M8-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="1370"></rect>
             <text class="score" width="30" height="30" x="3055" y="1390"><%= @bracket['W2-M8-P2'].try(:[], :score) %></text>
             <polyline points="3080,1385 3100,1385 3100,1340 3120,1340" />
         </g>
         <g id="W2-M9-P1">
             <rect width="170" height="30" x="2880" y="1460"></rect>
-            <text class="name" width="170" height="30" x="2885" y="1480"><%= @bracket['W2-M9-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M9-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="1480"><%= @bracket['W2-M9-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="1460"></rect>
             <text class="score" width="30" height="30" x="3055" y="1480"><%= @bracket['W2-M9-P1'].try(:[], :score) %></text>
             <polyline points="3080,1475 3100,1475 3100,1520 3120,1520" />
@@ -646,14 +680,14 @@
         </g>
         <g id="W2-M9-P2">
             <rect width="170" height="30" x="2880" y="1550"></rect>
-            <text class="name" width="170" height="30" x="2885" y="1570"><%= @bracket['W2-M9-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M9-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="1570"><%= @bracket['W2-M9-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="1550"></rect>
             <text class="score" width="30" height="30" x="3055" y="1570"><%= @bracket['W2-M9-P2'].try(:[], :score) %></text>
             <polyline points="3080,1565 3100,1565 3100,1520 3120,1520" />
         </g>
         <g id="W2-M10-P1">
             <rect width="170" height="30" x="2880" y="1640"></rect>
-            <text class="name" width="170" height="30" x="2885" y="1660"><%= @bracket['W2-M10-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M10-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="1660"><%= @bracket['W2-M10-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="1640"></rect>
             <text class="score" width="30" height="30" x="3055" y="1660"><%= @bracket['W2-M10-P1'].try(:[], :score) %></text>
             <polyline points="3080,1655 3100,1655 3100,1700 3120,1700" />
@@ -661,14 +695,14 @@
         </g>
         <g id="W2-M10-P2">
             <rect width="170" height="30" x="2880" y="1730"></rect>
-            <text class="name" width="170" height="30" x="2885" y="1750"><%= @bracket['W2-M10-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M10-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="1750"><%= @bracket['W2-M10-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="1730"></rect>
             <text class="score" width="30" height="30" x="3055" y="1750"><%= @bracket['W2-M10-P2'].try(:[], :score) %></text>
             <polyline points="3080,1745 3100,1745 3100,1700 3120,1700" />
         </g>
         <g id="W2-M11-P1">
             <rect width="170" height="30" x="2880" y="1820"></rect>
-            <text class="name" width="170" height="30" x="2885" y="1840"><%= @bracket['W2-M11-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M11-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="1840"><%= @bracket['W2-M11-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="1820"></rect>
             <text class="score" width="30" height="30" x="3055" y="1840"><%= @bracket['W2-M11-P1'].try(:[], :score) %></text>
             <polyline points="3080,1835 3100,1835 3100,1880 3120,1880" />
@@ -676,14 +710,14 @@
         </g>
         <g id="W2-M11-P2">
             <rect width="170" height="30" x="2880" y="1910"></rect>
-            <text class="name" width="170" height="30" x="2885" y="1930"><%= @bracket['W2-M11-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M11-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="1930"><%= @bracket['W2-M11-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="1910"></rect>
             <text class="score" width="30" height="30" x="3055" y="1930"><%= @bracket['W2-M11-P2'].try(:[], :score) %></text>
             <polyline points="3080,1925 3100,1925 3100,1880 3120,1880" />
         </g>
         <g id="W2-M12-P1">
             <rect width="170" height="30" x="2880" y="2000"></rect>
-            <text class="name" width="170" height="30" x="2885" y="2020"><%= @bracket['W2-M12-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M12-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="2020"><%= @bracket['W2-M12-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="2000"></rect>
             <text class="score" width="30" height="30" x="3055" y="2020"><%= @bracket['W2-M12-P1'].try(:[], :score) %></text>
             <polyline points="3080,2015 3100,2015 3100,2060 3120,2060" />
@@ -691,14 +725,14 @@
         </g>
         <g id="W2-M12-P2">
             <rect width="170" height="30" x="2880" y="2090"></rect>
-            <text class="name" width="170" height="30" x="2885" y="2110"><%= @bracket['W2-M12-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M12-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="2110"><%= @bracket['W2-M12-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="2090"></rect>
             <text class="score" width="30" height="30" x="3055" y="2110"><%= @bracket['W2-M12-P2'].try(:[], :score) %></text>
             <polyline points="3080,2105 3100,2105 3100,2060 3120,2060" />
         </g>
         <g id="W2-M13-P1">
             <rect width="170" height="30" x="2880" y="2180"></rect>
-            <text class="name" width="170" height="30" x="2885" y="2200"><%= @bracket['W2-M13-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M13-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="2200"><%= @bracket['W2-M13-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="2180"></rect>
             <text class="score" width="30" height="30" x="3055" y="2200"><%= @bracket['W2-M13-P1'].try(:[], :score) %></text>
             <polyline points="3080,2195 3100,2195 3100,2240 3120,2240" />
@@ -706,14 +740,14 @@
         </g>
         <g id="W2-M13-P2">
             <rect width="170" height="30" x="2880" y="2270"></rect>
-            <text class="name" width="170" height="30" x="2885" y="2290"><%= @bracket['W2-M13-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M13-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="2290"><%= @bracket['W2-M13-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="2270"></rect>
             <text class="score" width="30" height="30" x="3055" y="2290"><%= @bracket['W2-M13-P2'].try(:[], :score) %></text>
             <polyline points="3080,2285 3100,2285 3100,2240 3120,2240" />
         </g>
         <g id="W2-M14-P1">
             <rect width="170" height="30" x="2880" y="2360"></rect>
-            <text class="name" width="170" height="30" x="2885" y="2380"><%= @bracket['W2-M14-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M14-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="2380"><%= @bracket['W2-M14-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="2360"></rect>
             <text class="score" width="30" height="30" x="3055" y="2380"><%= @bracket['W2-M14-P1'].try(:[], :score) %></text>
             <polyline points="3080,2375 3100,2375 3100,2420 3120,2420" />
@@ -721,14 +755,14 @@
         </g>
         <g id="W2-M14-P2">
             <rect width="170" height="30" x="2880" y="2450"></rect>
-            <text class="name" width="170" height="30" x="2885" y="2470"><%= @bracket['W2-M14-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M14-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="2470"><%= @bracket['W2-M14-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="2450"></rect>
             <text class="score" width="30" height="30" x="3055" y="2470"><%= @bracket['W2-M14-P2'].try(:[], :score) %></text>
             <polyline points="3080,2465 3100,2465 3100,2420 3120,2420" />
         </g>
         <g id="W2-M15-P1">
             <rect width="170" height="30" x="2880" y="2540"></rect>
-            <text class="name" width="170" height="30" x="2885" y="2560"><%= @bracket['W2-M15-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M15-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="2560"><%= @bracket['W2-M15-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="2540"></rect>
             <text class="score" width="30" height="30" x="3055" y="2560"><%= @bracket['W2-M15-P1'].try(:[], :score) %></text>
             <polyline points="3080,2555 3100,2555 3100,2600 3120,2600" />
@@ -736,14 +770,14 @@
         </g>
         <g id="W2-M15-P2">
             <rect width="170" height="30" x="2880" y="2630"></rect>
-            <text class="name" width="170" height="30" x="2885" y="2650"><%= @bracket['W2-M15-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M5-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="2650"><%= @bracket['W2-M15-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="2630"></rect>
             <text class="score" width="30" height="30" x="3055" y="2650"><%= @bracket['W2-M15-P2'].try(:[], :score) %></text>
             <polyline points="3080,2645 3100,2645 3100,2600 3120,2600" />
         </g>
         <g id="W2-M16-P1">
             <rect width="170" height="30" x="2880" y="2720"></rect>
-            <text class="name" width="170" height="30" x="2885" y="2740"><%= @bracket['W2-M16-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M16-P1'].try(:[], :level) %>" width="170" height="30" x="2885" y="2740"><%= @bracket['W2-M16-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="2720"></rect>
             <text class="score" width="30" height="30" x="3055" y="2740"><%= @bracket['W2-M16-P1'].try(:[], :score) %></text>
             <polyline points="3080,2735 3100,2735 3100,2780 3120,2780" />
@@ -751,7 +785,7 @@
         </g>
         <g id="W2-M16-P2">
             <rect width="170" height="30" x="2880" y="2810"></rect>
-            <text class="name" width="170" height="30" x="2885" y="2830"><%= @bracket['W2-M16-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W2-M16-P2'].try(:[], :level) %>" width="170" height="30" x="2885" y="2830"><%= @bracket['W2-M16-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3050" y="2810"></rect>
             <text class="score" width="30" height="30" x="3055" y="2830"><%= @bracket['W2-M16-P2'].try(:[], :score) %></text>
             <polyline points="3080,2825 3100,2825 3100,2780 3120,2780" />
@@ -760,7 +794,7 @@
         <!-- Round 3 -->
         <g id="W3-M1-P1">
             <rect width="170" height="30" x="3120" y="65"></rect>
-            <text class="name" width="170" height="30" x="3125" y="85"><%= @bracket['W3-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M1-P1'].try(:[], :level) %>" width="170" height="30" x="3125" y="85"><%= @bracket['W3-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="65"></rect>
             <text class="score" width="30" height="30" x="3295" y="85"><%= @bracket['W3-M1-P1'].try(:[], :score) %></text>
             <polyline points="3320,80 3340,80 3340,170 3360,170" />
@@ -768,14 +802,14 @@
         </g>
         <g id="W3-M1-P2">
             <rect width="170" height="30" x="3120" y="245"></rect>
-            <text class="name" width="170" height="30" x="3125" y="265"><%= @bracket['W3-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M1-P2'].try(:[], :level) %>" width="170" height="30" x="3125" y="265"><%= @bracket['W3-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="245"></rect>
             <text class="score" width="30" height="30" x="3295" y="265"><%= @bracket['W3-M1-P2'].try(:[], :score) %></text>
             <polyline points="3320,260 3340,260 3340,170 3360,170" />
         </g>
         <g id="W3-M2-P1">
             <rect width="170" height="30" x="3120" y="425"></rect>
-            <text class="name" width="170" height="30" x="3125" y="445"><%= @bracket['W3-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M2-P1'].try(:[], :level) %>" width="170" height="30" x="3125" y="445"><%= @bracket['W3-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="425"></rect>
             <text class="score" width="30" height="30" x="3295" y="445"><%= @bracket['W3-M2-P1'].try(:[], :score) %></text>
             <polyline points="3320,440 3340,440 3340,530 3360,530" />
@@ -783,14 +817,14 @@
         </g>
         <g id="W3-M2-P2">
             <rect width="170" height="30" x="3120" y="605"></rect>
-            <text class="name" width="170" height="30" x="3125" y="625"><%= @bracket['W3-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M2-P2'].try(:[], :level) %>" width="170" height="30" x="3125" y="625"><%= @bracket['W3-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="605"></rect>
             <text class="score" width="30" height="30" x="3295" y="625"><%= @bracket['W3-M2-P2'].try(:[], :score) %></text>
             <polyline points="3320,620 3340,620 3340,530 3360,530" />
         </g>
         <g id="W3-M3-P1">
             <rect width="170" height="30" x="3120" y="785"></rect>
-            <text class="name" width="170" height="30" x="3125" y="805"><%= @bracket['W3-M3-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M3-P1'].try(:[], :level) %>" width="170" height="30" x="3125" y="805"><%= @bracket['W3-M3-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="785"></rect>
             <text class="score" width="30" height="30" x="3295" y="805"><%= @bracket['W3-M3-P1'].try(:[], :score) %></text>
             <polyline points="3320,800 3340,800 3340,890 3360,890" />
@@ -798,14 +832,14 @@
         </g>
         <g id="W3-M3-P2">
             <rect width="170" height="30" x="3120" y="965"></rect>
-            <text class="name" width="170" height="30" x="3125" y="985"><%= @bracket['W3-M3-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M3-P2'].try(:[], :level) %>" width="170" height="30" x="3125" y="985"><%= @bracket['W3-M3-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="965"></rect>
             <text class="score" width="30" height="30" x="3295" y="985"><%= @bracket['W3-M3-P2'].try(:[], :score) %></text>
             <polyline points="3320,980 3340,980 3340,890 3360,890" />
         </g>
         <g id="W3-M4-P1">
             <rect width="170" height="30" x="3120" y="1145"></rect>
-            <text class="name" width="170" height="30" x="3125" y="1165"><%= @bracket['W3-M4-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M4-P1'].try(:[], :level) %>" width="170" height="30" x="3125" y="1165"><%= @bracket['W3-M4-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="1145"></rect>
             <text class="score" width="30" height="30" x="3295" y="1165"><%= @bracket['W3-M4-P1'].try(:[], :score) %></text>
             <polyline points="3320,1160 3340,1160 3340,1250 3360,1250" />
@@ -813,14 +847,14 @@
         </g>
         <g id="W3-M4-P2">
             <rect width="170" height="30" x="3120" y="1325"></rect>
-            <text class="name" width="170" height="30" x="3125" y="1345"><%= @bracket['W3-M4-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M4-P2'].try(:[], :level) %>" width="170" height="30" x="3125" y="1345"><%= @bracket['W3-M4-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="1325"></rect>
             <text class="score" width="30" height="30" x="3295" y="1345"><%= @bracket['W3-M4-P2'].try(:[], :score) %></text>
             <polyline points="3320,1340 3340,1340 3340,1250 3360,1250" />
         </g>
         <g id="W3-M5-P1">
             <rect width="170" height="30" x="3120" y="1505"></rect>
-            <text class="name" width="170" height="30" x="3125" y="1525"><%= @bracket['W3-M5-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M5-P1'].try(:[], :level) %>" width="170" height="30" x="3125" y="1525"><%= @bracket['W3-M5-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="1505"></rect>
             <text class="score" width="30" height="30" x="3295" y="1525"><%= @bracket['W3-M5-P1'].try(:[], :score) %></text>
             <polyline points="3320,1520 3340,1520 3340,1610 3360,1610" />
@@ -828,14 +862,14 @@
         </g>
         <g id="W3-M5-P2">
             <rect width="170" height="30" x="3120" y="1685"></rect>
-            <text class="name" width="170" height="30" x="3125" y="1705"><%= @bracket['W3-M5-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M5-P2'].try(:[], :level) %>" width="170" height="30" x="3125" y="1705"><%= @bracket['W3-M5-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="1685"></rect>
             <text class="score" width="30" height="30" x="3295" y="1705"><%= @bracket['W3-M5-P2'].try(:[], :score) %></text>
             <polyline points="3320,1700 3340,1700 3340,1610 3360,1610" />
         </g>
         <g id="W3-M6-P1">
             <rect width="170" height="30" x="3120" y="1865"></rect>
-            <text class="name" width="170" height="30" x="3125" y="1885"><%= @bracket['W3-M6-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M6-P1'].try(:[], :level) %>" width="170" height="30" x="3125" y="1885"><%= @bracket['W3-M6-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="1865"></rect>
             <text class="score" width="30" height="30" x="3295" y="1885"><%= @bracket['W3-M6-P1'].try(:[], :score) %></text>
             <polyline points="3320,1880 3340,1880 3340,1970 3360,1970" />
@@ -843,14 +877,14 @@
         </g>
         <g id="W3-M6-P2">
             <rect width="170" height="30" x="3120" y="2045"></rect>
-            <text class="name" width="170" height="30" x="3125" y="2065"><%= @bracket['W3-M6-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M6-P2'].try(:[], :level) %>" width="170" height="30" x="3125" y="2065"><%= @bracket['W3-M6-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="2045"></rect>
             <text class="score" width="30" height="30" x="3295" y="2065"><%= @bracket['W3-M6-P2'].try(:[], :score) %></text>
             <polyline points="3320,2060 3340,2060 3340,1970 3360,1970" />
         </g>
         <g id="W3-M7-P1">
             <rect width="170" height="30" x="3120" y="2225"></rect>
-            <text class="name" width="170" height="30" x="3125" y="2245"><%= @bracket['W3-M7-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M7-P1'].try(:[], :level) %>" width="170" height="30" x="3125" y="2245"><%= @bracket['W3-M7-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="2225"></rect>
             <text class="score" width="30" height="30" x="3295" y="2245"><%= @bracket['W3-M7-P1'].try(:[], :score) %></text>
             <polyline points="3320,2240 3340,2240 3340,2330 3360,2330" />
@@ -858,14 +892,14 @@
         </g>
         <g id="W3-M7-P2">
             <rect width="170" height="30" x="3120" y="2405"></rect>
-            <text class="name" width="170" height="30" x="3125" y="2425"><%= @bracket['W3-M7-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M7-P2'].try(:[], :level) %>" width="170" height="30" x="3125" y="2425"><%= @bracket['W3-M7-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="2405"></rect>
             <text class="score" width="30" height="30" x="3295" y="2425"><%= @bracket['W3-M7-P2'].try(:[], :score) %></text>
             <polyline points="3320,2420 3340,2420 3340,2330 3360,2330" />
         </g>
         <g id="W3-M8-P1">
             <rect width="170" height="30" x="3120" y="2585"></rect>
-            <text class="name" width="170" height="30" x="3125" y="2605"><%= @bracket['W3-M8-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M8-P1'].try(:[], :level) %>" width="170" height="30" x="3125" y="2605"><%= @bracket['W3-M8-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="2585"></rect>
             <text class="score" width="30" height="30" x="3295" y="2605"><%= @bracket['W3-M8-P1'].try(:[], :score) %></text>
             <polyline points="3320,2600 3340,2600 3340,2690 3360,2690" />
@@ -873,7 +907,7 @@
         </g>
         <g id="W3-M8-P2">
             <rect width="170" height="30" x="3120" y="2765"></rect>
-            <text class="name" width="170" height="30" x="3125" y="2785"><%= @bracket['W3-M8-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W3-M8-P2'].try(:[], :level) %>" width="170" height="30" x="3125" y="2785"><%= @bracket['W3-M8-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3290" y="2765"></rect>
             <text class="score" width="30" height="30" x="3295" y="2785"><%= @bracket['W3-M8-P2'].try(:[], :score) %></text>
             <polyline points="3320,2780 3340,2780 3340,2690 3360,2690" />
@@ -882,7 +916,7 @@
         <!-- Round 4 -->
         <g id="W4-M1-P1">
             <rect width="170" height="30" x="3360" y="155"></rect>
-            <text class="name" width="170" height="30" x="3365" y="175"><%= @bracket['W4-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W4-M1-P1'].try(:[], :level) %>" width="170" height="30" x="3365" y="175"><%= @bracket['W4-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3530" y="155"></rect>
             <text class="score" width="30" height="30" x="3535" y="175"><%= @bracket['W4-M1-P1'].try(:[], :score) %></text>
             <polyline points="3560,170 3580,170 3580,350 3600,350" />
@@ -890,14 +924,14 @@
         </g>
         <g id="W4-M1-P2">
             <rect width="170" height="30" x="3360" y="515"></rect>
-            <text class="name" width="170" height="30" x="3365" y="535"><%= @bracket['W4-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W4-M1-P2'].try(:[], :level) %>" width="170" height="30" x="3365" y="535"><%= @bracket['W4-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3530" y="515"></rect>
             <text class="score" width="30" height="30" x="3535" y="535"><%= @bracket['W4-M1-P2'].try(:[], :score) %></text>
             <polyline points="3560,530 3580,530 3580,350 3600,350" />
         </g>
         <g id="W4-M2-P1">
             <rect width="170" height="30" x="3360" y="875"></rect>
-            <text class="name" width="170" height="30" x="3365" y="895"><%= @bracket['W4-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W4-M2-P1'].try(:[], :level) %>" width="170" height="30" x="3365" y="895"><%= @bracket['W4-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3530" y="875"></rect>
             <text class="score" width="30" height="30" x="3535" y="895"><%= @bracket['W4-M2-P1'].try(:[], :score) %></text>
             <polyline points="3560,890 3580,890 3580,1070 3600,1070" />
@@ -905,14 +939,14 @@
         </g>
         <g id="W4-M2-P2">
             <rect width="170" height="30" x="3360" y="1235"></rect>
-            <text class="name" width="170" height="30" x="3365" y="1255"><%= @bracket['W4-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W4-M2-P2'].try(:[], :level) %>" width="170" height="30" x="3365" y="1255"><%= @bracket['W4-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3530" y="1235"></rect>
             <text class="score" width="30" height="30" x="3535" y="1255"><%= @bracket['W4-M2-P2'].try(:[], :score) %></text>
             <polyline points="3560,1250 3580,1250 3580,1070 3600,1070" />
         </g>
         <g id="W4-M3-P1">
             <rect width="170" height="30" x="3360" y="1595"></rect>
-            <text class="name" width="170" height="30" x="3365" y="1615"><%= @bracket['W4-M3-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W4-M3-P1'].try(:[], :level) %>" width="170" height="30" x="3365" y="1615"><%= @bracket['W4-M3-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3530" y="1595"></rect>
             <text class="score" width="30" height="30" x="3535" y="1615"><%= @bracket['W4-M3-P1'].try(:[], :score) %></text>
             <polyline points="3560,1610 3580,1610 3580,1790 3600,1790" />
@@ -920,14 +954,14 @@
         </g>
         <g id="W4-M3-P2">
             <rect width="170" height="30" x="3360" y="1955"></rect>
-            <text class="name" width="170" height="30" x="3365" y="1975"><%= @bracket['W4-M3-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W4-M3-P2'].try(:[], :level) %>" width="170" height="30" x="3365" y="1975"><%= @bracket['W4-M3-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3530" y="1955"></rect>
             <text class="score" width="30" height="30" x="3535" y="1975"><%= @bracket['W4-M3-P2'].try(:[], :score) %></text>
             <polyline points="3560,1970 3580,1970 3580,1790 3600,1790" />
         </g>
         <g id="W4-M4-P1">
             <rect width="170" height="30" x="3360" y="2315"></rect>
-            <text class="name" width="170" height="30" x="3365" y="2335"><%= @bracket['W4-M4-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W4-M4-P1'].try(:[], :level) %>" width="170" height="30" x="3365" y="2335"><%= @bracket['W4-M4-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3530" y="2315"></rect>
             <text class="score" width="30" height="30" x="3535" y="2335"><%= @bracket['W4-M4-P1'].try(:[], :score) %></text>
             <polyline points="3560,2330 3580,2330 3580,2510 3600,2510" />
@@ -935,7 +969,7 @@
         </g>
         <g id="W4-M4-P2">
             <rect width="170" height="30" x="3360" y="2675"></rect>
-            <text class="name" width="170" height="30" x="3365" y="2695"><%= @bracket['W4-M4-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W4-M4-P2'].try(:[], :level) %>" width="170" height="30" x="3365" y="2695"><%= @bracket['W4-M4-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3530" y="2675"></rect>
             <text class="score" width="30" height="30" x="3535" y="2695"><%= @bracket['W4-M4-P2'].try(:[], :score) %></text>
             <polyline points="3560,2690 3580,2690 3580,2510 3600,2510" />
@@ -944,7 +978,7 @@
         <!-- Round 5 -->
         <g id="W5-M1-P1">
             <rect width="170" height="30" x="3600" y="335"></rect>
-            <text class="name" width="170" height="30" x="3605" y="355"><%= @bracket['W5-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W5-M1-P1'].try(:[], :level) %>" width="170" height="30" x="3605" y="355"><%= @bracket['W5-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3770" y="335"></rect>
             <text class="score" width="30" height="30" x="3775" y="355"><%= @bracket['W5-M1-P1'].try(:[], :score) %></text>
             <polyline points="3800,350 3820,350 3820,710 3840,710" />
@@ -952,14 +986,14 @@
         </g>
         <g id="W5-M1-P2">
             <rect width="170" height="30" x="3600" y="1055"></rect>
-            <text class="name" width="170" height="30" x="3605" y="1075"><%= @bracket['W5-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W5-M1-P2'].try(:[], :level) %>" width="170" height="30" x="3605" y="1075"><%= @bracket['W5-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3770" y="1055"></rect>
             <text class="score" width="30" height="30" x="3775" y="1075"><%= @bracket['W5-M1-P2'].try(:[], :score) %></text>
             <polyline points="3800,1070 3820,1070 3820,710 3840,710" />
         </g>
         <g id="W5-M2-P1">
             <rect width="170" height="30" x="3600" y="1775"></rect>
-            <text class="name" width="170" height="30" x="3605" y="1795"><%= @bracket['W5-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W5-M2-P1'].try(:[], :level) %>" width="170" height="30" x="3605" y="1795"><%= @bracket['W5-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3770" y="1775"></rect>
             <text class="score" width="30" height="30" x="3775" y="1795"><%= @bracket['W5-M2-P1'].try(:[], :score) %></text>
             <polyline points="3800,1790 3820,1790 3820,2150 3840,2150" />
@@ -967,7 +1001,7 @@
         </g>
         <g id="W5-M2-P2">
             <rect width="170" height="30" x="3600" y="2495"></rect>
-            <text class="name" width="170" height="30" x="3605" y="2515"><%= @bracket['W5-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W5-M2-P2'].try(:[], :level) %>" width="170" height="30" x="3605" y="2515"><%= @bracket['W5-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="3770" y="2495"></rect>
             <text class="score" width="30" height="30" x="3775" y="2515"><%= @bracket['W5-M2-P2'].try(:[], :score) %></text>
             <polyline points="3800,2510 3820,2510 3820,2150 3840,2150" />
@@ -976,7 +1010,7 @@
         <!-- Round 6 -->
         <g id="W6-M1-P1">
             <rect width="170" height="30" x="3840" y="695"></rect>
-            <text class="name" width="170" height="30" x="3845" y="715"><%= @bracket['W6-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W6-M1-P1'].try(:[], :level) %>" width="170" height="30" x="3845" y="715"><%= @bracket['W6-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="4010" y="695"></rect>
             <text class="score" width="30" height="30" x="4015" y="715"><%= @bracket['W6-M1-P1'].try(:[], :score) %></text>
             <polyline points="4040,710 4060,710 4060,1430 4080,1430" />
@@ -984,7 +1018,7 @@
         </g>
         <g id="W6-M1-P2">
             <rect width="170" height="30" x="3840" y="2135"></rect>
-            <text class="name" width="170" height="30" x="3845" y="2155"><%= @bracket['W6-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W6-M1-P2'].try(:[], :level) %>" width="170" height="30" x="3845" y="2155"><%= @bracket['W6-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="4010" y="2135"></rect>
             <text class="score" width="30" height="30" x="4015" y="2155"><%= @bracket['W6-M1-P2'].try(:[], :score) %></text>
             <polyline points="4040,2150 4060,2150 4060,1430 4080,1430" />
@@ -994,14 +1028,14 @@
         <text class="position" width="30" height"30" x="4160" y="1405">2nd</text>
         <g id="W7-M1-P1">
             <rect width="170" height="30" x="4080" y="1415"></rect>
-            <text class="name" width="170" height="30" x="4085" y="1435"><%= @bracket['W7-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W7-M1-P1'].try(:[], :level) %>" width="170" height="30" x="4085" y="1435"><%= @bracket['W7-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="4250" y="1415"></rect>
             <text class="score" width="30" height="30" x="4255" y="1435"><%= @bracket['W7-M1-P1'].try(:[], :score) %></text>
             <polyline points="4280,1430 4300,1430 4300,1450 4320,1450" />
         </g>
         <g id="W7-M1-P2">
             <rect width="170" height="30" x="4080" y="1455"></rect>
-            <text class="name" width="170" height="30" x="4085" y="1475"><%= @bracket['W7-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W7-M1-P2'].try(:[], :level) %>" width="170" height="30" x="4085" y="1475"><%= @bracket['W7-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="4250" y="1455"></rect>
             <text class="score" width="30" height="30" x="4255" y="1475"><%= @bracket['W7-M1-P2'].try(:[], :score) %></text>
             <polyline points="4280,1470 4300,1470 4300,1450 4320,1450" />
@@ -1012,7 +1046,7 @@
         <text class="position" width="30" height"30" x="4405" y="1425">1st</text>
         <g id="W8-M1-P1">
             <rect width="170" height="30" x="4320" y="1435"></rect>
-            <text class="name" width="170" height="30" x="4325" y="1455"><%= @bracket['W8-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['W8-M1-P1'].try(:[], :level) %>" width="170" height="30" x="4325" y="1455"><%= @bracket['W8-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="4490" y="1435"></rect>
             <text class="score" width="30" height="30" x="4495" y="1455"><%= @bracket['W8-M1-P1'].try(:[], :score) %></text>
         </g>
@@ -1021,224 +1055,224 @@
         <!-- Round 2 -->
         <g id="L2-M1-P1">
             <rect width="170" height="30" x="2400" y="20"></rect>
-            <text class="name" width="170" height="30" x="2405" y="40"><%= @bracket['L2-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M1-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="40"><%= @bracket['L2-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="20"></rect>
             <text class="score" width="30" height="30" x="2575" y="40"><%= @bracket['L2-M1-P1'].try(:[], :score) %></text>
             <polyline points="2400,35 2380,35 2380,80 2360,80" />
         </g>
         <g id="L2-M1-P2">
             <rect width="170" height="30" x="2400" y="110"></rect>
-            <text class="name" width="170" height="30" x="2405" y="130"><%= @bracket['L2-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M1-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="130"><%= @bracket['L2-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="110"></rect>
             <text class="score" width="30" height="30" x="2575" y="130"><%= @bracket['L2-M1-P2'].try(:[], :score) %></text>
             <polyline points="2400,125 2380,125 2380,80 2360,80" />
         </g>
         <g id="L2-M2-P1">
             <rect width="170" height="30" x="2400" y="200"></rect>
-            <text class="name" width="170" height="30" x="2405" y="220"><%= @bracket['L2-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M2-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="220"><%= @bracket['L2-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="200"></rect>
             <text class="score" width="30" height="30" x="2575" y="220"><%= @bracket['L2-M2-P1'].try(:[], :score) %></text>
             <polyline points="2400,215 2380,215 2380,260 2360,260" />
         </g>
         <g id="L2-M2-P2">
             <rect width="170" height="30" x="2400" y="290"></rect>
-            <text class="name" width="170" height="30" x="2405" y="310"><%= @bracket['L2-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M2-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="310"><%= @bracket['L2-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="290"></rect>
             <text class="score" width="30" height="30" x="2575" y="310"><%= @bracket['L2-M2-P2'].try(:[], :score) %></text>
             <polyline points="2400,305 2380,305 2380,260 2360,260" />
         </g>
         <g id="L2-M3-P1">
             <rect width="170" height="30" x="2400" y="380"></rect>
-            <text class="name" width="170" height="30" x="2405" y="400"><%= @bracket['L2-M3-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M3-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="400"><%= @bracket['L2-M3-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="380"></rect>
             <text class="score" width="30" height="30" x="2575" y="400"><%= @bracket['L2-M3-P1'].try(:[], :score) %></text>
             <polyline points="2400,395 2380,395 2380,440 2360,440" />
         </g>
         <g id="L2-M3-P2">
             <rect width="170" height="30" x="2400" y="470"></rect>
-            <text class="name" width="170" height="30" x="2405" y="490"><%= @bracket['L2-M3-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M3-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="490"><%= @bracket['L2-M3-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="470"></rect>
             <text class="score" width="30" height="30" x="2575" y="490"><%= @bracket['L2-M3-P2'].try(:[], :score) %></text>
             <polyline points="2400,485 2380,485 2380,440 2360,440" />
         </g>
         <g id="L2-M4-P1">
             <rect width="170" height="30" x="2400" y="560"></rect>
-            <text class="name" width="170" height="30" x="2405" y="580"><%= @bracket['L2-M4-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M4-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="580"><%= @bracket['L2-M4-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="560"></rect>
             <text class="score" width="30" height="30" x="2575" y="580"><%= @bracket['L2-M4-P1'].try(:[], :score) %></text>
             <polyline points="2400,575 2380,575 2380,620 2360,620" />
         </g>
         <g id="L2-M4-P2">
             <rect width="170" height="30" x="2400" y="650"></rect>
-            <text class="name" width="170" height="30" x="2405" y="670"><%= @bracket['L2-M4-P21'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M4-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="670"><%= @bracket['L2-M4-P21'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="650"></rect>
             <text class="score" width="30" height="30" x="2575" y="670"><%= @bracket['L2-M4-P2'].try(:[], :score) %></text>
             <polyline points="2400,665 2380,665 2380,620 2360,620" />
         </g>
         <g id="L2-M5-P1">
             <rect width="170" height="30" x="2400" y="740"></rect>
-            <text class="name" width="170" height="30" x="2405" y="760"><%= @bracket['L2-M5-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M5-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="760"><%= @bracket['L2-M5-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="740"></rect>
             <text class="score" width="30" height="30" x="2575" y="760"><%= @bracket['L2-M5-P1'].try(:[], :score) %></text>
             <polyline points="2400,755 2380,755 2380,800 2360,800" />
         </g>
         <g id="L2-M5-P2">
             <rect width="170" height="30" x="2400" y="830"></rect>
-            <text class="name" width="170" height="30" x="2405" y="850"><%= @bracket['L2-M5-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M5-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="850"><%= @bracket['L2-M5-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="830"></rect>
             <text class="score" width="30" height="30" x="2575" y="850"><%= @bracket['L2-M5-P2'].try(:[], :score) %></text>
             <polyline points="2400,845 2380,845 2380,800 2360,800" />
         </g>
         <g id="L2-M6-P1">
             <rect width="170" height="30" x="2400" y="920"></rect>
-            <text class="name" width="170" height="30" x="2405" y="940"><%= @bracket['L2-M6-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M6-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="940"><%= @bracket['L2-M6-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="920"></rect>
             <text class="score" width="30" height="30" x="2575" y="940"><%= @bracket['L2-M6-P1'].try(:[], :score) %></text>
             <polyline points="2400,935 2380,935 2380,980 2360,980" />
         </g>
         <g id="L2-M6-P2">
             <rect width="170" height="30" x="2400" y="1010"></rect>
-            <text class="name" width="170" height="30" x="2405" y="1030"><%= @bracket['L2-M6-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M6-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="1030"><%= @bracket['L2-M6-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="1010"></rect>
             <text class="score" width="30" height="30" x="2575" y="1030"><%= @bracket['L2-M6-P2'].try(:[], :score) %></text>
             <polyline points="2400,1025 2380,1025 2380,980 2360,980" />
         </g>
         <g id="L2-M7-P1">
             <rect width="170" height="30" x="2400" y="1100"></rect>
-            <text class="name" width="170" height="30" x="2405" y="1120"><%= @bracket['L2-M7-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M7-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="1120"><%= @bracket['L2-M7-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="1100"></rect>
             <text class="score" width="30" height="30" x="2575" y="1120"><%= @bracket['L2-M7-P1'].try(:[], :score) %></text>
             <polyline points="2400,1115 2380,1115 2380,1160 2360,1160" />
         </g>
         <g id="L2-M7-P2">
             <rect width="170" height="30" x="2400" y="1190"></rect>
-            <text class="name" width="170" height="30" x="2405" y="1210"><%= @bracket['L2-M7-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M7-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="1210"><%= @bracket['L2-M7-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="1190"></rect>
             <text class="score" width="30" height="30" x="2575" y="1210"><%= @bracket['L2-M7-P2'].try(:[], :score) %></text>
             <polyline points="2400,1205 2380,1205 2380,1160 2360,1160" />
         </g>
         <g id="L2-M8-P1">
             <rect width="170" height="30" x="2400" y="1280"></rect>
-            <text class="name" width="170" height="30" x="2405" y="1300"><%= @bracket['L2-M8-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M8-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="1300"><%= @bracket['L2-M8-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="1280"></rect>
             <text class="score" width="30" height="30" x="2575" y="1300"><%= @bracket['L2-M8-P1'].try(:[], :score) %></text>
             <polyline points="2400,1295 2380,1295 2380,1340 2360,1340" />
         </g>
         <g id="L2-M8-P2">
             <rect width="170" height="30" x="2400" y="1370"></rect>
-            <text class="name" width="170" height="30" x="2405" y="1390"><%= @bracket['L2-M8-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M8-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="1390"><%= @bracket['L2-M8-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="1370"></rect>
             <text class="score" width="30" height="30" x="2575" y="1390"><%= @bracket['L2-M8-P2'].try(:[], :score) %></text>
             <polyline points="2400,1385 2380,1385 2380,1340 2360,1340" />
         </g>
         <g id="L2-M9-P1">
             <rect width="170" height="30" x="2400" y="1460"></rect>
-            <text class="name" width="170" height="30" x="2405" y="1480"><%= @bracket['L2-M9-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M9-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="1480"><%= @bracket['L2-M9-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="1460"></rect>
             <text class="score" width="30" height="30" x="2575" y="1480"><%= @bracket['L2-M9-P1'].try(:[], :score) %></text>
             <polyline points="2400,1475 2380,1475 2380,1520 2360,1520" />
         </g>
         <g id="L2-M9-P2">
             <rect width="170" height="30" x="2400" y="1550"></rect>
-            <text class="name" width="170" height="30" x="2405" y="1570"><%= @bracket['L2-M9-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M9-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="1570"><%= @bracket['L2-M9-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="1550"></rect>
             <text class="score" width="30" height="30" x="2575" y="1570"><%= @bracket['L2-M9-P2'].try(:[], :score) %></text>
             <polyline points="2400,1565 2380,1565 2380,1520 2360,1520" />
         </g>
         <g id="L2-M10-P1">
             <rect width="170" height="30" x="2400" y="1640"></rect>
-            <text class="name" width="170" height="30" x="2405" y="1660"><%= @bracket['L2-M10-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M10-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="1660"><%= @bracket['L2-M10-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="1640"></rect>
             <text class="score" width="30" height="30" x="2575" y="1660"><%= @bracket['L2-M10-P1'].try(:[], :score) %></text>
             <polyline points="2400,1655 2380,1655 2380,1700 2360,1700" />
         </g>
         <g id="L2-M10-P2">
             <rect width="170" height="30" x="2400" y="1730"></rect>
-            <text class="name" width="170" height="30" x="2405" y="1750"><%= @bracket['L2-M10-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M10-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="1750"><%= @bracket['L2-M10-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="1730"></rect>
             <text class="score" width="30" height="30" x="2575" y="1750"><%= @bracket['L2-M10-P2'].try(:[], :score) %></text>
             <polyline points="2400,1745 2380,1745 2380,1700 2360,1700" />
         </g>
         <g id="L2-M11-P1">
             <rect width="170" height="30" x="2400" y="1820"></rect>
-            <text class="name" width="170" height="30" x="2405" y="1840"><%= @bracket['L2-M11-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M11-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="1840"><%= @bracket['L2-M11-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="1820"></rect>
             <text class="score" width="30" height="30" x="2575" y="1840"><%= @bracket['L2-M11-P1'].try(:[], :score) %></text>
             <polyline points="2400,1835 2380,1835 2380,1880 2360,1880" />
         </g>
         <g id="L2-M11-P2">
             <rect width="170" height="30" x="2400" y="1910"></rect>
-            <text class="name" width="170" height="30" x="2405" y="1930"><%= @bracket['L2-M11-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M11-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="1930"><%= @bracket['L2-M11-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="1910"></rect>
             <text class="score" width="30" height="30" x="2575" y="1930"><%= @bracket['L2-M11-P2'].try(:[], :score) %></text>
             <polyline points="2400,1925 2380,1925 2380,1880 2360,1880" />
         </g>
         <g id="L2-M12-P1">
             <rect width="170" height="30" x="2400" y="2000"></rect>
-            <text class="name" width="170" height="30" x="2405" y="2020"><%= @bracket['L2-M12-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M12-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="2020"><%= @bracket['L2-M12-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="2000"></rect>
             <text class="score" width="30" height="30" x="2575" y="2020"><%= @bracket['L2-M12-P1'].try(:[], :score) %></text>
             <polyline points="2400,2015 2380,2015 2380,2060 2360,2060" />
         </g>
         <g id="L2-M12-P2">
             <rect width="170" height="30" x="2400" y="2090"></rect>
-            <text class="name" width="170" height="30" x="2405" y="2110"><%= @bracket['L2-M12-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M12-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="2110"><%= @bracket['L2-M12-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="2090"></rect>
             <text class="score" width="30" height="30" x="2575" y="2110"><%= @bracket['L2-M12-P2'].try(:[], :score) %></text>
             <polyline points="2400,2105 2380,2105 2380,2060 2360,2060" />
         </g>
         <g id="L2-M13-P1">
             <rect width="170" height="30" x="2400" y="2180"></rect>
-            <text class="name" width="170" height="30" x="2405" y="2200"><%= @bracket['L2-M13-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M13-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="2200"><%= @bracket['L2-M13-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="2180"></rect>
             <text class="score" width="30" height="30" x="2575" y="2200"><%= @bracket['L2-M13-P1'].try(:[], :score) %></text>
             <polyline points="2400,2195 2380,2195 2380,2240 2360,2240" />
         </g>
         <g id="L2-M13-P2">
             <rect width="170" height="30" x="2400" y="2270"></rect>
-            <text class="name" width="170" height="30" x="2405" y="2290"><%= @bracket['L2-M13-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M13-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="2290"><%= @bracket['L2-M13-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="2270"></rect>
             <text class="score" width="30" height="30" x="2575" y="2290"><%= @bracket['L2-M13-P2'].try(:[], :score) %></text>
             <polyline points="2400,2285 2380,2285 2380,2240 2360,2240" />
         </g>
         <g id="L2-M14-P1">
             <rect width="170" height="30" x="2400" y="2360"></rect>
-            <text class="name" width="170" height="30" x="2405" y="2380"><%= @bracket['L2-M14-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M14-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="2380"><%= @bracket['L2-M14-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="2360"></rect>
             <text class="score" width="30" height="30" x="2575" y="2380"><%= @bracket['L2-M14-P1'].try(:[], :score) %></text>
             <polyline points="2400,2375 2380,2375 2380,2420 2360,2420" />
         </g>
         <g id="L2-M14-P2">
             <rect width="170" height="30" x="2400" y="2450"></rect>
-            <text class="name" width="170" height="30" x="2405" y="2470"><%= @bracket['L2-M14-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M4-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="2470"><%= @bracket['L2-M14-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="2450"></rect>
             <text class="score" width="30" height="30" x="2575" y="2470"><%= @bracket['L2-M14-P2'].try(:[], :score) %></text>
             <polyline points="2400,2465 2380,2465 2380,2420 2360,2420" />
         </g>
         <g id="L2-M15-P1">
             <rect width="170" height="30" x="2400" y="2540"></rect>
-            <text class="name" width="170" height="30" x="2405" y="2560"><%= @bracket['L2-M15-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M15-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="2560"><%= @bracket['L2-M15-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="2540"></rect>
             <text class="score" width="30" height="30" x="2575" y="2560"><%= @bracket['L2-M15-P1'].try(:[], :score) %></text>
             <polyline points="2400,2555 2380,2555 2380,2600 2360,2600" />
         </g>
         <g id="L2-M15-P2">
             <rect width="170" height="30" x="2400" y="2630"></rect>
-            <text class="name" width="170" height="30" x="2405" y="2650"><%= @bracket['L2-M15-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M15-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="2650"><%= @bracket['L2-M15-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="2630"></rect>
             <text class="score" width="30" height="30" x="2575" y="2650"><%= @bracket['L2-M15-P2'].try(:[], :score) %></text>
             <polyline points="2400,2645 2380,2645 2380,2600 2360,2600" />
         </g>
         <g id="L2-M16-P1">
             <rect width="170" height="30" x="2400" y="2720"></rect>
-            <text class="name" width="170" height="30" x="2405" y="2740"><%= @bracket['L2-M16-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M16-P1'].try(:[], :level) %>" width="170" height="30" x="2405" y="2740"><%= @bracket['L2-M16-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="2720"></rect>
             <text class="score" width="30" height="30" x="2575" y="2740"><%= @bracket['L2-M16-P1'].try(:[], :score) %></text>
             <polyline points="2400,2735 2380,2735 2380,2780 2360,2780" />
         </g>
         <g id="L2-M16-P2">
             <rect width="170" height="30" x="2400" y="2810"></rect>
-            <text class="name" width="170" height="30" x="2405" y="2830"><%= @bracket['L2-M16-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L2-M16-P2'].try(:[], :level) %>" width="170" height="30" x="2405" y="2830"><%= @bracket['L2-M16-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2570" y="2810"></rect>
             <text class="score" width="30" height="30" x="2575" y="2830"><%= @bracket['L2-M16-P2'].try(:[], :score) %></text>
             <polyline points="2400,2825 2380,2825 2380,2780 2360,2780" />
@@ -1247,14 +1281,14 @@
         <!-- Round 3 -->
         <g id="L3-M1-P1">
             <rect width="170" height="30" x="2160" y="65"></rect>
-            <text class="name" width="170" height="30" x="2165" y="85"><%= @bracket['L3-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M1-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="85"><%= @bracket['L3-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="65"></rect>
             <text class="score" width="30" height="30" x="2335" y="85"><%= @bracket['L3-M1-P1'].try(:[], :score) %></text>
             <polyline points="2160,80 2140,80 2140,100 2120,100" />
         </g>
         <g id="L3-M1-P2">
             <rect width="170" height="30" x="2160" y="105"></rect>
-            <text class="name" width="170" height="30" x="2165" y="125"><%= @bracket['L3-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M1-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="125"><%= @bracket['L3-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="105"></rect>
             <text class="score" width="30" height="30" x="2335" y="125"><%= @bracket['L3-M1-P2'].try(:[], :score) %></text>
             <polyline points="2160,120 2140,120 2140,100 2120,100" />
@@ -1262,14 +1296,14 @@
         </g>
         <g id="L3-M2-P1">
             <rect width="170" height="30" x="2160" y="245"></rect>
-            <text class="name" width="170" height="30" x="2165" y="265"><%= @bracket['L3-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M2-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="265"><%= @bracket['L3-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="245"></rect>
             <text class="score" width="30" height="30" x="2335" y="265"><%= @bracket['L3-M2-P1'].try(:[], :score) %></text>
             <polyline points="2160,260 2140,260 2140,280 2120,280" />
         </g>
         <g id="L3-M2-P2">
             <rect width="170" height="30" x="2160" y="285"></rect>
-            <text class="name" width="170" height="30" x="2165" y="305"><%= @bracket['L3-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M2-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="305"><%= @bracket['L3-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="285"></rect>
             <text class="score" width="30" height="30" x="2335" y="305"><%= @bracket['L3-M2-P2'].try(:[], :score) %></text>
             <polyline points="2160,300 2140,300 2140,280 2120,280" />
@@ -1277,14 +1311,14 @@
         </g>
         <g id="L3-M3-P1">
             <rect width="170" height="30" x="2160" y="425"></rect>
-            <text class="name" width="170" height="30" x="2165" y="445"><%= @bracket['L3-M3-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M3-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="445"><%= @bracket['L3-M3-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="425"></rect>
             <text class="score" width="30" height="30" x="2335" y="445"><%= @bracket['L3-M3-P1'].try(:[], :score) %></text>
             <polyline points="2160,440 2140,440 2140,460 2120,460" />
         </g>
         <g id="L3-M3-P2">
             <rect width="170" height="30" x="2160" y="465"></rect>
-            <text class="name" width="170" height="30" x="2165" y="485"><%= @bracket['L3-M3-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M3-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="485"><%= @bracket['L3-M3-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="465"></rect>
             <text class="score" width="30" height="30" x="2335" y="485"><%= @bracket['L3-M3-P2'].try(:[], :score) %></text>
             <polyline points="2160,480 2140,480 2140,460 2120,460" />
@@ -1292,14 +1326,14 @@
         </g>
         <g id="L3-M4-P1">
             <rect width="170" height="30" x="2160" y="605"></rect>
-            <text class="name" width="170" height="30" x="2165" y="625"><%= @bracket['L3-M4-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M4-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="625"><%= @bracket['L3-M4-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="605"></rect>
             <text class="score" width="30" height="30" x="2335" y="625"><%= @bracket['L3-M4-P1'].try(:[], :score) %></text>
             <polyline points="2160,620 2140,620 2140,640 2120,640" />
         </g>
         <g id="L3-M4-P2">
             <rect width="170" height="30" x="2160" y="645"></rect>
-            <text class="name" width="170" height="30" x="2165" y="665"><%= @bracket['L3-M4-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M4-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="665"><%= @bracket['L3-M4-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="645"></rect>
             <text class="score" width="30" height="30" x="2335" y="665"><%= @bracket['L3-M4-P2'].try(:[], :score) %></text>
             <polyline points="2160,660 2140,660 2140,640 2120,640" />
@@ -1307,14 +1341,14 @@
         </g>
         <g id="L3-M5-P1">
             <rect width="170" height="30" x="2160" y="785"></rect>
-            <text class="name" width="170" height="30" x="2165" y="805"><%= @bracket['L3-M5-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M5-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="805"><%= @bracket['L3-M5-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="785"></rect>
             <text class="score" width="30" height="30" x="2335" y="805"><%= @bracket['L3-M5-P1'].try(:[], :score) %></text>
             <polyline points="2160,800 2140,800 2140,820 2120,820" />
         </g>
         <g id="L3-M5-P2">
             <rect width="170" height="30" x="2160" y="825"></rect>
-            <text class="name" width="170" height="30" x="2165" y="845"><%= @bracket['L3-M5-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M5-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="845"><%= @bracket['L3-M5-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="825"></rect>
             <text class="score" width="30" height="30" x="2335" y="845"><%= @bracket['L3-M5-P2'].try(:[], :score) %></text>
             <polyline points="2160,840 2140,840 2140,820 2120,820" />
@@ -1322,14 +1356,14 @@
         </g>
         <g id="L3-M6-P1">
             <rect width="170" height="30" x="2160" y="965"></rect>
-            <text class="name" width="170" height="30" x="2165" y="985"><%= @bracket['L3-M6-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M6-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="985"><%= @bracket['L3-M6-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="965"></rect>
             <text class="score" width="30" height="30" x="2335" y="985"><%= @bracket['L3-M6-P1'].try(:[], :score) %></text>
             <polyline points="2160,980 2140,980 2140,1000 2120,1000" />
         </g>
         <g id="L3-M6-P2">
             <rect width="170" height="30" x="2160" y="1005"></rect>
-            <text class="name" width="170" height="30" x="2165" y="1025"><%= @bracket['L3-M6-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M6-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="1025"><%= @bracket['L3-M6-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="1005"></rect>
             <text class="score" width="30" height="30" x="2335" y="1025"><%= @bracket['L3-M6-P2'].try(:[], :score) %></text>
             <polyline points="2160,1020 2140,1020 2140,1000 2120,1000" />
@@ -1337,14 +1371,14 @@
         </g>
         <g id="L3-M7-P1">
             <rect width="170" height="30" x="2160" y="1145"></rect>
-            <text class="name" width="170" height="30" x="2165" y="1165"><%= @bracket['L3-M7-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M7-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="1165"><%= @bracket['L3-M7-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="1145"></rect>
             <text class="score" width="30" height="30" x="2335" y="1165"><%= @bracket['L3-M7-P1'].try(:[], :score) %></text>
             <polyline points="2160,1160 2140,1160 2140,1180 2120,1180" />
         </g>
         <g id="L3-M7-P2">
             <rect width="170" height="30" x="2160" y="1185"></rect>
-            <text class="name" width="170" height="30" x="2165" y="1205"><%= @bracket['L3-M7-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M7-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="1205"><%= @bracket['L3-M7-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="1185"></rect>
             <text class="score" width="30" height="30" x="2335" y="1205"><%= @bracket['L3-M7-P2'].try(:[], :score) %></text>
             <polyline points="2160,1200 2140,1200 2140,1180 2120,1180" />
@@ -1352,14 +1386,14 @@
         </g>
         <g id="L3-M8-P1">
             <rect width="170" height="30" x="2160" y="1325"></rect>
-            <text class="name" width="170" height="30" x="2165" y="1345"><%= @bracket['L3-M8-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M8-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="1345"><%= @bracket['L3-M8-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="1325"></rect>
             <text class="score" width="30" height="30" x="2335" y="1345"><%= @bracket['L3-M8-P1'].try(:[], :score) %></text>
             <polyline points="2160,1340 2140,1340 2140,1360 2120,1360" />
         </g>
         <g id="L3-M8-P2">
             <rect width="170" height="30" x="2160" y="1365"></rect>
-            <text class="name" width="170" height="30" x="2165" y="1385"><%= @bracket['L3-M8-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M8-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="1385"><%= @bracket['L3-M8-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="1365"></rect>
             <text class="score" width="30" height="30" x="2335" y="1385"><%= @bracket['L3-M8-P2'].try(:[], :score) %></text>
             <polyline points="2160,1380 2140,1380 2140,1360 2120,1360" />
@@ -1367,14 +1401,14 @@
         </g>
         <g id="L3-M9-P1">
             <rect width="170" height="30" x="2160" y="1505"></rect>
-            <text class="name" width="170" height="30" x="2165" y="1525"><%= @bracket['L3-M9-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M9-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="1525"><%= @bracket['L3-M9-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="1505"></rect>
             <text class="score" width="30" height="30" x="2335" y="1525"><%= @bracket['L3-M9-P1'].try(:[], :score) %></text>
             <polyline points="2160,1520 2140,1520 2140,1540 2120,1540" />
         </g>
         <g id="L3-M9-P2">
             <rect width="170" height="30" x="2160" y="1545"></rect>
-            <text class="name" width="170" height="30" x="2165" y="1565"><%= @bracket['L3-M9-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M9-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="1565"><%= @bracket['L3-M9-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="1545"></rect>
             <text class="score" width="30" height="30" x="2335" y="1565"><%= @bracket['L3-M9-P2'].try(:[], :score) %></text>
             <polyline points="2160,1560 2140,1560 2140,1540 2120,1540" />
@@ -1382,14 +1416,14 @@
         </g>
         <g id="L3-M10-P1">
             <rect width="170" height="30" x="2160" y="1685"></rect>
-            <text class="name" width="170" height="30" x="2165" y="1705"><%= @bracket['L3-M10-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M10-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="1705"><%= @bracket['L3-M10-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="1685"></rect>
             <text class="score" width="30" height="30" x="2335" y="1705"><%= @bracket['L3-M10-P1'].try(:[], :score) %></text>
             <polyline points="2160,1700 2140,1700 2140,1720 2120,1720" />
         </g>
         <g id="L3-M10-P2">
             <rect width="170" height="30" x="2160" y="1725"></rect>
-            <text class="name" width="170" height="30" x="2165" y="1745"><%= @bracket['L3-M10-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M10-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="1745"><%= @bracket['L3-M10-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="1725"></rect>
             <text class="score" width="30" height="30" x="2335" y="1745"><%= @bracket['L3-M10-P2'].try(:[], :score) %></text>
             <polyline points="2160,1740 2140,1740 2140,1720 2120,1720" />
@@ -1397,14 +1431,14 @@
         </g>
         <g id="L3-M11-P1">
             <rect width="170" height="30" x="2160" y="1865"></rect>
-            <text class="name" width="170" height="30" x="2165" y="1885"><%= @bracket['L3-M11-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M11-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="1885"><%= @bracket['L3-M11-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="1865"></rect>
             <text class="score" width="30" height="30" x="2335" y="1885"><%= @bracket['L3-M11-P1'].try(:[], :score) %></text>
             <polyline points="2160,1880 2140,1880 2140,1900 2120,1900" />
         </g>
         <g id="L3-M11-P2">
             <rect width="170" height="30" x="2160" y="1905"></rect>
-            <text class="name" width="170" height="30" x="2165" y="1925"><%= @bracket['L3-M11-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M11-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="1925"><%= @bracket['L3-M11-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="1905"></rect>
             <text class="score" width="30" height="30" x="2335" y="1925"><%= @bracket['L3-M11-P2'].try(:[], :score) %></text>
             <polyline points="2160,1920 2140,1920 2140,1900 2120,1900" />
@@ -1412,14 +1446,14 @@
         </g>
         <g id="L3-M12-P1">
             <rect width="170" height="30" x="2160" y="2045"></rect>
-            <text class="name" width="170" height="30" x="2165" y="2065"><%= @bracket['L3-M12-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M12-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="2065"><%= @bracket['L3-M12-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="2045"></rect>
             <text class="score" width="30" height="30" x="2335" y="2065"><%= @bracket['L3-M12-P1'].try(:[], :score) %></text>
             <polyline points="2160,2060 2140,2060 2140,2080 2120,2080" />
         </g>
         <g id="L3-M12-P2">
             <rect width="170" height="30" x="2160" y="2085"></rect>
-            <text class="name" width="170" height="30" x="2165" y="2105"><%= @bracket['L3-M12-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M12-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="2105"><%= @bracket['L3-M12-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="2085"></rect>
             <text class="score" width="30" height="30" x="2335" y="2105"><%= @bracket['L3-M12-P2'].try(:[], :score) %></text>
             <polyline points="2160,2100 2140,2100 2140,2080 2120,2080" />
@@ -1427,14 +1461,14 @@
         </g>
         <g id="L3-M13-P1">
             <rect width="170" height="30" x="2160" y="2225"></rect>
-            <text class="name" width="170" height="30" x="2165" y="2245"><%= @bracket['L3-M13-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M13-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="2245"><%= @bracket['L3-M13-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="2225"></rect>
             <text class="score" width="30" height="30" x="2335" y="2245"><%= @bracket['L3-M13-P1'].try(:[], :score) %></text>
             <polyline points="2160,2240 2140,2240 2140,2260 2120,2260" />
         </g>
         <g id="L3-M13-P2">
             <rect width="170" height="30" x="2160" y="2265"></rect>
-            <text class="name" width="170" height="30" x="2165" y="2285"><%= @bracket['L3-M13-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M13-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="2285"><%= @bracket['L3-M13-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="2265"></rect>
             <text class="score" width="30" height="30" x="2335" y="2285"><%= @bracket['L3-M13-P2'].try(:[], :score) %></text>
             <polyline points="2160,2280 2140,2280 2140,2260 2120,2260" />
@@ -1442,14 +1476,14 @@
         </g>
         <g id="L3-M14-P1">
             <rect width="170" height="30" x="2160" y="2405"></rect>
-            <text class="name" width="170" height="30" x="2165" y="2425"><%= @bracket['L3-M14-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M14-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="2425"><%= @bracket['L3-M14-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="2405"></rect>
             <text class="score" width="30" height="30" x="2335" y="2425"><%= @bracket['L3-M14-P1'].try(:[], :score) %></text>
             <polyline points="2160,2420 2140,2420 2140,2440 2120,2440" />
         </g>
         <g id="L3-M14-P2">
             <rect width="170" height="30" x="2160" y="2445"></rect>
-            <text class="name" width="170" height="30" x="2165" y="2465"><%= @bracket['L3-M14-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M14-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="2465"><%= @bracket['L3-M14-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="2445"></rect>
             <text class="score" width="30" height="30" x="2335" y="2465"><%= @bracket['L3-M14-P2'].try(:[], :score) %></text>
             <polyline points="2160,2460 2140,2460 2140,2440 2120,2440" />
@@ -1457,14 +1491,14 @@
         </g>
         <g id="L3-M15-P1">
             <rect width="170" height="30" x="2160" y="2585"></rect>
-            <text class="name" width="170" height="30" x="2165" y="2605"><%= @bracket['L3-M15-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M15-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="2605"><%= @bracket['L3-M15-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="2585"></rect>
             <text class="score" width="30" height="30" x="2335" y="2605"><%= @bracket['L3-M15-P1'].try(:[], :score) %></text>
             <polyline points="2160,2600 2140,2600 2140,2620 2120,2620" />
         </g>
         <g id="L3-M15-P2">
             <rect width="170" height="30" x="2160" y="2625"></rect>
-            <text class="name" width="170" height="30" x="2165" y="2645"><%= @bracket['L3-M15-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M15-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="2645"><%= @bracket['L3-M15-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="2625"></rect>
             <text class="score" width="30" height="30" x="2335" y="2645"><%= @bracket['L3-M15-P2'].try(:[], :score) %></text>
             <polyline points="2160,2640 2140,2640 2140,2620 2120,2620" />
@@ -1472,14 +1506,14 @@
         </g>
         <g id="L3-M16-P1">
             <rect width="170" height="30" x="2160" y="2765"></rect>
-            <text class="name" width="170" height="30" x="2165" y="2785"><%= @bracket['L3-M16-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M16-P1'].try(:[], :level) %>" width="170" height="30" x="2165" y="2785"><%= @bracket['L3-M16-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="2765"></rect>
             <text class="score" width="30" height="30" x="2335" y="2785"><%= @bracket['L3-M16-P1'].try(:[], :score) %></text>
             <polyline points="2160,2780 2140,2780 2140,2800 2120,2800" />
         </g>
         <g id="L3-M16-P2">
             <rect width="170" height="30" x="2160" y="2805"></rect>
-            <text class="name" width="170" height="30" x="2165" y="2825"><%= @bracket['L3-M16-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L3-M16-P2'].try(:[], :level) %>" width="170" height="30" x="2165" y="2825"><%= @bracket['L3-M16-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2330" y="2805"></rect>
             <text class="score" width="30" height="30" x="2335" y="2825"><%= @bracket['L3-M16-P2'].try(:[], :score) %></text>
             <polyline points="2160,2820 2140,2820 2140,2800 2120,2800" />
@@ -1489,386 +1523,474 @@
         <!-- Round 4 -->
         <g id="L4-M1-P1">
             <rect width="170" height="30" x="1920" y="85"></rect>
-            <text class="name" width="170" height="30" x="1925" y="105"><%= @bracket['L4-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M1-P1'].try(:[], :level) %>" width="170" height="30" x="1925" y="105"><%= @bracket['L4-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="85"></rect>
             <text class="score" width="30" height="30" x="2095" y="105"><%= @bracket['L4-M1-P1'].try(:[], :score) %></text>
+            <polyline points="1920,100 1900,100 1900,190 1880,190" />
         </g>
         <g id="L4-M1-P2">
             <rect width="170" height="30" x="1920" y="265"></rect>
-            <text class="name" width="170" height="30" x="1925" y="285"><%= @bracket['L4-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M1-P2'].try(:[], :level) %>" width="170" height="30" x="1925" y="285"><%= @bracket['L4-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="265"></rect>
             <text class="score" width="30" height="30" x="2095" y="285"><%= @bracket['L4-M1-P2'].try(:[], :score) %></text>
+            <polyline points="1920,280 1900,280 1900,190 1880,190" />
         </g>
         <g id="L4-M2-P1">
             <rect width="170" height="30" x="1920" y="445"></rect>
-            <text class="name" width="170" height="30" x="1925" y="465"><%= @bracket['L4-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M2-P1'].try(:[], :level) %>" width="170" height="30" x="1925" y="465"><%= @bracket['L4-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="445"></rect>
             <text class="score" width="30" height="30" x="2095" y="465"><%= @bracket['L4-M2-P1'].try(:[], :score) %></text>
+            <polyline points="1920,460 1900,460 1900,550 1880,550" />
         </g>
         <g id="L4-M2-P2">
             <rect width="170" height="30" x="1920" y="625"></rect>
-            <text class="name" width="170" height="30" x="1925" y="645"><%= @bracket['L4-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M2-P2'].try(:[], :level) %>" width="170" height="30" x="1925" y="645"><%= @bracket['L4-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="625"></rect>
             <text class="score" width="30" height="30" x="2095" y="645"><%= @bracket['L4-M2-P2'].try(:[], :score) %></text>
+            <polyline points="1920,640 1900,640 1900,550 1880,550" />
         </g>
         <g id="L4-M3-P1">
             <rect width="170" height="30" x="1920" y="805"></rect>
-            <text class="name" width="170" height="30" x="1925" y="825"><%= @bracket['L4-M3-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M3-P1'].try(:[], :level) %>" width="170" height="30" x="1925" y="825"><%= @bracket['L4-M3-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="805"></rect>
             <text class="score" width="30" height="30" x="2095" y="825"><%= @bracket['L4-M3-P1'].try(:[], :score) %></text>
+            <polyline points="1920,820 1900,820 1900,910 1880,910" />
         </g>
         <g id="L4-M3-P2">
             <rect width="170" height="30" x="1920" y="985"></rect>
-            <text class="name" width="170" height="30" x="1925" y="1005"><%= @bracket['L4-M3-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M3-P2'].try(:[], :level) %>" width="170" height="30" x="1925" y="1005"><%= @bracket['L4-M3-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="985"></rect>
             <text class="score" width="30" height="30" x="2095" y="1005"><%= @bracket['L4-M3-P2'].try(:[], :score) %></text>
+            <polyline points="1920,1000 1900,1000 1900,910 1880,910" />
         </g>
         <g id="L4-M4-P1">
             <rect width="170" height="30" x="1920" y="1165"></rect>
-            <text class="name" width="170" height="30" x="1925" y="1185"><%= @bracket['L4-M4-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M4-P1'].try(:[], :level) %>" width="170" height="30" x="1925" y="1185"><%= @bracket['L4-M4-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="1165"></rect>
             <text class="score" width="30" height="30" x="2095" y="1185"><%= @bracket['L4-M4-P1'].try(:[], :score) %></text>
+            <polyline points="1920,1180 1900,1180 1900,1270 1880,1270" />
         </g>
         <g id="L4-M4-P2">
             <rect width="170" height="30" x="1920" y="1345"></rect>
-            <text class="name" width="170" height="30" x="1925" y="1365"><%= @bracket['L4-M4-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M4-P2'].try(:[], :level) %>" width="170" height="30" x="1925" y="1365"><%= @bracket['L4-M4-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="1345"></rect>
             <text class="score" width="30" height="30" x="2095" y="1365"><%= @bracket['L4-M4-P2'].try(:[], :score) %></text>
+            <polyline points="1920,1360 1900,1360 1900,1270 1880,1270" />
         </g>
         <g id="L4-M5-P1">
             <rect width="170" height="30" x="1920" y="1525"></rect>
-            <text class="name" width="170" height="30" x="1925" y="1545"><%= @bracket['L4-M5-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M5-P1'].try(:[], :level) %>" width="170" height="30" x="1925" y="1545"><%= @bracket['L4-M5-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="1525"></rect>
             <text class="score" width="30" height="30" x="2095" y="1545"><%= @bracket['L4-M5-P1'].try(:[], :score) %></text>
+            <polyline points="1920,1540 1900,1540 1900,1630 1880,1630" />
         </g>
         <g id="L4-M5-P2">
             <rect width="170" height="30" x="1920" y="1705"></rect>
-            <text class="name" width="170" height="30" x="1925" y="1725"><%= @bracket['L4-M5-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M5-P2'].try(:[], :level) %>" width="170" height="30" x="1925" y="1725"><%= @bracket['L4-M5-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="1705"></rect>
             <text class="score" width="30" height="30" x="2095" y="1725"><%= @bracket['L4-M5-P2'].try(:[], :score) %></text>
+            <polyline points="1920,1720 1900,1720 1900,1630 1880,1630" />
         </g>
         <g id="L4-M6-P1">
             <rect width="170" height="30" x="1920" y="1885"></rect>
-            <text class="name" width="170" height="30" x="1925" y="1905"><%= @bracket['L4-M6-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M6-P1'].try(:[], :level) %>" width="170" height="30" x="1925" y="1905"><%= @bracket['L4-M6-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="1885"></rect>
             <text class="score" width="30" height="30" x="2095" y="1905"><%= @bracket['L4-M6-P1'].try(:[], :score) %></text>
+            <polyline points="1920,1900 1900,1900 1900,1990 1880,1990" />
         </g>
         <g id="L4-M6-P2">
             <rect width="170" height="30" x="1920" y="2065"></rect>
-            <text class="name" width="170" height="30" x="1925" y="2085"><%= @bracket['L4-M6-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M6-P2'].try(:[], :level) %>" width="170" height="30" x="1925" y="2085"><%= @bracket['L4-M6-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="2065"></rect>
             <text class="score" width="30" height="30" x="2095" y="2085"><%= @bracket['L4-M6-P2'].try(:[], :score) %></text>
+            <polyline points="1920,2080 1900,2080 1900,1990 1880,1990" />
         </g>
         <g id="L4-M7-P1">
             <rect width="170" height="30" x="1920" y="2245"></rect>
-            <text class="name" width="170" height="30" x="1925" y="2265"><%= @bracket['L4-M7-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M7-P1'].try(:[], :level) %>" width="170" height="30" x="1925" y="2265"><%= @bracket['L4-M7-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="2245"></rect>
             <text class="score" width="30" height="30" x="2095" y="2265"><%= @bracket['L4-M7-P1'].try(:[], :score) %></text>
+            <polyline points="1920,2260 1900,2260 1900,2350 1880,2350" />
         </g>
         <g id="L4-M7-P2">
             <rect width="170" height="30" x="1920" y="2425"></rect>
-            <text class="name" width="170" height="30" x="1925" y="2445"><%= @bracket['L4-M7-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M7-P2'].try(:[], :level) %>" width="170" height="30" x="1925" y="2445"><%= @bracket['L4-M7-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="2425"></rect>
             <text class="score" width="30" height="30" x="2095" y="2445"><%= @bracket['L4-M7-P2'].try(:[], :score) %></text>
+            <polyline points="1920,2440 1900,2440 1900,2350 1880,2350" />
         </g>
         <g id="L4-M8-P1">
             <rect width="170" height="30" x="1920" y="2605"></rect>
-            <text class="name" width="170" height="30" x="1925" y="2625"><%= @bracket['L4-M8-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M8-P1'].try(:[], :level) %>" width="170" height="30" x="1925" y="2625"><%= @bracket['L4-M8-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="2605"></rect>
             <text class="score" width="30" height="30" x="2095" y="2625"><%= @bracket['L4-M8-P1'].try(:[], :score) %></text>
+            <polyline points="1920,2620 1900,2620 1900,2710 1880,2710" />
         </g>
         <g id="L4-M8-P2">
             <rect width="170" height="30" x="1920" y="2785"></rect>
-            <text class="name" width="170" height="30" x="1925" y="2805"><%= @bracket['L4-M8-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L4-M8-P2'].try(:[], :level) %>" width="170" height="30" x="1925" y="2805"><%= @bracket['L4-M8-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="2090" y="2785"></rect>
             <text class="score" width="30" height="30" x="2095" y="2805"><%= @bracket['L4-M8-P2'].try(:[], :score) %></text>
+            <polyline points="1920,2800 1900,2800 1900,2710 1880,2710" />
         </g>
 
         <!-- Round 5 -->
         <g id="L5-M1-P1">
             <rect width="170" height="30" x="1680" y="175"></rect>
-            <text class="name" width="170" height="30" x="1685" y="195"><%= @bracket['L5-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M1-P1'].try(:[], :level) %>" width="170" height="30" x="1685" y="195"><%= @bracket['L5-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="175"></rect>
             <text class="score" width="30" height="30" x="1855" y="195"><%= @bracket['L5-M1-P1'].try(:[], :score) %></text>
+            <polyline points="1680,190 1660,190 1660,210 1640,210" />
         </g>
         <g id="L5-M1-P2">
             <rect width="170" height="30" x="1680" y="215"></rect>
-            <text class="name" width="170" height="30" x="1685" y="235"><%= @bracket['L5-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M1-P2'].try(:[], :level) %>" width="170" height="30" x="1685" y="235"><%= @bracket['L5-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="215"></rect>
             <text class="score" width="30" height="30" x="1855" y="235"><%= @bracket['L5-M1-P2'].try(:[], :score) %></text>
+            <polyline points="1680,230 1660,230 1660,210 1640,210" />
+            <text class="position" width="100" height"30" x="1750" y="265">Loser B4</text>
         </g>
         <g id="L5-M2-P1">
             <rect width="170" height="30" x="1680" y="535"></rect>
-            <text class="name" width="170" height="30" x="1685" y="555"><%= @bracket['L5-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M2-P1'].try(:[], :level) %>" width="170" height="30" x="1685" y="555"><%= @bracket['L5-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="535"></rect>
             <text class="score" width="30" height="30" x="1855" y="555"><%= @bracket['L5-M2-P1'].try(:[], :score) %></text>
+            <polyline points="1680,550 1660,550 1660,570 1640,570" />
         </g>
         <g id="L5-M2-P2">
             <rect width="170" height="30" x="1680" y="575"></rect>
-            <text class="name" width="170" height="30" x="1685" y="595"><%= @bracket['L5-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M2-P2'].try(:[], :level) %>" width="170" height="30" x="1685" y="595"><%= @bracket['L5-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="575"></rect>
             <text class="score" width="30" height="30" x="1855" y="595"><%= @bracket['L5-M2-P2'].try(:[], :score) %></text>
+            <polyline points="1680,590 1660,590 1660,570 1640,570" />
+            <text class="position" width="100" height"30" x="1750" y="625">Loser B3</text>
         </g>
         <g id="L5-M3-P1">
             <rect width="170" height="30" x="1680" y="895"></rect>
-            <text class="name" width="170" height="30" x="1685" y="915"><%= @bracket['L5-M3-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M3-P1'].try(:[], :level) %>" width="170" height="30" x="1685" y="915"><%= @bracket['L5-M3-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="895"></rect>
             <text class="score" width="30" height="30" x="1855" y="915"><%= @bracket['L5-M3-P1'].try(:[], :score) %></text>
+            <polyline points="1680,910 1660,910 1660,930 1640,930" />
         </g>
         <g id="L5-M3-P2">
             <rect width="170" height="30" x="1680" y="935"></rect>
-            <text class="name" width="170" height="30" x="1685" y="955"><%= @bracket['L5-M3-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M3-P2'].try(:[], :level) %>" width="170" height="30" x="1685" y="955"><%= @bracket['L5-M3-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="935"></rect>
             <text class="score" width="30" height="30" x="1855" y="955"><%= @bracket['L5-M3-P2'].try(:[], :score) %></text>
+            <polyline points="1680,950 1660,950 1660,930 1640,930" />
+            <text class="position" width="100" height"30" x="1750" y="985">Loser B2</text>
         </g>
         <g id="L5-M4-P1">
             <rect width="170" height="30" x="1680" y="1255"></rect>
-            <text class="name" width="170" height="30" x="1685" y="1275"><%= @bracket['L5-M4-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M4-P1'].try(:[], :level) %>" width="170" height="30" x="1685" y="1275"><%= @bracket['L5-M4-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="1255"></rect>
             <text class="score" width="30" height="30" x="1855" y="1275"><%= @bracket['L5-M4-P1'].try(:[], :score) %></text>
+            <polyline points="1680,1270 1660,1270 1660,1290 1640,1290" />
         </g>
         <g id="L5-M4-P2">
             <rect width="170" height="30" x="1680" y="1295"></rect>
-            <text class="name" width="170" height="30" x="1685" y="1315"><%= @bracket['L5-M4-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M4-P2'].try(:[], :level) %>" width="170" height="30" x="1685" y="1315"><%= @bracket['L5-M4-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="1295"></rect>
             <text class="score" width="30" height="30" x="1855" y="1315"><%= @bracket['L5-M4-P2'].try(:[], :score) %></text>
+            <polyline points="1680,1310 1660,1310 1660,1290 1640,1290" />
+            <text class="position" width="100" height"30" x="1750" y="1345">Loser B1</text>
         </g>
         <g id="L5-M5-P1">
             <rect width="170" height="30" x="1680" y="1615"></rect>
-            <text class="name" width="170" height="30" x="1685" y="1635"><%= @bracket['L5-M5-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M5-P1'].try(:[], :level) %>" width="170" height="30" x="1685" y="1635"><%= @bracket['L5-M5-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="1615"></rect>
             <text class="score" width="30" height="30" x="1855" y="1635"><%= @bracket['L5-M5-P1'].try(:[], :score) %></text>
+            <polyline points="1680,1630 1660,1630 1660,1650 1640,1650" />
         </g>
         <g id="L5-M5-P2">
             <rect width="170" height="30" x="1680" y="1655"></rect>
-            <text class="name" width="170" height="30" x="1685" y="1675"><%= @bracket['L5-M5-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M5-P2'].try(:[], :level) %>" width="170" height="30" x="1685" y="1675"><%= @bracket['L5-M5-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="1655"></rect>
             <text class="score" width="30" height="30" x="1855" y="1675"><%= @bracket['L5-M5-P2'].try(:[], :score) %></text>
+            <polyline points="1680,1670 1660,1670 1660,1650 1640,1650" />
+            <text class="position" width="100" height"30" x="1750" y="1705">Loser B8</text>
         </g>
         <g id="L5-M6-P1">
             <rect width="170" height="30" x="1680" y="1975"></rect>
-            <text class="name" width="170" height="30" x="1685" y="1995"><%= @bracket['L5-M6-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M6-P1'].try(:[], :level) %>" width="170" height="30" x="1685" y="1995"><%= @bracket['L5-M6-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="1975"></rect>
             <text class="score" width="30" height="30" x="1855" y="1995"><%= @bracket['L5-M6-P1'].try(:[], :score) %></text>
+            <polyline points="1680,1990 1660,1990 1660,2010 1640,2010" />
         </g>
         <g id="L5-M6-P2">
             <rect width="170" height="30" x="1680" y="2015"></rect>
-            <text class="name" width="170" height="30" x="1685" y="2035"><%= @bracket['L5-M6-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M6-P2'].try(:[], :level) %>" width="170" height="30" x="1685" y="2035"><%= @bracket['L5-M6-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="2015"></rect>
             <text class="score" width="30" height="30" x="1855" y="2035"><%= @bracket['L5-M6-P2'].try(:[], :score) %></text>
+            <polyline points="1680,2030 1660,2030 1660,2010 1640,2010" />
+            <text class="position" width="100" height"30" x="1750" y="2065">Loser B7</text>
         </g>
         <g id="L5-M7-P1">
             <rect width="170" height="30" x="1680" y="2335"></rect>
-            <text class="name" width="170" height="30" x="1685" y="2355"><%= @bracket['L5-M7-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M7-P1'].try(:[], :level) %>" width="170" height="30" x="1685" y="2355"><%= @bracket['L5-M7-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="2335"></rect>
             <text class="score" width="30" height="30" x="1855" y="2355"><%= @bracket['L5-M7-P1'].try(:[], :score) %></text>
+            <polyline points="1680,2350 1660,2350 1660,2370 1640,2370" />
         </g>
         <g id="L5-M7-P2">
             <rect width="170" height="30" x="1680" y="2375"></rect>
-            <text class="name" width="170" height="30" x="1685" y="2395"><%= @bracket['L5-M7-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M7-P2'].try(:[], :level) %>" width="170" height="30" x="1685" y="2395"><%= @bracket['L5-M7-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="2375"></rect>
             <text class="score" width="30" height="30" x="1855" y="2395"><%= @bracket['L5-M7-P2'].try(:[], :score) %></text>
+            <polyline points="1680,2390 1660,2390 1660,2370 1640,2370" />
+            <text class="position" width="100" height"30" x="1750" y="2425">Loser B6</text>
         </g>
         <g id="L5-M8-P1">
             <rect width="170" height="30" x="1680" y="2695"></rect>
-            <text class="name" width="170" height="30" x="1685" y="2715"><%= @bracket['L5-M8-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M8-P1'].try(:[], :level) %>" width="170" height="30" x="1685" y="2715"><%= @bracket['L5-M8-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="2695"></rect>
             <text class="score" width="30" height="30" x="1855" y="2715"><%= @bracket['L5-M8-P1'].try(:[], :score) %></text>
+            <polyline points="1680,2710 1660,2710 1660,2730 1640,2730" />
         </g>
         <g id="L5-M8-P2">
             <rect width="170" height="30" x="1680" y="2735"></rect>
-            <text class="name" width="170" height="30" x="1685" y="2755"><%= @bracket['L5-M8-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L5-M8-P2'].try(:[], :level) %>" width="170" height="30" x="1685" y="2755"><%= @bracket['L5-M8-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1850" y="2735"></rect>
             <text class="score" width="30" height="30" x="1855" y="2755"><%= @bracket['L5-M8-P2'].try(:[], :score) %></text>
+            <polyline points="1680,2750 1660,2750 1660,2730 1640,2730" />
+            <text class="position" width="100" height"30" x="1750" y="2785">Loser B5</text>
         </g>
 
         <!-- Round 6 -->
         <g id="L6-M1-P1">
             <rect width="170" height="30" x="1440" y="195"></rect>
-            <text class="name" width="170" height="30" x="1445" y="215"><%= @bracket['L6-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L6-M1-P1'].try(:[], :level) %>" width="170" height="30" x="1445" y="215"><%= @bracket['L6-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1610" y="195"></rect>
             <text class="score" width="30" height="30" x="1615" y="215"><%= @bracket['L6-M1-P1'].try(:[], :score) %></text>
+            <polyline points="1440,210 1420,210 1420,390 1400,390" />
         </g>
         <g id="L6-M1-P2">
             <rect width="170" height="30" x="1440" y="555"></rect>
-            <text class="name" width="170" height="30" x="1445" y="575"><%= @bracket['L6-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L6-M1-P2'].try(:[], :level) %>" width="170" height="30" x="1445" y="575"><%= @bracket['L6-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1610" y="555"></rect>
             <text class="score" width="30" height="30" x="1615" y="575"><%= @bracket['L6-M1-P2'].try(:[], :score) %></text>
+            <polyline points="1440,570 1420,570 1420,390 1400,390" />
         </g>
         <g id="L6-M2-P1">
             <rect width="170" height="30" x="1440" y="915"></rect>
-            <text class="name" width="170" height="30" x="1445" y="935"><%= @bracket['L6-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L6-M2-P1'].try(:[], :level) %>" width="170" height="30" x="1445" y="935"><%= @bracket['L6-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1610" y="915"></rect>
             <text class="score" width="30" height="30" x="1615" y="935"><%= @bracket['L6-M2-P1'].try(:[], :score) %></text>
+            <polyline points="1440,930 1420,930 1420,1110 1400,1110" />
         </g>
+        <polyline class="arrow" points="1520,1425 1535,1405 1550,1425 1540,1425 1540,1455 1530,1455 1530,1425 1520,1425" />
+        <text class="position" width="30" height"30" x="1485" y="1490">13, 14, 15 &amp; 16th</text>
+        <polyline class="arrow" points="1530,1515 1540,1515 1540,1545 1550,1545 1535,1565 1520,1545 1530,1545 1530,1515" />
         <g id="L6-M2-P2">
             <rect width="170" height="30" x="1440" y="1275"></rect>
-            <text class="name" width="170" height="30" x="1445" y="1295"><%= @bracket['L6-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L6-M2-P2'].try(:[], :level) %>" width="170" height="30" x="1445" y="1295"><%= @bracket['L6-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1610" y="1275"></rect>
             <text class="score" width="30" height="30" x="1615" y="1295"><%= @bracket['L6-M2-P2'].try(:[], :score) %></text>
+            <polyline points="1440,1290 1420,1290 1420,1110 1400,1110" />
         </g>
         <g id="L6-M3-P1">
             <rect width="170" height="30" x="1440" y="1635"></rect>
-            <text class="name" width="170" height="30" x="1445" y="1655"><%= @bracket['L6-M3-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L6-M3-P1'].try(:[], :level) %>" width="170" height="30" x="1445" y="1655"><%= @bracket['L6-M3-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1610" y="1635"></rect>
             <text class="score" width="30" height="30" x="1615" y="1655"><%= @bracket['L6-M3-P1'].try(:[], :score) %></text>
+            <polyline points="1440,1650 1420,1650 1420,1830 1400,1830" />
         </g>
         <g id="L6-M3-P2">
             <rect width="170" height="30" x="1440" y="1995"></rect>
-            <text class="name" width="170" height="30" x="1445" y="2015"><%= @bracket['L6-M3-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L6-M3-P2'].try(:[], :level) %>" width="170" height="30" x="1445" y="2015"><%= @bracket['L6-M3-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1610" y="1995"></rect>
             <text class="score" width="30" height="30" x="1615" y="2015"><%= @bracket['L6-M3-P2'].try(:[], :score) %></text>
+            <polyline points="1440,2010 1420,2010 1420,1830 1400,1830" />
         </g>
         <g id="L6-M4-P1">
             <rect width="170" height="30" x="1440" y="2355"></rect>
-            <text class="name" width="170" height="30" x="1445" y="2375"><%= @bracket['L6-M4-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L6-M4-P1'].try(:[], :level) %>" width="170" height="30" x="1445" y="2375"><%= @bracket['L6-M4-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1610" y="2355"></rect>
             <text class="score" width="30" height="30" x="1615" y="2375"><%= @bracket['L6-M4-P1'].try(:[], :score) %></text>
+            <polyline points="1440,2370 1420,2370 1420,2550 1400,2550" />
         </g>
         <g id="L6-M4-P2">
             <rect width="170" height="30" x="1440" y="2715"></rect>
-            <text class="name" width="170" height="30" x="1445" y="2735"><%= @bracket['L6-M4-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L6-M4-P2'].try(:[], :level) %>" width="170" height="30" x="1445" y="2735"><%= @bracket['L6-M4-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1610" y="2715"></rect>
             <text class="score" width="30" height="30" x="1615" y="2735"><%= @bracket['L6-M4-P2'].try(:[], :score) %></text>
+            <polyline points="1440,2730 1420,2730 1420,2550 1400,2550" />
         </g>
 
         <!-- Round 7 -->
         <g id="L7-M1-P1">
             <rect width="170" height="30" x="1200" y="375"></rect>
-            <text class="name" width="170" height="30" x="1205" y="395"><%= @bracket['L7-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L7-M1-P1'].try(:[], :level) %>" width="170" height="30" x="1205" y="395"><%= @bracket['L7-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1370" y="375"></rect>
             <text class="score" width="30" height="30" x="1375" y="395"><%= @bracket['L7-M1-P1'].try(:[], :score) %></text>
+            <polyline points="1200,390 1180,390 1180,410 1160,410" />
         </g>
         <g id="L7-M1-P2">
             <rect width="170" height="30" x="1200" y="415"></rect>
-            <text class="name" width="170" height="30" x="1205" y="435"><%= @bracket['L7-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L7-M1-P2'].try(:[], :level) %>" width="170" height="30" x="1205" y="435"><%= @bracket['L7-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1370" y="415"></rect>
             <text class="score" width="30" height="30" x="1375" y="435"><%= @bracket['L7-M1-P2'].try(:[], :score) %></text>
+            <polyline points="1200,430 1180,430 1180,410 1160,410" />
+            <text class="position" width="100" height"30" x="1270" y="465">Loser C3</text>
         </g>
         <g id="L7-M2-P1">
             <rect width="170" height="30" x="1200" y="1095"></rect>
-            <text class="name" width="170" height="30" x="1205" y="1115"><%= @bracket['L7-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L7-M2-P1'].try(:[], :level) %>" width="170" height="30" x="1205" y="1115"><%= @bracket['L7-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1370" y="1095"></rect>
             <text class="score" width="30" height="30" x="1375" y="1115"><%= @bracket['L7-M2-P1'].try(:[], :score) %></text>
+            <polyline points="1200,1110 1180,1110 1180,1130 1160,1130" />
         </g>
         <g id="L7-M2-P2">
             <rect width="170" height="30" x="1200" y="1135"></rect>
-            <text class="name" width="170" height="30" x="1205" y="1155"><%= @bracket['L7-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L7-M2-P2'].try(:[], :level) %>" width="170" height="30" x="1205" y="1155"><%= @bracket['L7-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1370" y="1135"></rect>
             <text class="score" width="30" height="30" x="1375" y="1155"><%= @bracket['L7-M2-P2'].try(:[], :score) %></text>
+            <polyline points="1200,1150 1180,1150 1180,1130 1160,1130" />
+            <text class="position" width="100" height"30" x="1270" y="1185">Loser C4</text>
         </g>
+        <polyline class="arrow" points="1290,1425 1305,1405 1320,1425 1310,1425 1310,1455 1300,1455 1300,1425 1290,1425" />
+        <text class="position" width="30" height"30" x="1255" y="1490">9, 10, 11 &amp; 12th</text>
+        <polyline class="arrow" points="1300,1515 1310,1515 1310,1545 1320,1545 1305,1565 1290,1545 1300,1545 1300,1515" />
         <g id="L7-M3-P1">
             <rect width="170" height="30" x="1200" y="1815"></rect>
-            <text class="name" width="170" height="30" x="1205" y="1835"><%= @bracket['L7-M3-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L7-M3-P1'].try(:[], :level) %>" width="170" height="30" x="1205" y="1835"><%= @bracket['L7-M3-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1370" y="1815"></rect>
             <text class="score" width="30" height="30" x="1375" y="1835"><%= @bracket['L7-M3-P1'].try(:[], :score) %></text>
+            <polyline points="1200,1830 1180,1830 1180,1850 1160,1850" />
         </g>
         <g id="L7-M3-P2">
             <rect width="170" height="30" x="1200" y="1855"></rect>
-            <text class="name" width="170" height="30" x="1205" y="1875"><%= @bracket['L7-M3-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L7-M3-P2'].try(:[], :level) %>" width="170" height="30" x="1205" y="1875"><%= @bracket['L7-M3-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1370" y="1855"></rect>
             <text class="score" width="30" height="30" x="1375" y="1875"><%= @bracket['L7-M3-P2'].try(:[], :score) %></text>
+            <polyline points="1200,1870 1180,1870 1180,1850 1160,1850" />
+            <text class="position" width="100" height"30" x="1270" y="1905">Loser C1</text>
         </g>
         <g id="L7-M4-P1">
             <rect width="170" height="30" x="1200" y="2535"></rect>
-            <text class="name" width="170" height="30" x="1205" y="2555"><%= @bracket['L7-M4-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L7-M4-P1'].try(:[], :level) %>" width="170" height="30" x="1205" y="2555"><%= @bracket['L7-M4-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1370" y="2535"></rect>
             <text class="score" width="30" height="30" x="1375" y="2555"><%= @bracket['L7-M4-P1'].try(:[], :score) %></text>
+            <polyline points="1200,2550 1180,2550 1180,2570 1160,2570" />
         </g>
         <g id="L7-M4-P2">
             <rect width="170" height="30" x="1200" y="2575"></rect>
-            <text class="name" width="170" height="30" x="1205" y="2595"><%= @bracket['L7-M4-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L7-M4-P2'].try(:[], :level) %>" width="170" height="30" x="1205" y="2595"><%= @bracket['L7-M4-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1370" y="2575"></rect>
             <text class="score" width="30" height="30" x="1375" y="2595"><%= @bracket['L7-M4-P2'].try(:[], :score) %></text>
+            <polyline points="1200,2590 1180,2590 1180,2570 1160,2570" />
+            <text class="position" width="100" height"30" x="1270" y="2625">Loser C2</text>
         </g>
 
         <!-- Round 8 -->
         <g id="L8-M1-P1">
             <rect width="170" height="30" x="960" y="395"></rect>
-            <text class="name" width="170" height="30" x="965" y="415"><%= @bracket['L8-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L8-M1-P1'].try(:[], :level) %>" width="170" height="30" x="965" y="415"><%= @bracket['L8-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1130" y="395"></rect>
             <text class="score" width="30" height="30" x="1135" y="415"><%= @bracket['L8-M1-P1'].try(:[], :score) %></text>
+            <polyline points="960,410 940,410 940,770 920,770" />
         </g>
         <g id="L8-M1-P2">
             <rect width="170" height="30" x="960" y="1115"></rect>
-            <text class="name" width="170" height="30" x="965" y="1135"><%= @bracket['L8-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L8-M1-P2'].try(:[], :level) %>" width="170" height="30" x="965" y="1135"><%= @bracket['L8-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1130" y="1115"></rect>
             <text class="score" width="30" height="30" x="1135" y="1135"><%= @bracket['L8-M1-P2'].try(:[], :score) %></text>
+            <polyline points="960,1130 940,1130 940,770 920,770" />
         </g>
+        <polyline class="arrow" points="1040,1425 1055,1405 1070,1425 1060,1425 1060,1455 1050,1455 1050,1425 1040,1425" />
+        <text class="position" width="30" height"30" x="1030" y="1490">7th &amp; 8th</text>
+        <polyline class="arrow" points="1050,1515 1060,1515 1060,1545 1070,1545 1055,1565 1040,1545 1050,1545 1050,1515" />
         <g id="L8-M2-P1">
             <rect width="170" height="30" x="960" y="1835"></rect>
-            <text class="name" width="170" height="30" x="965" y="1855"><%= @bracket['L8-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L8-M2-P1'].try(:[], :level) %>" width="170" height="30" x="965" y="1855"><%= @bracket['L8-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1130" y="1835"></rect>
             <text class="score" width="30" height="30" x="1135" y="1855"><%= @bracket['L8-M2-P1'].try(:[], :score) %></text>
+            <polyline points="960,1850 940,1850 940,2210 920,2210" />
         </g>
         <g id="L8-M2-P2">
             <rect width="170" height="30" x="960" y="2555"></rect>
-            <text class="name" width="170" height="30" x="965" y="2575"><%= @bracket['L8-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L8-M2-P2'].try(:[], :level) %>" width="170" height="30" x="965" y="2575"><%= @bracket['L8-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="1130" y="2555"></rect>
             <text class="score" width="30" height="30" x="1135" y="2575"><%= @bracket['L8-M2-P2'].try(:[], :score) %></text>
+            <polyline points="960,2570 940,2570 940,2210 920,2210" />
         </g>
 
         <!-- Round 9 -->
         <g id="L9-M1-P1">
             <rect width="170" height="30" x="720" y="755"></rect>
-            <text class="name" width="170" height="30" x="725" y="775"><%= @bracket['L9-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L9-M1-P1'].try(:[], :level) %>" width="170" height="30" x="725" y="775"><%= @bracket['L9-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="890" y="755"></rect>
             <text class="score" width="30" height="30" x="895" y="775"><%= @bracket['L9-M1-P1'].try(:[], :score) %></text>
+            <polyline points="720,770 700,770 700,790 680,790" />
         </g>
         <g id="L9-M1-P2">
             <rect width="170" height="30" x="720" y="795"></rect>
-            <text class="name" width="170" height="30" x="725" y="815"><%= @bracket['L9-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L9-M1-P2'].try(:[], :level) %>" width="170" height="30" x="725" y="815"><%= @bracket['L9-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="890" y="795"></rect>
             <text class="score" width="30" height="30" x="895" y="815"><%= @bracket['L9-M1-P2'].try(:[], :score) %></text>
+            <polyline points="720,810 700,810 700,790 680,790" />
+            <text class="position" width="100" height"30" x="790" y="845">Loser D1</text>
         </g>
+        <polyline class="arrow" points="795,1425 810,1405 825,1425 815,1425 815,1455 805,1455 805,1425 795,1425" />
+        <text class="position" width="30" height"30" x="785" y="1490">5th &amp; 6th</text>
+        <polyline class="arrow" points="805,1515 815,1515 815,1545 825,1545 810,1565 795,1545 805,1545 805,1515" />
         <g id="L9-M2-P1">
             <rect width="170" height="30" x="720" y="2195"></rect>
-            <text class="name" width="170" height="30" x="725" y="2215"><%= @bracket['L9-M2-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L9-M2-P1'].try(:[], :level) %>" width="170" height="30" x="725" y="2215"><%= @bracket['L9-M2-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="890" y="2195"></rect>
             <text class="score" width="30" height="30" x="895" y="2215"><%= @bracket['L9-M2-P1'].try(:[], :score) %></text>
+            <polyline points="720,2210 700,2210 700,2230 680,2230" />
         </g>
         <g id="L9-M2-P2">
             <rect width="170" height="30" x="720" y="2235"></rect>
-            <text class="name" width="170" height="30" x="725" y="2255"><%= @bracket['L9-M2-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L9-M2-P2'].try(:[], :level) %>" width="170" height="30" x="725" y="2255"><%= @bracket['L9-M2-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="890" y="2235"></rect>
             <text class="score" width="30" height="30" x="895" y="2255"><%= @bracket['L9-M2-P2'].try(:[], :score) %></text>
+            <polyline points="720,2250 700,2250 700,2230 680,2230" />
+            <text class="position" width="100" height"30" x="790" y="2285">Loser D2</text>
         </g>
 
         <!-- Round 10 -->
         <g id="L10-M1-P1">
             <rect width="170" height="30" x="480" y="775"></rect>
-            <text class="name" width="170" height="30" x="485" y="795"><%= @bracket['L10-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L10-M1-P1'].try(:[], :level) %>" width="170" height="30" x="485" y="795"><%= @bracket['L10-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="650" y="775"></rect>
             <text class="score" width="30" height="30" x="655" y="795"><%= @bracket['L10-M1-P1'].try(:[], :score) %></text>
+            <polyline points="480,790 460,790 460,1510 440,1510" />
         </g>
+        <polyline class="arrow" points="560,1425 575,1405 590,1425 580,1425 580,1455 570,1455 570,1425 560,1425" />
+        <text class="position" width="30" height"30" x="565" y="1490">4th</text>
+        <polyline class="arrow" points="570,1515 580,1515 580,1545 590,1545 575,1565 560,1545 570,1545 570,1515" />
         <g id="L10-M1-P2">
             <rect width="170" height="30" x="480" y="2215"></rect>
-            <text class="name" width="170" height="30" x="485" y="2235"><%= @bracket['L10-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L10-M1-P2'].try(:[], :level) %>" width="170" height="30" x="485" y="2235"><%= @bracket['L10-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="650" y="2215"></rect>
             <text class="score" width="30" height="30" x="655" y="2235"><%= @bracket['L10-M1-P2'].try(:[], :score) %></text>
+            <polyline points="480,2230 460,2230 460,1510 440,1510" />
         </g>
 
         <!-- Round 11 -->
+        <text class="position" width="30" height"30" x="325" y="1485">3rd</text>
         <g id="L11-M1-P1">
             <rect width="170" height="30" x="240" y="1495"></rect>
-            <text class="name" width="170" height="30" x="245" y="1515"><%= @bracket['L11-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L11-M1-P1'].try(:[], :level) %>" width="170" height="30" x="245" y="1515"><%= @bracket['L11-M1-P1'].try(:[], :name) %></text>
             <rect width="30" height="30" x="410" y="1495"></rect>
             <text class="score" width="30" height="30" x="415" y="1515"><%= @bracket['L11-M1-P1'].try(:[], :score) %></text>
             <polyline points="240,1505 220,1505 220,1530 200,1530" />
         </g>
         <g id="L11-M1-P2">
             <rect width="170" height="30" x="240" y="1535"></rect>
-            <text class="name  <%= @bracket['L11-M1-P2'].try(:[], :level) %>" width="170" height="30" x="245" y="1555"><%= @bracket['L11-M1-P2'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L11-M1-P2'].try(:[], :level) %>" width="170" height="30" x="245" y="1555"><%= @bracket['L11-M1-P2'].try(:[], :name) %></text>
             <rect width="30" height="30" x="410" y="1535"></rect>
             <text class="score" width="30" height="30" x="415" y="1555"><%= @bracket['L11-M1-P2'].try(:[], :score) %></text>
             <polyline points="240,1550 220,1550 220,1530 200,1530" />
-            <text class="position" width="100" height"30" x="310" y="1585">Loser E2</text>
+            <text class="position" width="100" height"30" x="310" y="1585">Loser E1</text>
         </g>
 
         <!-- Round 12 -->
         <g id="L12-M1-P1">
             <rect width="200" height="30" x="0" y="1515"></rect>
-            <text class="name" width="200" height="30" x="5" y="1535"><%= @bracket['L12-M1-P1'].try(:[], :name) %></text>
+            <text class="name <%= @bracket['L12-M1-P1'].try(:[], :level) %>" width="200" height="30" x="5" y="1535"><%= @bracket['L12-M1-P1'].try(:[], :name) %></text>
             <text class="position" width="100" height"30" x="70" y="1565">To Finals</text>
         </g>
     </svg>
@@ -1877,5 +1999,5 @@
 <script>
     setTimeout(function () {
         window.location.reload(1);
-    }, 30000);
+    }, 60000);
 </script>
