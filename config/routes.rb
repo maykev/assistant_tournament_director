@@ -2,7 +2,7 @@ Rails.application.routes.draw do
     devise_for :admins
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-    root 'match#index'
+    root 'match#junior_nationals'
 
     resources :tournaments, only: [:index, :show]
     get 'tournaments/:id/players' => 'tournaments#players'

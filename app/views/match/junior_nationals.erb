@@ -1,0 +1,51 @@
+<div class="container-fluid junior-nationals">
+  <div class="row header">
+    <div class="logo visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+        Live Scoring
+        <br>
+        <span class="powered-by">Powered by Contact Point Media</span>
+    </div>
+  </div>
+
+  <% if @in_progress_matches.present? %>
+      <div class="row matches">
+        <% @in_progress_matches.each do |match| %>
+            <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block match">
+              <table>
+                <tr>
+                  <td colspan="2" class="table-number">Table <%= match.table_number %></td>
+                </tr>
+                <tr>
+                  <td class="player-name"><%= match.match_players.order(:id).first.player.full_name %></td>
+                  <td class="player-score"><%= match.match_players.order(:id).first.score %></td>
+                </tr>
+                <tr>
+                  <td class="player-name"><%= match.match_players.order(:id).last.player.full_name %></td>
+                  <td class="player-score"><%= match.match_players.order(:id).last.score %></td>
+                </tr>
+              </table>
+            </div>
+        <% end %>
+      </div>
+  <% else %>
+      <div class="row no-matches">There are currently no matches in progress</div>
+  <% end %>
+
+  <div class="row sponsors">
+    <div class="col-sm-4 sponsor">
+      <%= image_tag("junior_nationals/simonis.png", { class: 'img-responsive' }) %>
+    </div>
+    <div class="col-sm-4 sponsor">
+      <%= image_tag("junior_nationals/diamond.png", { class: 'img-responsive' }) %>
+    </div>
+    <div class="col-sm-4 sponsor">
+      <%= image_tag("junior_nationals/kamui.png", { class: 'img-responsive' }) %>
+    </div>
+  </div>
+</div>
+
+<script>
+    setTimeout(function () {
+        window.location.reload(1);
+    }, 30000);
+</script>

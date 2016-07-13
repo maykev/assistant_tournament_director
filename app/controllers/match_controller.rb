@@ -43,6 +43,11 @@ class MatchController < ApplicationController
     end
   end
 
+  def junior_nationals
+      @in_progress_matches = Match.includes(:match_players).where(status: :in_progress).order(:table_number)
+      render :junior_nationals
+  end
+
   def create
     player_1 = Player.find(params[:players][0][:id])
     player_2 = Player.find(params[:players][1][:id])
