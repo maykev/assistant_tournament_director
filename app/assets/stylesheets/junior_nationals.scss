@@ -78,18 +78,19 @@ body {
 
   .no-matches {
     background-color: white;
-    border-top: 10px solid rgba(242, 186, 53, 1);
+    border-top: 5px solid rgba(242, 186, 53, 1);
     font-size: 40px;
     padding-left: 15px;
   }
 
   .sponsors {
       background: white;
+      text-align: center;
     border-top: 5px solid rgba(242, 186, 53, 1);
     border-bottom: 5px solid rgba(242, 186, 53, 1);
 
     .sponsor {
-      height: 190px;
+      height: 170px;
       text-align: center;
       padding: 25px 15px;
     }
