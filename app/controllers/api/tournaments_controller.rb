@@ -71,6 +71,6 @@ class Api::TournamentsController < ApplicationController
 
         render json: available_tables.to_json
     rescue ActiveRecord::RecordNotFound
-        render json: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].to_json
+        head :not_found
     end
 end
