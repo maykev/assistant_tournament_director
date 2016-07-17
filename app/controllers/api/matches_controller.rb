@@ -12,9 +12,12 @@ class Api::MatchesController < ApplicationController
                 next
             end
 
-            winners_side = match.bracket_position.start_with?('W')
-            round_number = match.bracket_position.slice!(1, match.bracket_position.index('-') - 1).to_i
-            is_final = winners_side && (Math.log2(tournament.players.length).ceil + 1) == round_number
+            if tournament.mode == :full
+                winners_side = match.bracket_position.start_with?('W')
+                round_number = match.bracket_position.slice!(1, match.bracket_position.index('-') - 1).to_i
+                is_final = winners_side && (Math.log2(tournament.players.length).ceil + 1) == round_number
+            end
+            
             matchJson = {
                 id: match.id,
                 tournament_id: tournament.id,
