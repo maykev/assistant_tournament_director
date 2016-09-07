@@ -17,7 +17,7 @@ class Api::MatchesController < ApplicationController
                 round_number = match.bracket_position.slice!(1, match.bracket_position.index('-') - 1).to_i
                 is_final = winners_side && (Math.log2(tournament.players.length).ceil + 1) == round_number
             end
-            
+
             matchJson = {
                 id: match.id,
                 tournament_id: tournament.id,
@@ -69,6 +69,7 @@ class Api::MatchesController < ApplicationController
 
         matchJson = {
             id: match.id,
+            tournament_id: tournament.id,
             race: tournament.reload.race,
             players: []
         }
