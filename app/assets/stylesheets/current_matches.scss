@@ -1,73 +1,59 @@
 .current-matches {
-  padding: 15px;
-  background-color: black;
+  background-color: #22262B;
 
-  p {
-    font-size: 16px;
-    padding: 10px 0px 0px 20px;
+  .title {
+      font-size: 20px;
+      color: #d5d9dd;
+      display: inline;
+
+      .logo {
+          padding: 10px;
+          height: 120px;
+      }
   }
 
-  .header {
-    .logo {
-      background: image-url('mezz_west_logo.png') no-repeat left center;
-      width: 400px;
-      height: 150px;
-      padding-left: 170px;
-      padding-top: 45px;
-      margin-bottom: 15px;
-      font-size: 40px;
-      color: white;
+  .title-sponsors {
+      display: inline;
 
-      .powered-by {
-          float: right;
-          font-size: 12px;
+      .mezz,
+      .west-state-billiard-supply {
+          padding: 35px 10px 0px 10px;
       }
-    }
+  }
 
-    .title-sponsor {
-      height: 115px;
-      text-align: center;
-      float: right;
-
-      img.mezz {
-        padding: 35px 15px;
-      }
-
-      img.west-state-billiard-supply {
-        padding: 50px 20px;
-      }
-    }
+  p {
+    font-size: 14px;
   }
 
   .matches {
+    padding: 10px;
     background-color: white;
-    border-top: 10px solid rgba(242, 186, 53, 1);
 
     .match {
+      display: inline-block;;
       background: image-url('table.png') no-repeat left center;
-      width: 254px;
-      height: 127px;
-      padding: 20px;
-      margin: 0px 10px 10px 10px;
-      color: white;
+      width: 220px;
+      height: 110px;
+      padding: 20px 20px;
+      color: whitesmoke;
 
       table {
         width: 100%;
       }
 
       .table-number {
-        font-size: 14px;
-        padding-bottom: 5px;
+        font-size: 12px;
+        padding-bottom: 3px;
         text-align: center;
       }
 
       .player-name {
-        font-size: 20px;
+        font-size: 16px;
         text-align: left;
       }
 
       .player-score {
-        font-size: 20px;
+        font-size: 16px;
         text-align: right;
       }
     }
@@ -75,18 +61,12 @@
 
   .no-matches {
     background-color: white;
-    border-top: 10px solid rgba(242, 186, 53, 1);
-    font-size: 40px;
-    padding-left: 15px;
+    font-size: 20px;
+    padding: 10px;
   }
 
   .sponsors {
-    border-top: 10px solid rgba(242, 186, 53, 1);
-
-    .sponsor {
-      height: 115px;
-      text-align: center;
-      padding: 25px 15px;
-    }
+      padding: 10px;
+      width: 100%;
   }
 }

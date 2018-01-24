@@ -1,13 +1,12 @@
 <div class="container-fluid current-matches">
   <div class="row header">
-    <div class="logo visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+    <div class="title">
+        <%= image_tag("mezz_west_logo_32.png", class: 'logo') %>
         Live Scoring
-        <br>
-        <span class="powered-by">Powered by Contact Point Media</span>
     </div>
-    <div class="title-sponsor visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
-      <%= image_tag("mezz_cues.png", class: "mezz") %>
-      <%= image_tag("west_state_billiards_supply.png", class: "west-state-billiard-supply") %>
+    <div class="title-sponsors">
+      <%= image_tag("west_state_billiards_supply.png", class: "west-state-billiard-supply pull-right") %>
+      <%= image_tag("mezz_cues.png", class: "mezz pull-right") %>
     </div>
   </div>
 
@@ -15,7 +14,7 @@
       <div class="row matches">
         <p><strong>All matches are race to 9 (finals race to 11).</strong>  This page will refresh automatically every 30 seconds.</p>
         <% @in_progress_matches.each do |match| %>
-            <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block match">
+            <div class="match">
               <table>
                 <tr>
                   <td colspan="2" class="table-number">Table <%= match.table_number %></td>
@@ -36,45 +35,13 @@
       <div class="row no-matches">There are currently no matches in progress</div>
   <% end %>
 
-  <div class="row sponsors">
-    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
-      <%= image_tag("aramith.png") %>
-    </div>
-    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
-      <%= image_tag("andy_cloth.png") %>
-    </div>
-    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
-      <%= image_tag("tony_rodriguez_remax.png") %>
-    </div>
-    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
-      <%= image_tag("zan_tips.png") %>
-    </div>
-    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
-      <%= image_tag("on_the_wire.png") %>
-    </div>
-    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
-      <%= image_tag("csi.png") %>
-    </div>
-    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
-      <%= image_tag("james_hanshew.png") %>
-    </div>
-    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
-      <%= image_tag("turtle_rack.png") %>
-    </div>
-    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
-      <%= image_tag("kurzweils.png") %>
-    </div>
-    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
-      <%= image_tag("fast_and_loose_designs.png") %>
-    </div>
-    <div class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block sponsor">
-      <%= image_tag("qk-s.png") %>
-    </div>
+  <div>
+      <%= image_tag("sponsors_64.png", :class => "sponsors") %>
   </div>
 </div>
 
-<script>
+<!-- <script>
     setTimeout(function () {
         window.location.reload(1);
     }, 30000);
-</script>
+</script> -->
