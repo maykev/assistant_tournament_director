@@ -34,14 +34,17 @@ class TournamentsController < ApplicationController
                 round = position_elements[0].slice(1, position_elements[0].length - 1).to_i
                 winners_side = position_elements[0].start_with?('W')
 
-                if !winners_side && loser_rounds === round || winners_side && winner_rounds === round then
-                    # Don't add anything
+                # Figure out which one is missing and fake it
+                if match_players.size === 1 then
+                    position = match_players.first.position === 1 ? 2 : 1
+                    fake_match_player = MatchPlayer.new()
+                    fake_match_player.position = position
+                    fake_match_player.score = nil
+                    match_players.push(fake_match_player)
                 else
-                    # Figure out which one is missing and fake it
-                    if match_players.size === 1 then
-                        position = match_players.first.position === 1 ? 2 : 1
+                    if !winners_side && loser_rounds === round || winners_side && winner_rounds === round then
                         fake_match_player = MatchPlayer.new()
-                        fake_match_player.position = position
+                        fake_match_player.position = 1
                         fake_match_player.score = nil
                         match_players.push(fake_match_player)
                     else
