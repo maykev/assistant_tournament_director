@@ -27,9 +27,9 @@
                     <polyline class="arrow" points="<%= slot[:x] + 90 %>,<%= slot[:multi_finish][:y] + 25 %> <%= slot[:x] + 100 %>,<%= slot[:multi_finish][:y] + 25 %> <%= slot[:x] + 100 %>,<%= slot[:multi_finish][:y] + 45 %> <%= slot[:x] + 110 %>,<%= slot[:multi_finish][:y] + 45 %> <%= slot[:x] + 95 %>,<%= slot[:multi_finish][:y] + 65 %> <%= slot[:x] + 80 %>,<%= slot[:multi_finish][:y] + 45 %> <%= slot[:x] + 90 %>,<%= slot[:multi_finish][:y] + 45 %> <%= slot[:x] + 90 %>,<%= slot[:multi_finish][:y] + 25 %>"></polyline>
                 <% end %>
                 <rect width="170" height="30" x="<%= slot[:x] + 10 %>" y="<%= slot[:y] - 10 %>" />
-                <text class="name <%= slot.try(:[], :level) %>" width="170" height="30" x="<%= slot[:x] + 15 %>" y="<%= slot[:y] + 10 %>"><%= slot.try(:[], :name) %></text>
+                <text class="name <= @bracket['<%= slot[:position] %>'].try(:[], :level) =>" width="170" height="30" x="<%= slot[:x] + 15 %>" y="<%= slot[:y] + 10 %>"><= @bracket['<%= slot[:position] %>'].try(:[], :name) =></text>
                 <rect width="30" height="30" x="<%= slot[:x] + 180 %>" y="<%= slot[:y] - 10 %>" />
-                <text class="score" width="30" height="30" x="<%= slot[:x] + 185 %>" y="<%= slot[:y] + 10 %>"><%= slot.try(:[], :score) %></text>
+                <text class="score" width="30" height="30" x="<%= slot[:x] + 185 %>" y="<%= slot[:y] + 10 %>"><= @bracket['<%= slot[:position] %>'].try(:[], :score) =></text>
                 <% if slot[:winner_line] then %>
                     <polyline points="<%= slot[:winner_line] %>" />
                 <% end %>
