@@ -1,4 +1,4 @@
-class BracketConfiguration < ActiveRecord::Base
+class BracketConfiguration < ApplicationRecord
     serialize :bye_pattern, Array
     serialize :loser_pattern, Array
 

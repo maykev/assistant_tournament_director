@@ -1,4 +1,4 @@
-class Player < ActiveRecord::Base
+class Player < ApplicationRecord
   belongs_to :level, inverse_of: :players
   has_many :match_player
   has_many :player_tournaments

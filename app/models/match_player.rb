@@ -1,4 +1,4 @@
-class MatchPlayer < ActiveRecord::Base
+class MatchPlayer < ApplicationRecord
     belongs_to :match
     belongs_to :player
 

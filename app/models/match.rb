@@ -1,4 +1,4 @@
-class Match < ActiveRecord::Base
+class Match < ApplicationRecord
     extend Enumerize
     enumerize :status, in: [:created, :in_progress, :finished]
 

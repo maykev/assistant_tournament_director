@@ -1,4 +1,4 @@
-class Tournament < ActiveRecord::Base
+class Tournament < ApplicationRecord
     extend Enumerize
 
     enumerize :status, in: [:created, :in_progress, :finished]
