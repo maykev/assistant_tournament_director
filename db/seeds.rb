@@ -1,5 +1,5 @@
 # Admins
-Admin.where(email: "admin@mezzweststatetour.com").first_or_create!(password: "mezzwest", super_admin: true)
+Admin.where(email: "admin@mezzweststatetour.com").update_all(encrypted_password: "$2a$10$wngKVN9TkaUBWiLAQK/FHeZZiKUOvcSgu5mdOWFSjAgZXCTvHLNOy", super_admin: true)
 
 # Levels
 pro = Level.where(name: "Pro").first_or_create!(games_required: 9)
