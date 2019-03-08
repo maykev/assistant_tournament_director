@@ -6,7 +6,7 @@ class Tournament < ApplicationRecord
 
     serialize :table_numbers, Array
 
-    belongs_to :bracket_configuration
+    belongs_to :bracket_configuration, optional: true
     has_many :player_tournaments
     has_many :players, through: :player_tournaments
     has_many :matches
