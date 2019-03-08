@@ -51,4 +51,33 @@ class TournamentsController < ApplicationController
         @players = Tournament.find(params[:id]).players.order(:first_name, :last_name)
         render 'tournament_players'
     end
+
+    def points
+        # Get bracket size
+        # Detemine winners rounds
+        # Determine losers rounds
+
+        # Take winner of last winner side match as 1st
+        # Take loser of last winner side as 2nd
+
+        # Take loser of last loser side match as 3rd
+
+        # Take loser of 2nd to last loser side match as 4th
+
+        # Take losers of 3rd to last loser side round as 5-6th
+
+        # Take losers of 4th to last loser side round as 7-8th
+
+        # Take losers of 5th to last loser side round as 9-12th
+
+        # Take losers of 6th to last loser side round as 13-16th
+
+        # Take losers of 7th to last loser side round as 17-24th
+
+        # Take losers of 8th to last loser side round as 25-32th
+
+        # Take losers of 9th to last loser side round as 33-48th
+
+        # Take losers of 9th to last loser side round as 49-64th
+    end
 end
