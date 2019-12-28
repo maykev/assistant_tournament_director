@@ -14,9 +14,4 @@ class MatchPlayer < ApplicationRecord
             ""
         end
     end
-
-    rails_admin do
-        object_label_method :rails_admin_display
-        hide
-    end
 end
