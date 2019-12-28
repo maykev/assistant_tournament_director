@@ -46,7 +46,7 @@ RailsAdmin.config do |config|
         end
 
         edit do
-            include_fields :id, :status, :table_number
+            include_fields :id, :tournament, :status, :table_number, :bracket_position, :match_players
         end
     end
 
