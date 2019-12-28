@@ -50,6 +50,10 @@ RailsAdmin.config do |config|
         end
     end
 
+    config.model MatchPlayer do
+        include_all_fields
+    end
+
     config.model Player do
         object_label_method :full_name
         include_fields :id, :first_name, :last_name, :level
